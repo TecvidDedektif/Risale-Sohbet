@@ -6,6 +6,9 @@
                  arkasına (( )) içinde yaz. Örnek:  merâtib‑i hayat ((hayatın mertebeleri))
      aciklama  : sade açıklama (her paragraf ayrı bir satır)
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
+   Daha önce bir derste anlamı yazılmış kelimede (()) yazman yeter,
+   anlam lügatten kendiliğinden gelir. Örnek:  tenvir (())
+   Bölüme kitaptaki sayfa numarasını eklemek için:  sayfa: 12,
    Bir bölümde olmayan kısmı yazmayabilirsin.
    ============================================================ */
 
@@ -120,7 +123,7 @@ RISALE.dersEkle({
       alt: true,
       metin: [
         'İşte âlem‑i Berzahtaki emvât ((ölülerin)) ve şühedânın hayat‑ı Berzahiyeden ((kabir hayatından)) istifadeleri, öyle farklıdır. Hadsiz ((sayısız)) vâkıâtla ((olaylarla)) ve rivâyâtla ((nakledilen haberlerle)) şühedânın bu tarz‑ı hayata mazhariyetleri ((kavuşmaları)) ve kendilerini sağ bildikleri sâbit ve kat’îdir ((kesindir)).',
-        'Hattâ Seyyidü’ş‑şühedâ ((şehitlerin efendisi)) olan Hazret‑i Hamza Radıyallahu Anh, mükerrer ((tekrar tekrar yaşanan)) vâkıâtla kendine iltîcâ eden ((sığınan)) adamları muhâfaza etmesi‥ ve dünyevî işlerini görmesi ve gördürmesi gibi çok vâkıâtla, bu tabaka‑i hayat tenvir ve ispat edilmiş.',
+        'Hattâ Seyyidü’ş‑şühedâ ((şehitlerin efendisi)) olan Hazret‑i Hamza Radıyallahu Anh, mükerrer ((tekrar tekrar yaşanan)) vâkıâtla (()) kendine iltîcâ eden ((sığınan)) adamları muhâfaza etmesi‥ ve dünyevî işlerini görmesi ve gördürmesi gibi çok vâkıâtla, bu tabaka‑i hayat tenvir (()) ve ispat edilmiş.',
         'Hattâ – ben kendim – Ubeyd isminde bir yeğenim ve talebem vardı. Benim yanımda ve benim yerime şehit olduktan sonra, üç aylık mesâfede esârette ((esirlikte)) bulunduğum zaman, mahall‑i defnini ((gömüldüğü yeri)) bilmediğim hâlde, bence bir rüya‑yı sâdıkada ((doğru, gerçeğe uygun bir rüyada)), tahte’l‑arz ((yer altında)) bir menzil ((ev, konak)) sûretindeki kabrine girmişim. Onu şühedâ tabaka‑i hayatında gördüm. O, beni ölmüş biliyormuş. Benim için çok ağladığını söyledi. Kendisini hayatta biliyor; fakat, Rus’un istîlâsından ((işgalinden)) çekindiği için, yer altında kendine güzel bir menzil yapmış. İşte bu cüz’î ((küçük, tek)) rüya, bazı şerâit ve emârâtla ((şartlar ve işaretlerle)), geçen hakikate, bana şühûd derecesinde ((görmüş gibi kesin)) bir kanâat vermiştir.',
       ],
       aciklama: [
