@@ -180,3 +180,9 @@ mark { background:var(--isaret); color:inherit; border-radius:3px; padding:0 2px
 :root { --not:#7a5200; --not-zemin:#fdf4e1; --isaret:#ffe9a8 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --not:#f2c46d; --not-zemin:#2c2414; --isaret:#5a4a12 } }
 :root[data-theme="dark"] { --not:#f2c46d; --not-zemin:#2c2414; --isaret:#5a4a12 }
+
+/* ---------- Sayfa sonu: eRisale'deki gibi sayfa numarası ---------- */
+.sayfa-sonu { display:flex; align-items:center; gap:12px; margin:26px 0 0; color:var(--soluk); font:600 14px var(--f-ui); font-variant-numeric:tabular-nums }
+.sayfa-sonu::before, .sayfa-sonu::after { content:""; flex:1; border-top:1px dashed var(--cizgi) }
+.sayfa-sonu + .bolum { border-top:0; margin-top:0 }
+body.sohbet .sayfa-sonu { display:flex }

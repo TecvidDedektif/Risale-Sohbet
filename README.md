@@ -25,7 +25,7 @@ Alttaki çubukla anlamlar, açıklamalar ve örnekler ayrı ayrı açılıp kapa
 | Lügat: derslerdeki bütün anlamlar | Üstte "Lügat" |
 | Kelime tekrarı | Üstte "Tekrar" |
 | Arama (şapka ve Türkçe harf farkı önemsiz) | Üstte "Ara" |
-| Sayfa numarası | Ders dosyasında bölüme `sayfa: 12,` yaz |
+| Sayfa numarası (eRisale'deki gibi, bölümler arasında) | Ders dosyasında sayfanın bittiği bölüme `sayfaSonu: 26,` yaz |
 | Telefona kurma ve internetsiz açılma | Tarayıcı menüsünde "Ana ekrana ekle" |
 
 ## Dosyalar

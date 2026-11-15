@@ -8,13 +8,15 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
    Daha önce bir derste anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  tenvir (())
-   Bölüme kitaptaki sayfa numarasını eklemek için:  sayfa: 12,
+   Sayfa numarası (eRisale'deki gibi): sayfanın bittiği bölüme  sayfaSonu: 26,  yaz.
+   Bölüm başlığının yanında sayfa göstermek için:  sayfa: 12,
    Bir bölümde olmayan kısmı yazmayabilirsin.
    ============================================================ */
 
 RISALE.dersEkle({
   id: 'birinci-mektup-1',            // dosya adıyla aynı olmalı
   kitap: 'Mektûbât',
+  baski: 'sayfalar eRisale’ye göre',
   baslik: 'Birinci Mektup: Hayatın Beş Tabakası',
   ozet: 'Hızır (as) hayatta mı? Cevap, hayatın beş basamağı üzerinden.',
 
@@ -79,6 +81,8 @@ RISALE.dersEkle({
       ornek: [
         'Bir lambayı düşün: cam ve tel ağır ve bir yere bağlı. Ama ondan çıkan ışık bütün odaya yayılır, ağırlığı yoktur. “Nurânî letâfet” böyle bir incelik: beden var, ama ağırlık ve ihtiyaç yok gibi.',
       ],
+
+      sayfaSonu: 26,                // eRisale'de bu bölümden sonra 26 yazıyor
     },
     {
       baslik: 'İsâ’nın (as) gelişi hadisinin sırrı',
@@ -117,6 +121,8 @@ RISALE.dersEkle({
       ornek: [
         'Tatilde biri her gün dönüş biletine bakıp “üç gün kaldı, iki gün kaldı” diye sayıyor. Diğeri dönüşü düşünmüyor. Aynı otelde, aynı denizde olsalar da ikincisi tatilin tadını çok daha fazla alır.',
       ],
+
+      sayfaSonu: 27,
     },
     {
       baslik: 'Hz. Hamza ve Ubeyd',

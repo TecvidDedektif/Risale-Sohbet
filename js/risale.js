@@ -252,7 +252,8 @@ window.RISALE = {
           '<button type="button" class="kucuk" data-not-yaz="' + bi + '">Not yaz</button>' +
           '<button type="button" class="kucuk" data-paylas="' + bi + '">Paylaş</button>' +
         '</div>' +
-        '</section>';
+        '</section>' +
+        (b.sayfaSonu ? '<div class="sayfa-sonu" aria-label="Sayfa ' + esc(b.sayfaSonu) + '">' + esc(b.sayfaSonu) + '</div>' : '');
     }).join('');
 
     var sorular = d.sorular && d.sorular.length
