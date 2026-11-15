@@ -1,0 +1,16 @@
+{
+  "name": "Risale Sohbet",
+  "short_name": "Risale",
+  "description": "Sohbet hazırlığı: metin, kelime anlamları, açıklama ve günlük hayattan örnekler.",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbfbf9",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "ikon/ikon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "ikon/ikon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "ikon/ikon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
