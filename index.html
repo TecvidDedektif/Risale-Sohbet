@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Risale Sohbet</title>
+<meta name="description" content="Risale-i Nur sohbet hazırlığı: metin, kelime anlamları, açıklama ve günlük hayattan örnekler.">
+<link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+
+<!-- Üst şerit ve gövdeyi js/risale.js doldurur -->
+<header class="ust" id="ust"></header>
+<main class="kap" id="govde"></main>
+
+<!-- Alttaki okuma çubuğu: aç/kapat ve yazı büyüklüğü -->
+<nav class="cubuk" id="cubuk" hidden aria-label="Okuma ayarları">
+  <div class="kap">
+    <div class="anahtarlar">
+      <button type="button" data-anahtar="anlam" aria-pressed="true">Anlam</button>
+      <button type="button" data-anahtar="aciklama" aria-pressed="true">Açıklama</button>
+      <button type="button" data-anahtar="ornek" aria-pressed="true">Örnek</button>
+    </div>
+    <div class="boyutlar">
+      <button type="button" data-boyut="-1" aria-label="Yazıyı küçült">A−</button>
+      <button type="button" data-boyut="1" aria-label="Yazıyı büyüt">A+</button>
+    </div>
+  </div>
+</nav>
+
+<noscript><p class="kap">Bu sayfa için JavaScript açık olmalı.</p></noscript>
+
+<!-- Sıra önemli: önce uygulama, sonra ders listesi. Ders dosyaları listeden kendiliğinden yüklenir. -->
+<script src="js/risale.js"></script>
+<script src="dersler/liste.js"></script>
+</body>
+</html>
