@@ -25,7 +25,7 @@ Alttaki çubukla anlamlar, açıklamalar ve örnekler ayrı ayrı açılıp kapa
 | Lügat: derslerdeki bütün anlamlar | Üstte "Lügat" |
 | Kelime tekrarı | Üstte "Tekrar" |
 | Arama (şapka ve Türkçe harf farkı önemsiz) | Üstte "Ara" |
-| Sayfa numarası | Ders dosyasında bölüme `sayfa: 12,` yaz |
+| Sayfa numarası (eRisale'deki gibi) | Kitapta yeni sayfa hangi bölümle başlıyorsa, ders dosyasında o bölüme `sayfa: 26,` yaz |
 | Telefona kurma ve internetsiz açılma | Tarayıcı menüsünde "Ana ekrana ekle" |
 
 ## Dosyalar
@@ -37,7 +37,8 @@ js/risale.js              uygulama (ders eklerken dokunmana gerek yok)
 dersler/                  İÇERİK: senin çalışacağın yer
   liste.js                ana sayfadaki derslerin sırası
   lugat.js                derslerde geçmeyen ek kelimeler
-  birinci-mektup-1.js     Birinci Mektup, hayatın beş tabakası
+  birinci-mektup-1.js     Birinci Mektup, Birinci Suâl: hayatın beş tabakası
+  birinci-mektup-2.js     Birinci Mektup, İkinci Suâl: ölüm nasıl nimet olur?
 fonts/                    yazı tipleri ve lisansları
 ikon/                     telefona kurulunca görünen simge
 sw.js, manifest.webmanifest  internetsiz çalışma ve kurulum

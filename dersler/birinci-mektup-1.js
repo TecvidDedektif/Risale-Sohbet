@@ -8,13 +8,15 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
    Daha önce bir derste anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  tenvir (())
-   Bölüme kitaptaki sayfa numarasını eklemek için:  sayfa: 12,
+   Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
+   o bölüme  sayfa: 26,  yaz. Numara bölümün üstünde kesik çizgiyle görünür.
    Bir bölümde olmayan kısmı yazmayabilirsin.
    ============================================================ */
 
 RISALE.dersEkle({
   id: 'birinci-mektup-1',            // dosya adıyla aynı olmalı
   kitap: 'Mektûbât',
+  baski: 'sayfalar eRisale’ye göre',
   baslik: 'Birinci Mektup: Hayatın Beş Tabakası',
   ozet: 'Hızır (as) hayatta mı? Cevap, hayatın beş basamağı üzerinden.',
 
@@ -47,7 +49,7 @@ RISALE.dersEkle({
     {
       baslik: 'Birinci tabaka: bizim hayatımız',
       metin: [
-        'Birinci Tabaka‑i Hayat ((hayatın birinci katmanı)): Bizim hayatımızdır ki, çok kayıtlarla mukayyettir ((pek çok sınırla bağlıdır)).',
+        'Birinci Tabaka‑i Hayat ((hayatın birinci katmanı)): Bizim hayatımızdır ki, çok kayıtlarla ((sınırlarla)) mukayyettir ((bağlıdır)).',
       ],
       aciklama: [
         'Bizim hayatımız sınırlarla dolu. Aynı anda sadece bir yerde olabiliriz. Yemeye, içmeye, uyumaya mecburuz. Zamana, mekâna ve bedenimize bağlıyız.',
@@ -59,7 +61,7 @@ RISALE.dersEkle({
     {
       baslik: 'İkinci tabaka: Hızır ve İlyas (as)',
       metin: [
-        'İkinci Tabaka‑i Hayat: Hazret‑i Hızır ve İlyas Aleyhimesselâm’ın hayatlarıdır ki, bir derece serbesttir. Yani bir vakitte pek çok yerlerde bulunabilirler. Bizim gibi beşeriyet levâzımatıyla ((insan olmanın zorunlu ihtiyaçlarıyla)) dâimî mukayyet ((sürekli bağlı)) değillerdir. Bazen istedikleri vakit bizim gibi yerler, içerler; fakat bizim gibi mecbur değillerdir. Tevâtür derecesinde ((yalan üzerinde birleşmeleri imkânsız sayıda kişinin bildirdiği şekilde)) ehl‑i şühûd ve keşif ((manevî gözü açık, görülmeyeni görebilen)) olan evliyânın ((velilerin)), Hazret‑i Hızır ile mâceraları, bu tabaka‑i hayatı tenvir ((aydınlatır)) ve ispat eder. Hattâ makàmât‑ı velâyette ((velilik makamları arasında)) bir makam vardır ki, “Makam‑ı Hızır” tâbir edilir ((denir)). O makama gelen bir velî, Hızır’dan ders alır ve Hızır ile görüşür. Fakat bazen o makam sâhibi yanlış olarak ayn‑ı Hızır ((Hızır’ın kendisi)) telâkki olunur ((sanılır)).',
+        'İkinci Tabaka‑i Hayat: Hazret‑i Hızır ve İlyas Aleyhimesselâm’ın hayatlarıdır ki, bir derece serbesttir. Yani bir vakitte pek çok yerlerde bulunabilirler. Bizim gibi beşeriyet levâzımatıyla ((insan olmanın zorunlu ihtiyaçlarıyla)) dâimî ((sürekli)) mukayyet ((bağlı)) değillerdir. Bazen istedikleri vakit bizim gibi yerler, içerler; fakat bizim gibi mecbur değillerdir. Tevâtür ((yalan üzerinde birleşmeleri imkânsız sayıda kişinin bildirmesi)) derecesinde ehl‑i şühûd ve keşif ((manevî gözü açık ve görülmeyeni görebilen)) olan evliyânın ((velilerin)), Hazret‑i Hızır ile mâceraları, bu tabaka‑i hayatı tenvir ((aydınlatır)) ve ispat eder. Hattâ makàmât‑ı velâyette ((velilik makamları arasında)) bir makam vardır ki, “Makam‑ı Hızır” tâbir edilir ((denir)). O makama gelen bir velî, Hızır’dan ders alır ve Hızır ile görüşür. Fakat bazen o makam sâhibi yanlış olarak ayn‑ı Hızır ((Hızır’ın kendisi)) telâkki olunur ((sanılır)).',
       ],
       aciklama: [
         'Hızır ve İlyas’ın hayatı bizimki gibi sıkı bağlı değil, biraz serbest. Aynı anda birçok yerde bulunabilirler. İsterlerse yiyip içerler, ama bizim gibi buna muhtaç değiller. Pek çok velinin Hızır’la karşılaşması bunu gösteriyor. Bir de şu var: velilikte “Makam‑ı Hızır” denen bir derece var. O dereceye ulaşan veliyi görenler bazen yanlışlıkla Hızır’ın kendisini gördüklerini sanıyor.',
@@ -79,10 +81,12 @@ RISALE.dersEkle({
       ornek: [
         'Bir lambayı düşün: cam ve tel ağır ve bir yere bağlı. Ama ondan çıkan ışık bütün odaya yayılır, ağırlığı yoktur. “Nurânî letâfet” böyle bir incelik: beden var, ama ağırlık ve ihtiyaç yok gibi.',
       ],
+
     },
     {
       baslik: 'İsâ’nın (as) gelişi hadisinin sırrı',
       alt: true,
+      sayfa: 26,
       metin: [
         '“Âhirzamanda Hazret‑i İsâ Aleyhisselâm gelecek, Şerîat‑ı Muhammediye (asm) ile amel edecek” meâlindeki ((anlamındaki)) hadîsin sırrı şudur ki: Âhirzamanda felsefe‑i tabîiyenin ((her şeyi tabiata veren, Yaratıcı’yı yok sayan felsefenin)) verdiği cereyan‑ı küfrîye ((inkâr akımına)) ve inkâr‑ı ulûhiyete ((Allah’ı inkâra)) karşı İsevîlik dini tasaffî ederek ((arınıp)) ve hurâfâttan ((batıl inanışlardan)) tecerrüt edip ((sıyrılıp)) İslâmiyete inkılâp edeceği ((dönüşeceği)) bir sırada; nasıl ki, İsevîlik şahs‑ı manevîsi ((İsevîliğin toplu, manevî kişiliği)), vahy‑i semâvî ((gökten inen vahiy)) kılıncıyla o müthiş dinsizliğin şahs‑ı manevîsini öldürür, öyle de; Hazret‑i İsâ Aleyhisselâm, İsevîlik şahs‑ı manevîsini temsîl ederek, dinsizliğin şahs‑ı manevîsini temsîl eden Deccâlı öldürür‥ yani inkâr‑ı ulûhiyet fikrini öldürecek.',
       ],
@@ -117,14 +121,16 @@ RISALE.dersEkle({
       ornek: [
         'Tatilde biri her gün dönüş biletine bakıp “üç gün kaldı, iki gün kaldı” diye sayıyor. Diğeri dönüşü düşünmüyor. Aynı otelde, aynı denizde olsalar da ikincisi tatilin tadını çok daha fazla alır.',
       ],
+
     },
     {
       baslik: 'Hz. Hamza ve Ubeyd',
       alt: true,
+      sayfa: 27,
       metin: [
         'İşte âlem‑i Berzahtaki emvât ((ölülerin)) ve şühedânın hayat‑ı Berzahiyeden ((kabir hayatından)) istifadeleri, öyle farklıdır. Hadsiz ((sayısız)) vâkıâtla ((olaylarla)) ve rivâyâtla ((nakledilen haberlerle)) şühedânın bu tarz‑ı hayata mazhariyetleri ((kavuşmaları)) ve kendilerini sağ bildikleri sâbit ve kat’îdir ((kesindir)).',
         'Hattâ Seyyidü’ş‑şühedâ ((şehitlerin efendisi)) olan Hazret‑i Hamza Radıyallahu Anh, mükerrer ((tekrar tekrar yaşanan)) vâkıâtla (()) kendine iltîcâ eden ((sığınan)) adamları muhâfaza etmesi‥ ve dünyevî işlerini görmesi ve gördürmesi gibi çok vâkıâtla, bu tabaka‑i hayat tenvir (()) ve ispat edilmiş.',
-        'Hattâ – ben kendim – Ubeyd isminde bir yeğenim ve talebem vardı. Benim yanımda ve benim yerime şehit olduktan sonra, üç aylık mesâfede esârette ((esirlikte)) bulunduğum zaman, mahall‑i defnini ((gömüldüğü yeri)) bilmediğim hâlde, bence bir rüya‑yı sâdıkada ((doğru, gerçeğe uygun bir rüyada)), tahte’l‑arz ((yer altında)) bir menzil ((ev, konak)) sûretindeki kabrine girmişim. Onu şühedâ tabaka‑i hayatında gördüm. O, beni ölmüş biliyormuş. Benim için çok ağladığını söyledi. Kendisini hayatta biliyor; fakat, Rus’un istîlâsından ((işgalinden)) çekindiği için, yer altında kendine güzel bir menzil yapmış. İşte bu cüz’î ((küçük, tek)) rüya, bazı şerâit ve emârâtla ((şartlar ve işaretlerle)), geçen hakikate, bana şühûd derecesinde ((görmüş gibi kesin)) bir kanâat vermiştir.',
+        'Hattâ – ben kendim – Ubeyd isminde bir yeğenim ve talebem vardı. Benim yanımda ve benim yerime şehit olduktan sonra, üç aylık mesâfede esârette ((esirlikte)) bulunduğum zaman, mahall‑i defnini ((gömüldüğü yeri)) bilmediğim hâlde, bence bir rüya‑yı sâdıkada ((doğru, gerçeğe uygun bir rüyada)), tahte’l‑arz ((yer altında)) bir menzil ((ev, konak)) sûretindeki kabrine girmişim. Onu şühedâ tabaka‑i hayatında gördüm. O, beni ölmüş biliyormuş. Benim için çok ağladığını söyledi. Kendisini hayatta biliyor; fakat, Rus’un istîlâsından ((işgalinden)) çekindiği için, yer altında kendine güzel bir menzil yapmış. İşte bu cüz’î ((küçük, tek)) rüya, bazı şerâit ve emârâtla ((şartlar ve işaretlerle)), geçen hakikate, bana şühûd ((gözle görme)) derecesinde bir kanâat vermiştir.',
       ],
       aciklama: [
         'Ölülerin ve şehitlerin kabir hayatından aldıkları pay işte bu kadar farklıdır. Şehitlerin kendilerini diri bildiği, sayısız olay ve rivayetle kesinleşmiştir. Örneğin Hz. Hamza’nın kendisine sığınanları koruduğu ve işlerine yardım ettiği birçok olay anlatılır.',

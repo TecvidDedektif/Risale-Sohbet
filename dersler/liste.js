@@ -5,4 +5,5 @@
 
 RISALE.liste([
   'birinci-mektup-1',
+  'birinci-mektup-2',
 ]);
