@@ -47,11 +47,20 @@ window.RISALE = {
 
   // Bir anlamın hangi kelimeye ait olduğunu bulur: "… merâtib‑i hayat" -> "merâtib‑i hayat"
   // İzafetli kelimeleri (‑i, ‑ı, ‑u, ‑ü ile bağlananlar) birlikte alır.
-  function terimBul(onceki) {
+  // "tecerrüt ile", "ihsân eder" gibi yerlerde yardımcı kelime tek başına alınmaz, önceki kelimeyle birlikte alınır.
+  // Anlamda " ve " varsa "şerâit ve emârâtla" gibi iki kelime birlikte alınır.
+  var YARDIMCI = /^(ile|ed(er|eriz|ip|erek|ilir|iliyor|iyor|ilmiş|en|ecek|eceği)|et(miş|mek|ti)|ol(ur|unur|an|anlar|arak|up|uyor|uyorlar|mak|muş|duğu))$/;
+  function terimBul(onceki, anlam) {
     var t = onceki.replace(/\s+$/, '').split(/\s+/);
     var temizle = function (w) { return w.replace(/^[“"'(«]+|[,;:.!?”"'»)]+$/g, ''); };
-    var son = temizle(t.pop() || '');
-    while (t.length && /[‑-](i|ı|u|ü|yi|yı|yu|yü)$/.test(temizle(t[t.length - 1]))) son = temizle(t.pop()) + ' ' + son;
+    function kelimeAl() {
+      var w = temizle(t.pop() || '');
+      while (t.length && /[‑-](i|ı|u|ü|yi|yı|yu|yü)$/.test(temizle(t[t.length - 1]))) w = temizle(t.pop()) + ' ' + w;
+      return w;
+    }
+    var son = kelimeAl();
+    if (t.length && YARDIMCI.test(son.toLocaleLowerCase('tr'))) son = kelimeAl() + ' ' + son;
+    if (t.length > 1 && temizle(t[t.length - 1]) === 've' && / ve /.test(anlam || '')) { t.pop(); son = kelimeAl() + ' ve ' + son; }
     return son;
   }
 
@@ -71,7 +80,7 @@ window.RISALE = {
         (b.metin || []).forEach(function (p) {
           var re = /\(\((.*?)\)\)/g, m;
           while ((m = re.exec(p))) {
-            var terim = terimBul(p.slice(0, m.index).replace(/\(\(.*?\)\)/g, ''));
+            var terim = terimBul(p.slice(0, m.index).replace(/\(\(.*?\)\)/g, ''), m[1]);
             if (!terim || /[؀-ۿ]/.test(terim)) continue;   // Arapça satırlar lügate girmez
             var k = sade(terim);
             if (!lugat[k]) lugat[k] = { terim: terim, anlam: '', yerler: [] };
@@ -243,8 +252,9 @@ window.RISALE = {
         var k = notAnahtari(d, bi, pi);
         return '<div class="paragraf"><p>' + metinCiz(p, yer) + '</p>' + notCiz(k) + '</div>';
       }).join('');
-      return '<section class="bolum' + (b.alt ? ' alt' : '') + '" id="b' + bi + '">' +
-        '<h2>' + esc(b.baslik) + (b.sayfa ? ' <span class="sayfa">s. ' + esc(b.sayfa) + '</span>' : '') + '</h2>' +
+      return (b.sayfa ? '<div class="sayfa-cizgi" aria-label="Sayfa ' + esc(b.sayfa) + '">' + esc(b.sayfa) + '</div>' : '') +
+        '<section class="bolum' + (b.alt ? ' alt' : '') + '" id="b' + bi + '">' +
+        '<h2>' + esc(b.baslik) + '</h2>' +
         '<div class="metin">' + metin + '</div>' +
         (b.aciklama ? '<div class="aciklama"><span class="etiket">Açıklama</span>' + b.aciklama.map(function (p) { return '<p>' + arapca(esc(p)) + '</p>'; }).join('') + '</div>' : '') +
         (b.ornek ? '<div class="ornek"><span class="etiket">Günlük hayattan</span>' + b.ornek.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' : '') +
@@ -252,8 +262,7 @@ window.RISALE = {
           '<button type="button" class="kucuk" data-not-yaz="' + bi + '">Not yaz</button>' +
           '<button type="button" class="kucuk" data-paylas="' + bi + '">Paylaş</button>' +
         '</div>' +
-        '</section>' +
-        (b.sayfaSonu ? '<div class="sayfa-sonu" aria-label="Sayfa ' + esc(b.sayfaSonu) + '">' + esc(b.sayfaSonu) + '</div>' : '');
+        '</section>';
     }).join('');
 
     var sorular = d.sorular && d.sorular.length
