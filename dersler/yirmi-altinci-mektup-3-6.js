@@ -17,8 +17,8 @@ RISALE.dersEkle({
   id: 'yirmi-altinci-mektup-3-6',    // dosya adıyla aynı olmalı
   kitap: 'Mektûbât',
   baski: 'sayfalar eRisale’ye göre',
-  baslik: 'Yirmi Altıncı Mektup: Menfî Milliyete İki Cevap',
-  ozet: 'Üçüncü Mebhas, Altıncı Mesele: soylar birbirine karışmıştır; bakılacak olan dil, din ve vatan bağıdır. İslâm milliyetinin iki büyük faydası.',
+  baslik: 'Altıncı Mesele: Menfî Milliyete İki Cevap',
+  ozet: 'Yirmi Altıncı Mektup, Üçüncü Mebhas: soylar birbirine karışmıştır; bakılacak olan dil, din ve vatan bağıdır. İslâm milliyetinin iki büyük faydası.',
 
   bolumler: [
     {

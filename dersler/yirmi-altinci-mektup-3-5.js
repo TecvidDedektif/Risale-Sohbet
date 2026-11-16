@@ -17,8 +17,8 @@ RISALE.dersEkle({
   id: 'yirmi-altinci-mektup-3-5',    // dosya adıyla aynı olmalı
   kitap: 'Mektûbât',
   baski: 'sayfalar eRisale’ye göre',
-  baslik: 'Yirmi Altıncı Mektup: Körü Körüne Taklit',
-  ozet: 'Üçüncü Mebhas, Beşinci Mesele: Avrupa’yı körü körüne taklit neden yanlış? Üç sebep ve İslâm ile Hıristiyanlık arasındaki farkın sırrı.',
+  baslik: 'Beşinci Mesele: Körü Körüne Taklit',
+  ozet: 'Yirmi Altıncı Mektup, Üçüncü Mebhas: Avrupa’yı körü körüne taklit neden yanlış? Üç sebep ve İslâm ile Hıristiyanlık arasındaki farkın sırrı.',
 
   bolumler: [
     {
