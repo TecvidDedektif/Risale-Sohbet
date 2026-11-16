@@ -40,6 +40,7 @@ dersler/                  İÇERİK: senin çalışacağın yer
   birinci-mektup-1.js     Birinci Mektup, Birinci Suâl: hayatın beş tabakası
   birinci-mektup-2.js     Birinci Mektup, İkinci Suâl: ölüm nasıl nimet olur?
   yirmi-altinci-mektup-3-5.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Beşinci Mesele: körü körüne taklit
+  yirmi-altinci-mektup-3-6.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Altıncı Mesele: menfî milliyete iki cevap
 fonts/                    yazı tipleri ve lisansları
 ikon/                     telefona kurulunca görünen simge
 sw.js, manifest.webmanifest  internetsiz çalışma ve kurulum
