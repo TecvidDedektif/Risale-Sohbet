@@ -42,6 +42,7 @@ dersler/                  İÇERİK: senin çalışacağın yer
   yirmi-altinci-mektup-3-5.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Beşinci Mesele: körü körüne taklit
   yirmi-altinci-mektup-3-6.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Altıncı Mesele: menfî milliyete iki cevap
   yirmi-altinci-mektup-3-7.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Yedinci Mesele: gerçek hamiyet şefkattir
+  yirmi-altinci-mektup-4-1.js  Yirmi Altıncı Mektup, Dördüncü Mebhas, Birinci Mesele: âlemlerin Rabbi ve nefsin ayıbı
 fonts/                    yazı tipleri ve lisansları
 ikon/                     telefona kurulunca görünen simge
 sw.js, manifest.webmanifest  internetsiz çalışma ve kurulum
