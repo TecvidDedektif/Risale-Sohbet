@@ -54,5 +54,6 @@ sw.js, manifest.webmanifest  internetsiz çalışma ve kurulum
 2. Metni, açıklamaları ve örnekleri değiştir. Zor kelimenin anlamını kelimenin hemen arkasına çift parantezle yaz: `merâtib‑i hayat ((hayatın mertebeleri))`
    Anlamı daha önce bir derste yazılmış kelimede boş parantez yeter: `tenvir (())`. Anlam lügatten gelir; hiçbir derste olmayan kelimeleri `dersler/lugat.js` dosyasına yaz.
 3. `dersler/liste.js` dosyasına yeni dersin adını ekle.
+4. İstersen derse bir sohbet planı ekle (`plan`): bir açılış sorusu, iki üç ana nokta (her birinde tek cümlelik mesaj, kısa bir hikâye ve metindeki bölümün numarası) ve bir kapanış. Plan, ders sayfasının başında açılıp kapanan bir kutuda görünür. Örnek: `dersler/yirmi-altinci-mektup-4-1.js`.
 
 Kelime anlamları ve açıklamalar sohbet hazırlığı içindir; okumadan önce bilen birine göstermek iyi olur.

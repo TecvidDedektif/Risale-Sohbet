@@ -92,6 +92,18 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--anlam); outline-
 .sorular h2 { font-family:var(--f-metin); font-weight:650; font-size:calc(var(--boyut) * 1.25); margin:0 0 10px }
 .sorular li { font-size:var(--boyut); line-height:1.6; margin-bottom:.5em }
 
+/* Sohbet planı: dersin başında açılıp kapanan kutu */
+.plan { margin:14px 0 22px; background:var(--kart); border:1px solid var(--cizgi); border-radius:14px; padding:4px 16px 14px }
+.plan summary { font:700 15px var(--f-ui); padding:10px 0; cursor:pointer }
+.plan p, .plan li { font-size:calc(var(--boyut) * .88); line-height:1.45 }
+.plan .etiket { color:var(--soluk) }
+.plan-acilis, .plan-kapanis { margin:4px 0 12px }
+.plan-noktalar { margin:0 0 12px; padding-left:22px }
+.plan-noktalar li { margin-bottom:10px }
+.plan-hikaye { display:block; color:var(--ornek); margin-top:2px }
+.plan-git { display:inline-block; font:600 13px var(--f-ui); color:var(--soluk); margin-top:2px; text-decoration:none }
+.plan-kapanis { margin-bottom:0 }
+
 /* Gizleme düğmeleri kapalıyken */
 body.anlam-gizli .anlam { display:none }
 body.aciklama-gizli .aciklama { display:none }
