@@ -7,6 +7,8 @@
                  arkasına (( )) içinde yaz. Örnek:  münhasır ((sınırlı))
      aciklama  : sade açıklama (her paragraf ayrı bir satır)
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
+     plan      : sohbet planı (isteğe bağlı): açılış sorusu, ana noktalar
+                 (mesaj, hikâye, bolum = metne git numarası, 0'dan sayılır), kapanış
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  hakîki (())
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
@@ -19,6 +21,17 @@ RISALE.dersEkle({
   baski: 'sayfalar eRisale’ye göre',
   baslik: 'Dördüncü Mebhas: Âlemlerin Rabbi ve Nefsin Ayıbı',
   ozet: 'Yirmi Altıncı Mektup, Birinci Mesele: “on sekiz bin âlem” ne demek? Kusurunu görmek neden bahtiyarlıktır?',
+
+  // Sohbet planı: ders sayfasının başında görünür. Sohbette telefondan tek bakış için.
+  plan: {
+    acilis: 'Kusurunu görmek insanı üzmeli mi, sevindirmeli mi?',
+    noktalar: [
+      { mesaj: 'Herkes Kur’an’ı kendi kabı kadar anlar; Üstad bile “bilmiyorum” der.', hikaye: 'Bahar yağmuru: gül koku yapar, domates meyve.', bolum: 1 },
+      { mesaj: 'Sen de küçük bir âlemsin; Rabbin seni unutmaz.', hikaye: 'Uyurken atan kalp, karın altında bekleyen tohum.', bolum: 3 },
+      { mesaj: 'Kusurunu gören bahtiyardır; içteki eski çekiş, mücadelenin sürdüğünü gösterir.', hikaye: 'Sigarayı bırakan amcanın eli çaydan sonra hâlâ cebine gider.', bolum: 4 },
+    ],
+    kapanis: 'Bu hafta her akşam bir dakika: “Bugün kimseyi kırdım mı?”',
+  },
 
   bolumler: [
     {

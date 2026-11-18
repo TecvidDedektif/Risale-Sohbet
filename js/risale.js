@@ -265,12 +265,28 @@ window.RISALE = {
         '</section>';
     }).join('');
 
+    // Sohbet planı: açılış sorusu, ana noktalar (mesaj + hikâye), kapanış
+    var plan = '';
+    if (d.plan) {
+      var pl = d.plan;
+      plan = '<details class="plan" open><summary>Sohbet planı</summary>' +
+        (pl.acilis ? '<p class="plan-acilis"><span class="etiket">Açılış sorusu</span>' + esc(pl.acilis) + '</p>' : '') +
+        '<ol class="plan-noktalar">' + (pl.noktalar || []).map(function (n) {
+          return '<li><b>' + esc(n.mesaj) + '</b>' +
+            (n.hikaye ? '<span class="plan-hikaye">' + esc(n.hikaye) + '</span>' : '') +
+            (typeof n.bolum === 'number' && d.bolumler[n.bolum] ? '<a class="plan-git" href="#/' + esc(d.id) + '/' + n.bolum + '">Metne git: ' + esc(d.bolumler[n.bolum].baslik) + ' ›</a>' : '') +
+            '</li>';
+        }).join('') + '</ol>' +
+        (pl.kapanis ? '<p class="plan-kapanis"><span class="etiket">Kapanış</span>' + esc(pl.kapanis) + '</p>' : '') +
+        '</details>';
+    }
+
     var sorular = d.sorular && d.sorular.length
       ? '<section class="sorular"><h2>Sohbet için sorular</h2><ol>' + d.sorular.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol></section>'
       : '';
 
     govde.innerHTML = '<header class="ders-bas"><small>' + esc(d.kitap) + (d.baski ? ' · ' + esc(d.baski) : '') + '</small><h1>' + esc(d.baslik) + '</h1>' +
-      '<ul class="icindekiler">' + icindekiler + '</ul></header>' + hataKutusu() + bolumler + sorular +
+      '<ul class="icindekiler">' + icindekiler + '</ul></header>' + hataKutusu() + plan + bolumler + sorular +
       '<p class="alt-not">Kelime anlamları ve açıklamalar sohbet hazırlığı içindir; asıl metin esastır.</p>';
 
     govde.querySelectorAll('[data-not-yaz]').forEach(function (b) {
