@@ -6,6 +6,9 @@
    - İki kip: "Tam" (metin + açıklama + örnek), "Özet" (açıklama + örnek).
    - Ekran kilitliyken de çalar; kilit ekranında oynat/duraklat, ileri/geri, bölüm atlama.
    - Kaldığın yer, hız ve kip bu telefonda hatırlanır.
+   - Yazıyı takip: çalan kelime sayfada işaretlenir, ekran onunla kayar (ses/<ders>.json içindeki kelime
+     zamanlarından). Sayfadaki kelimeler, seslendirilen kelimelerle sırayla eşleştirilir; Arapça ve okunmayan
+     anlamlar atlanır. Eşleşmeyen paragrafta sadece paragraf işaretlenir.
    ============================================================ */
 
 (function () {
@@ -20,10 +23,11 @@
   var ETIKET = { baslik: 'Giriş', metin: 'Metin', aciklama: 'Açıklama', ornek: 'Günlük hayattan örnek' };
   var KIP_AD = { tam: 'Tam', ozet: 'Özet' };
 
-  var kayit = K.oku('risale-ses', { kip: 'tam', hiz: 1, konum: {} });
+  var kayit = K.oku('risale-ses', { kip: 'tam', hiz: 1, konum: {}, takip: true });
   var ses = new Audio();
   ses.preload = 'metadata';
   var id = null, kip = 'tam', surukleme = false, sonKayit = 0, uykuIndeks = 0, uykuZamani = null, sonBolum = null, degisiyor = false;
+  var ayrinti = {}, harita = null, cur = { p: -1, w: -2 }, takipBekle = false, kaydirmaKilidi = 0, sonKurma = 0, kare = 0;
   var el = {};
 
   var IKON = {
@@ -67,6 +71,7 @@
     kok.innerHTML = '<div class="kap">' +
       '<div class="oyn-liste" id="oyn-liste" hidden></div>' +
       '<div class="oyn-ust"><div class="oyn-bilgi"><b id="oyn-bolum"></b><small id="oyn-parca"></small></div>' +
+      '<button type="button" class="kucuk oyn-takip" id="oyn-takip"></button>' +
       '<button type="button" class="oyn-kapat" id="oyn-kapat" aria-label="Dinlemeyi kapat">✕</button></div>' +
       '<div class="oyn-zaman"><span id="oyn-t">0:00</span><input type="range" id="oyn-ara" min="0" max="1000" value="0" aria-label="Konum"><span id="oyn-s">0:00</span></div>' +
       '<div class="oyn-dugmeler">' +
@@ -80,7 +85,7 @@
       '<button type="button" class="kucuk" id="oyn-hiz"></button><button type="button" class="kucuk" id="oyn-uyku"></button></div></div>';
     document.body.appendChild(kok);
     el.kok = kok;
-    ['liste', 'bolum', 'parca', 'kip', 'bolumler', 'kapat', 't', 's', 'ara', 'onceki', 'geri', 'oynat', 'ileri', 'sonraki', 'hiz', 'uyku'].forEach(function (a) { el[a] = document.getElementById('oyn-' + a); });
+    ['liste', 'bolum', 'parca', 'takip', 'kip', 'bolumler', 'kapat', 't', 's', 'ara', 'onceki', 'geri', 'oynat', 'ileri', 'sonraki', 'hiz', 'uyku'].forEach(function (a) { el[a] = document.getElementById('oyn-' + a); });
 
     el.oynat.addEventListener('click', function () { if (ses.paused) calis(); else ses.pause(); });
     el.geri.addEventListener('click', function () { git(ses.currentTime - 15); });
@@ -89,6 +94,14 @@
     el.sonraki.addEventListener('click', function () { sonrakiBolum(); });
     el.kapat.addEventListener('click', kapat);
     el.kip.addEventListener('click', kipDegistir);
+    el.takip.addEventListener('click', function () {
+      if (kayit.takip && takipBekle) { takipBekle = false; kaydirmaKilidi = 0; cur.w = -2; takipGuncelle(); }
+      else {
+        kayit.takip = !kayit.takip; K.yaz('risale-ses', kayit);
+        if (kayit.takip) { takipBekle = false; kaydirmaKilidi = 0; cur.w = -2; takipGuncelle(); } else takipTemizle();
+      }
+      durumYaz();
+    });
     el.hiz.addEventListener('click', function () {
       var i = HIZLAR.indexOf(kayit.hiz); kayit.hiz = HIZLAR[(i + 1) % HIZLAR.length];
       ses.playbackRate = kayit.hiz; K.yaz('risale-ses', kayit); durumYaz();
@@ -111,9 +124,22 @@
     el.ara.addEventListener('change', function () { git(el.ara.value / 1000 * sureToplam()); surukleme = false; });
 
     ses.addEventListener('timeupdate', guncelle);
-    ses.addEventListener('play', durumYaz);
-    ses.addEventListener('pause', function () { durumYaz(); if (!ses.ended) konumKaydet(true); });
+    ses.addEventListener('play', function () { durumYaz(); kareBaslat(); });
+    ses.addEventListener('pause', function () { durumYaz(); if (!ses.ended) konumKaydet(true); takipGuncelle(); });
     ses.addEventListener('ended', function () { if (id) { kayit.konum[id + ':' + kip] = 0; K.yaz('risale-ses', kayit); } durumYaz(); });
+    ses.addEventListener('seeked', function () { takipGuncelle(); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) kareBaslat(); });
+    // Sen sayfayı kendin kaydırırsan takip bekler; "Takibe dön" ile geri gelir
+    var elle = function (e) {
+      if (!id || !kayit.takip || takipBekle || ses.paused) return;
+      if (e.target && e.target.closest && e.target.closest('.oyn')) return;
+      takipBekle = true; durumYaz();
+    };
+    window.addEventListener('wheel', elle, { passive: true });
+    window.addEventListener('touchmove', elle, { passive: true });
+    window.addEventListener('keydown', function (e) {
+      if (/^(PageUp|PageDown|Home|End|ArrowUp|ArrowDown| )$/.test(e.key) && !/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test((e.target.tagName || ''))) elle(e);
+    });
     ses.addEventListener('loadedmetadata', guncelle);
     window.addEventListener('resize', yukseklik);
     ses.addEventListener('error', function () { el.bolum.textContent = 'Ses dosyası açılamadı'; el.parca.textContent = 'İnternet bağlantını kontrol et.'; durumYaz(); });
@@ -141,6 +167,11 @@
     el.uyku.textContent = UYKU[uykuIndeks] ? 'Uyku ' + UYKU[uykuIndeks] + ' dk' : 'Uyku';
     el.uyku.setAttribute('aria-label', UYKU[uykuIndeks] ? 'Uyku zamanlayıcısı: ' + UYKU[uykuIndeks] + ' dakika sonra durdur' : 'Uyku zamanlayıcısı kapalı');
     el.kip.textContent = KIP_AD[kip];
+    var kesin = ayrinti[id] !== false;
+    el.takip.hidden = !kesin;
+    el.takip.textContent = !kayit.takip ? 'Takip kapalı' : (takipBekle ? 'Takibe dön' : 'Takip');
+    el.takip.className = 'kucuk oyn-takip' + (kayit.takip ? (takipBekle ? ' bekle' : ' acik') : '');
+    el.takip.setAttribute('aria-pressed', String(kayit.takip && !takipBekle));
     if ('mediaSession' in navigator) navigator.mediaSession.playbackState = ses.paused ? 'paused' : 'playing';
   }
 
@@ -156,6 +187,7 @@
       try { navigator.mediaSession.setPositionState({ duration: top, playbackRate: ses.playbackRate, position: Math.min(t, top) }); } catch (e) {}
     }
     konumKaydet(false);
+    takipGuncelle();
   }
 
   function yukseklik() {
@@ -183,9 +215,158 @@
     if (h) h.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  // ---------- Yazıyı takip ----------
+  var KELIME;
+  try { KELIME = new RegExp("[\\p{L}\\p{N}]+(?:['’‘\\-‐‑][\\p{L}\\p{N}]+)*", 'gu'); }
+  catch (e) { KELIME = /[A-Za-zÀ-ɏ0-9]+(?:['’‘\-‐‑][A-Za-zÀ-ɏ0-9]+)*/g; }
+
+  // Karşılaştırma biçimi: küçük harf, şapkasız, ASCII. araclar/ses_uret.py'deki norm() ile aynı kural.
+  function norm(w) {
+    return String(w).replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase().replace(/ı/g, 'i')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+  }
+  function esit(a, b) { return a === b || (a === 'hz' && b === 'hazreti'); }
+
+  function ayrintiYukle(dersId) {
+    if (ayrinti[dersId] !== undefined) return;
+    ayrinti[dersId] = null;
+    fetch('ses/' + dersId + '.json' + (veri[dersId] && veri[dersId].ver ? '?v=' + veri[dersId].ver : '')).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) { ayrinti[dersId] = j; harita = null; durumYaz(); takipGuncelle(); })
+      .catch(function () { ayrinti[dersId] = false; durumYaz(); });
+  }
+
+  // Ders dosyasındaki (tür, sıra) paragrafının sayfadaki <p> öğesi
+  function parEl(b, tur, i) {
+    var s = document.getElementById('b' + b);
+    if (!s) return null;
+    if (tur === 'metin') { var m = s.querySelector('.metin'), pr = m && m.children[i]; return pr ? pr.querySelector('p') : null; }
+    var kap = s.querySelector(tur === 'aciklama' ? '.aciklama' : '.ornek');
+    return kap ? (kap.querySelectorAll(':scope > p')[i] || null) : null;
+  }
+
+  // Paragraftaki okunabilir kelimeler (Arapça atlanır) ve metin düğümündeki yerleri
+  function ekranKelimeleri(p) {
+    var w = document.createTreeWalker(p, NodeFilter.SHOW_TEXT, null), n, out = [];
+    while ((n = w.nextNode())) {
+      if (n.parentElement && n.parentElement.closest('.ar')) continue;
+      var t = n.nodeValue, m;
+      KELIME.lastIndex = 0;
+      while ((m = KELIME.exec(t))) {
+        var k = norm(m[0]);
+        if (k) out.push({ n: n, s: m.index, e: m.index + m[0].length, k: k });
+      }
+    }
+    return out;
+  }
+
+  // İki kelime dizisini sırayla eşleştirir (en uzun ortak dizi). Dönüş: ekran kelimesi -> seslendirilen kelime ya da -1
+  function hizala(D, S) {
+    var n = D.length, m = S.length, w = m + 1, T = new Uint16Array((n + 1) * w), i, j, sonuc = [];
+    for (i = n - 1; i >= 0; i--) for (j = m - 1; j >= 0; j--) {
+      T[i * w + j] = esit(D[i], S[j]) ? T[(i + 1) * w + j + 1] + 1 : Math.max(T[(i + 1) * w + j], T[i * w + j + 1]);
+    }
+    for (i = 0; i < n; i++) sonuc.push(-1);
+    i = 0; j = 0;
+    while (i < n && j < m) {
+      if (esit(D[i], S[j]) && T[i * w + j] === T[(i + 1) * w + j + 1] + 1) { sonuc[i] = j; i++; j++; }
+      else if (T[(i + 1) * w + j] >= T[i * w + j + 1]) i++;
+      else j++;
+    }
+    return sonuc;
+  }
+
+  function haritaKur() {
+    var ay = ayrinti[id], kv = ay && ay.kipler && ay.kipler[kip];
+    if (!kv || !kv.par) return null;
+    var par = [], ilk = null;
+    kv.par.forEach(function (x) {
+      var p = parEl(x.b, x.p, x.i);
+      if (!p || !x.t.length) return;
+      ilk = ilk || p;
+      var D = ekranKelimeleri(p), esl = hizala(D.map(function (d) { return d.k; }), x.k), kel = [];
+      for (var d = 0; d < D.length; d++) if (esl[d] >= 0) kel.push({ t: x.t[esl[d]] / 100, n: D[d].n, s: D[d].s, e: D[d].e });
+      // seslendirilen kelimelerin en az %40'ı sayfada bulunamadıysa kelime işareti güvenilmez; sadece paragraf işaretlenir
+      par.push({ el: p, bas: x.t[0] / 100, bit: x.e / 100, kel: kel.length >= Math.max(1, Math.ceil(x.k.length * 0.4)) ? kel : [] });
+    });
+    return par.length ? { id: id, kip: kip, ilk: ilk, par: par } : null;
+  }
+
+  function haritaAl() {
+    if (!id || location.hash.split('/')[1] !== id) return null;            // ders sayfası açık değil
+    if (harita && harita.id === id && harita.kip === kip && harita.ilk.isConnected) return harita;
+    if (Date.now() - sonKurma < 400) return null;
+    sonKurma = Date.now();
+    harita = haritaKur(); cur = { p: -1, w: -2 };
+    return harita;
+  }
+
+  function takipTemizle() {
+    if (harita && cur.p >= 0 && harita.par[cur.p]) harita.par[cur.p].el.classList.remove('okunan-par');
+    document.querySelectorAll('p.okunan-par').forEach(function (x) { x.classList.remove('okunan-par'); });
+    if (window.CSS && CSS.highlights) CSS.highlights.delete('okunan');
+    cur = { p: -1, w: -2 };
+  }
+
+  function ikili(dizi, olcut) {          // olcut(x) doğru olan son öğenin sırası
+    var lo = 0, hi = dizi.length - 1, bulunan = -1;
+    while (lo <= hi) { var o = (lo + hi) >> 1; if (olcut(dizi[o])) { bulunan = o; lo = o + 1; } else hi = o - 1; }
+    return bulunan;
+  }
+
+  function takipGuncelle() {
+    if (!id || !el.kok || el.kok.hidden || !kayit.takip) { if (cur.p >= 0 || cur.w !== -2) takipTemizle(); return; }
+    var h = haritaAl();
+    if (!h) { if (cur.p >= 0) takipTemizle(); return; }
+    var t = ses.currentTime || 0, P = h.par;
+    var pi = ikili(P, function (x) { return x.bas <= t + 0.06; });
+    if (pi >= 0 && t > P[pi].bit + 0.4) pi = -1;
+    var wi = pi >= 0 ? ikili(P[pi].kel, function (x) { return x.t <= t + 0.04; }) : -1;
+    if (pi !== cur.p) {
+      if (cur.p >= 0 && P[cur.p]) P[cur.p].el.classList.remove('okunan-par');
+      if (pi >= 0) P[pi].el.classList.add('okunan-par');
+      cur.p = pi; cur.w = -2;
+    }
+    if (wi !== cur.w) { cur.w = wi; isaretle(pi >= 0 ? P[pi] : null, wi); }
+  }
+
+  function isaretle(par, wi) {
+    var rect = null, desteli = window.CSS && CSS.highlights && window.Highlight;
+    if (desteli) CSS.highlights.delete('okunan');
+    if (!par) return;
+    if (desteli && wi >= 0) {
+      var w = par.kel[wi], r = document.createRange();
+      if (!w.n.isConnected) { harita = null; return; }
+      try { r.setStart(w.n, w.s); r.setEnd(w.n, w.e); } catch (e) { return; }
+      CSS.highlights.set('okunan', new Highlight(r));
+      rect = r.getBoundingClientRect();
+    } else if (!desteli || !par.kel.length) {
+      rect = par.el.getBoundingClientRect();
+    }
+    takipKaydir(rect);
+  }
+
+  // İşaretli yer ekranın rahat bölgesinden çıkınca sayfa kayar; çalan yer yukarıdan yaklaşık üçte birde durur
+  function takipKaydir(r) {
+    if (!r || (!r.width && !r.height) || takipBekle || Date.now() < kaydirmaKilidi) return;
+    var ust = 16, alt = window.innerHeight - ((el.kok && el.kok.offsetHeight) || 190) - 16, H = alt - ust;
+    if (r.top >= ust + H * 0.05 && r.bottom <= ust + H * 0.8) return;
+    var fark = r.top - (ust + H * 0.3), az = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    kaydirmaKilidi = Date.now() + 700;
+    window.scrollBy({ top: fark, behavior: (az || Math.abs(fark) > window.innerHeight * 2) ? 'auto' : 'smooth' });
+  }
+
+  // Çalarken kelime geçişi saniyede 4 kez gelen timeupdate'e bırakılmaz; her karede bakılır
+  function kareBaslat() { if (!kare) kare = requestAnimationFrame(kareDon); }
+  function kareDon() {
+    kare = 0;
+    takipGuncelle();
+    if (!ses.paused && !ses.ended && !document.hidden && id) kare = requestAnimationFrame(kareDon);
+  }
+
   // ---------- Kontroller ----------
   function git(sn) {
     var top = sureToplam();
+    if (takipBekle) { takipBekle = false; durumYaz(); }
     ses.currentTime = Math.max(0, top ? Math.min(sn, top - 0.5) : sn);
     guncelle();
   }
@@ -259,6 +440,8 @@
     if (id === dersId && !el.kok.hidden) { if (ses.paused) calis(); return; }   // zaten açık
     if (id) { konumKaydet(true); ses.pause(); }          // başka bir ders dinleniyorduysa yerini sakla
     id = dersId;
+    takipBekle = false; harita = null; cur = { p: -1, w: -2 };
+    ayrintiYukle(dersId);
     var kipler = Object.keys(veri[id].kipler);
     yukle(kipler.indexOf(kayit.kip) >= 0 ? kayit.kip : kipler[0]);
     el.kok.hidden = false;
@@ -272,17 +455,21 @@
   function kapat() {
     if (!el.kok) return;
     konumKaydet(true); ses.pause();
+    takipTemizle();
     el.kok.hidden = true;
     document.body.classList.remove('ses-acik');
     document.documentElement.style.removeProperty('--oyn-h');
     document.querySelectorAll('.bolum.dinleniyor').forEach(function (x) { x.classList.remove('dinleniyor'); });
     if (uykuZamani) { clearTimeout(uykuZamani); uykuZamani = null; uykuIndeks = 0; }
     if ('mediaSession' in navigator) navigator.mediaSession.metadata = null;
-    id = null;
+    id = null; harita = null;
   }
 
   // Başka sayfaya gidip dönünce işaret yeniden konsun
-  window.addEventListener('hashchange', function () { if (id && sonBolum !== null) setTimeout(function () { vurgula(sonBolum); }, 0); });
+  window.addEventListener('hashchange', function () {
+    if (!id) return;
+    setTimeout(function () { if (sonBolum !== null) vurgula(sonBolum); takipGuncelle(); }, 0);
+  });
 
   R.ses = {
     var: function (dersId) { return !!veri[dersId]; },
