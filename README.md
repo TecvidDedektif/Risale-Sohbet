@@ -33,6 +33,7 @@ Alttaki çubukla anlamlar, açıklamalar ve örnekler ayrı ayrı açılıp kapa
 | Şekiller: bölümün altında küçük çizimler | Bölümün açıklamasından sonra |
 | Kalıcı kelime tekrarı: bilmediğin kelime sık, bildiğin seyrek gelir (1, 3, 7, 14, 30 gün) | Üstte "Tekrar" |
 | Çalışma ilerlemesi ve günlük seri | Ana sayfa (ders kartlarında çubuk, üstte "Bugün N kelime sırada") |
+| Yazıyı takip: dinlerken okunan kelime sayfada işaretlenir, ekran onunla kayar. Elle kaydırırsan takip bekler, "Takibe dön" ile geri gelir; "Takip" düğmesiyle kapatılır | Oynatıcıda "Takip" düğmesi |
 | Dinle: dersi sesli dinle; ekran kilitliyken de çalar, kilit ekranından durdurulur. Tam ve Özet kayıt, bölüme atlama, hız, uyku zamanlayıcısı, kaldığın yerden devam | Ders başında "Dinle" (sesi olan derslerde) |
 
 ## Dosyalar
@@ -111,7 +112,7 @@ Sesi olmayan derste "Dinle" düğmesi görünmez; ders eskisi gibi çalışır. 
 Üretmek için (bilgisayarda, bir kez kurulum):
 
 ```
-pip install piper-tts numpy                  # ffmpeg ve node da kurulu olmalı
+pip install piper-tts numpy onnx             # ffmpeg ve node da kurulu olmalı
 python3 araclar/ses_uret.py --model yol/tr_TR-fahrettin-medium.onnx --ders yirmi-altinci-mektup-4-1
 ```
 
@@ -119,8 +120,10 @@ Kullanılan ses `tr_TR-fahrettin-medium` (veri seti CC0, yani serbest). Ses mode
 
 Bilmen gerekenler:
 
+- Kelime kelime takip için her kelimenin başlangıç zamanı ses modelinden alınır (`onnx` kuruluysa kesin, yoksa tahmin). Zamanlar `ses/<ders>.json` içinde durur; ders açılınca oynatıcı onları okur.
+- Sayfadaki kelimeler seslendirilen kelimelerle sırayla eşleştirilir. Arapça ve okunmayan anlamlar (ders dosyasında boş `(())` olup anlamı lügattan gelenler) işaretlenmez, işaret bir sonraki okunan kelimeye geçer. Çok eski telefonlarda (kelime işaretini desteklemeyen tarayıcılar) sadece okunan paragraf işaretlenir.
 - Yapay ses **Arapça okumaz**; âyet ve hadis metni atlanır, hemen ardından gelen Türkçe anlam okunur.
 - Metindeki kelime anlamları "kelime, yani anlamı" diye okunur. Şapkalı harfler sade okunur.
 - Osmanlıca kelimelerde telaffuz bazen kayar. Ders dosyasında düzeltme yapınca sesi yeniden üretmek gerekir.
 - Ses internetten çalınır (internetsiz indirme yok). Her ders yaklaşık 7 MB tutar; depo büyüklüğünü akılda tut.
-- Ders metni değişirse (`ses_uret.py`yi aynı komutla yeniden çalıştır) zaman çizelgesi de yenilenir.
+- Ders metni değişirse `ses_uret.py`yi aynı komutla yeniden çalıştır; kayıtlar ve zaman çizelgesi birlikte yenilenir (kayıt adresindeki `?v=` özeti de değişir, eski kayıt önbellekte kalmaz).

@@ -424,3 +424,16 @@ body.sohbet .oyn, body.kartlar .oyn { display:none }
 .bolum.dinleniyor h2::after { content:'Dinleniyor'; margin-left:10px; vertical-align:middle; font:700 11px/1 var(--f-ui); letter-spacing:.04em; text-transform:uppercase; color:var(--pk); background:var(--pk-zemin); border-radius:999px; padding:5px 9px }
 @media (max-width:420px) { .bolum.dinleniyor::before { left:-9px } }
 @media (prefers-reduced-motion: reduce) { .oyn * { transition:none !important } }
+
+/* Yazıyı takip: çalan kelime ve paragraf (js/ses.js) */
+:root { --okunan-zemin:#ffd84d; --okunan-yazi:#141414; --okunan-par:rgba(255,216,77,.17) }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --okunan-zemin:#8a6a00; --okunan-yazi:#fff; --okunan-par:rgba(255,216,77,.10) } }
+:root[data-theme="dark"] { --okunan-zemin:#8a6a00; --okunan-yazi:#fff; --okunan-par:rgba(255,216,77,.10) }
+::highlight(okunan) { background-color:var(--okunan-zemin); color:var(--okunan-yazi) }
+p.okunan-par { background:var(--okunan-par); box-shadow:0 0 0 6px var(--okunan-par); border-radius:4px; transition:background-color .2s }
+.oyn-ust .kucuk { flex:0 0 auto; padding:8px 12px }
+.oyn .oyn-takip { border-color:var(--cizgi) }
+.oyn .oyn-takip.acik { border-color:var(--pk); color:var(--pk); background:var(--pk-zemin) }
+.oyn .oyn-takip.bekle { border-color:var(--pk); background:var(--pk); color:var(--kart) }
+.oyn .oyn-takip[hidden] { display:none }
+@media (prefers-reduced-motion: reduce) { p.okunan-par { transition:none } }
