@@ -6,9 +6,9 @@
    son hali açılır.
    ============================================================ */
 
-var ONBELLEK = 'risale-v2';
+var ONBELLEK = 'risale-v3';
 var TEMEL = [
-  './', 'index.html', 'css/stil.css', 'js/risale.js', 'js/sekiller.js', 'js/pekistir.js', 'dersler/liste.js', 'dersler/lugat.js',
+  './', 'index.html', 'css/stil.css', 'js/risale.js', 'js/sekiller.js', 'js/pekistir.js', 'js/ses.js', 'ses/liste.js', 'dersler/liste.js', 'dersler/lugat.js',
   'manifest.webmanifest', 'ikon/ikon-192.png',
   'fonts/literata-latin-wght-normal.woff2', 'fonts/literata-latin-ext-wght-normal.woff2',
   'fonts/figtree-latin-wght-normal.woff2', 'fonts/figtree-latin-ext-wght-normal.woff2',
@@ -34,6 +34,8 @@ self.addEventListener('message', function (e) {
 self.addEventListener('fetch', function (e) {
   var istek = e.request;
   if (istek.method !== 'GET' || new URL(istek.url).origin !== location.origin) return;
+  // Ses kayıtları büyük ve parça parça (Range) istenir; önbelleğe alınmaz, tarayıcı kendisi getirir
+  if (/\.mp3$/i.test(new URL(istek.url).pathname) || istek.headers.has('range')) return;
   e.respondWith(
     fetch(istek).then(function (cevap) {
       if (cevap.ok) { var kopya = cevap.clone(); caches.open(ONBELLEK).then(function (c) { c.put(istek, kopya); }); }
