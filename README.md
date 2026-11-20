@@ -33,7 +33,7 @@ Alttaki çubukla anlamlar, açıklamalar ve örnekler ayrı ayrı açılıp kapa
 | Şekiller: bölümün altında küçük çizimler | Bölümün açıklamasından sonra |
 | Kalıcı kelime tekrarı: bilmediğin kelime sık, bildiğin seyrek gelir (1, 3, 7, 14, 30 gün) | Üstte "Tekrar" |
 | Çalışma ilerlemesi ve günlük seri | Ana sayfa (ders kartlarında çubuk, üstte "Bugün N kelime sırada") |
-| Yazıyı takip: dinlerken okunan kelime sayfada işaretlenir, ekran onunla kayar. Elle kaydırırsan takip bekler, "Takibe dön" ile geri gelir; "Takip" düğmesiyle kapatılır | Oynatıcıda "Takip" düğmesi |
+| Yazıyı takip: dinlerken okunan kelime sayfada işaretlenir, ekran onunla kayar. Elle kaydırırsan takip 5 saniye bekler ve kendiliğinden geri döner ("Takibe dön" düğmesi hemen döndürür); "Takip" düğmesiyle kapatılır | Oynatıcıda "Takip" düğmesi |
 | Dinle: dersi sesli dinle; ekran kilitliyken de çalar, kilit ekranından durdurulur. Tam ve Özet kayıt, bölüme atlama, hız, uyku zamanlayıcısı, kaldığın yerden devam | Ders başında "Dinle" (sesi olan derslerde) |
 
 ## Dosyalar

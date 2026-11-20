@@ -27,7 +27,8 @@
   var ses = new Audio();
   ses.preload = 'metadata';
   var id = null, kip = 'tam', surukleme = false, sonKayit = 0, uykuIndeks = 0, uykuZamani = null, sonBolum = null, degisiyor = false;
-  var ayrinti = {}, harita = null, cur = { p: -1, w: -2 }, takipBekle = false, kaydirmaKilidi = 0, sonKurma = 0, kare = 0;
+  var ayrinti = {}, harita = null, cur = { p: -1, w: -2 }, takipDurakla = 0, bekleZamani = 0, anim = 0, kaydirmaKilidi = 0, sonKurma = 0, kare = 0;
+  var BEKLE = 5000;                    // elle kaydırdıktan kaç ms sonra takip kendiliğinden geri döner
   var el = {};
 
   var IKON = {
@@ -95,10 +96,10 @@
     el.kapat.addEventListener('click', kapat);
     el.kip.addEventListener('click', kipDegistir);
     el.takip.addEventListener('click', function () {
-      if (kayit.takip && takipBekle) { takipBekle = false; kaydirmaKilidi = 0; cur.w = -2; takipGuncelle(); }
+      if (kayit.takip && bekliyor()) { takibeDon(); }
       else {
         kayit.takip = !kayit.takip; K.yaz('risale-ses', kayit);
-        if (kayit.takip) { takipBekle = false; kaydirmaKilidi = 0; cur.w = -2; takipGuncelle(); } else takipTemizle();
+        if (kayit.takip) takibeDon(); else takipTemizle();
       }
       durumYaz();
     });
@@ -129,14 +130,22 @@
     ses.addEventListener('ended', function () { if (id) { kayit.konum[id + ':' + kip] = 0; K.yaz('risale-ses', kayit); } durumYaz(); });
     ses.addEventListener('seeked', function () { takipGuncelle(); });
     document.addEventListener('visibilitychange', function () { if (!document.hidden) kareBaslat(); });
-    // Sen sayfayı kendin kaydırırsan takip bekler; "Takibe dön" ile geri gelir
+    // Sayfayı kendin kaydırırsan takip, son dokunuştan BEKLE ms sonra kendiliğinden geri döner
+    // ("Takibe dön" düğmesi hemen döndürür)
     var elle = function (e) {
-      if (!id || !kayit.takip || takipBekle || ses.paused) return;
-      if (e.target && e.target.closest && e.target.closest('.oyn')) return;
-      takipBekle = true; durumYaz();
+      if (!id || !kayit.takip || ses.paused) return;
+      if (e && e.target && e.target.closest && e.target.closest('.oyn')) return;
+      if (anim) { cancelAnimationFrame(anim); anim = 0; }
+      var yeni = !bekliyor();
+      takipDurakla = Date.now() + BEKLE;
+      clearTimeout(bekleZamani);
+      bekleZamani = setTimeout(takibeDon, BEKLE + 50);
+      if (yeni) durumYaz();
     };
     window.addEventListener('wheel', elle, { passive: true });
+    window.addEventListener('touchstart', function (e) { if (anim && !(e.target.closest && e.target.closest('.oyn'))) { cancelAnimationFrame(anim); anim = 0; } }, { passive: true });
     window.addEventListener('touchmove', elle, { passive: true });
+    window.addEventListener('touchend', function (e) { if (bekliyor()) elle(e); }, { passive: true });
     window.addEventListener('keydown', function (e) {
       if (/^(PageUp|PageDown|Home|End|ArrowUp|ArrowDown| )$/.test(e.key) && !/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test((e.target.tagName || ''))) elle(e);
     });
@@ -169,9 +178,9 @@
     el.kip.textContent = KIP_AD[kip];
     var kesin = ayrinti[id] !== false;
     el.takip.hidden = !kesin;
-    el.takip.textContent = !kayit.takip ? 'Takip kapalı' : (takipBekle ? 'Takibe dön' : 'Takip');
-    el.takip.className = 'kucuk oyn-takip' + (kayit.takip ? (takipBekle ? ' bekle' : ' acik') : '');
-    el.takip.setAttribute('aria-pressed', String(kayit.takip && !takipBekle));
+    el.takip.textContent = !kayit.takip ? 'Takip kapalı' : (bekliyor() ? 'Takibe dön' : 'Takip');
+    el.takip.className = 'kucuk oyn-takip' + (kayit.takip ? (bekliyor() ? ' bekle' : ' acik') : '');
+    el.takip.setAttribute('aria-pressed', String(kayit.takip && !bekliyor()));
     if ('mediaSession' in navigator) navigator.mediaSession.playbackState = ses.paused ? 'paused' : 'playing';
   }
 
@@ -212,7 +221,7 @@
   function sayfadaGoster() {
     if (location.hash.split('/')[1] !== id || sonBolum === null || sonBolum < 0) return;
     var h = document.getElementById('b' + sonBolum);
-    if (h) h.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    if (h) { kaydirmaKilidi = Date.now() + 900; kaydirGit(h.getBoundingClientRect().top - 12); }
   }
 
   // ---------- Yazıyı takip ----------
@@ -345,14 +354,36 @@
     takipKaydir(rect);
   }
 
-  // İşaretli yer ekranın rahat bölgesinden çıkınca sayfa kayar; çalan yer yukarıdan yaklaşık üçte birde durur
+  function bekliyor() { return Date.now() < takipDurakla; }
+  function takibeDon() {
+    clearTimeout(bekleZamani); takipDurakla = 0; kaydirmaKilidi = 0; cur.w = -2;
+    durumYaz(); takipGuncelle();
+  }
+
+  // Sayfayı fark kadar kaydırır. Tarayıcının kendi "smooth" kaydırmasına güvenmeyiz (iPhone'da güvenilmez); kendi animasyonumuz.
+  function kaydirGit(fark) {
+    var y0 = window.pageYOffset, y1 = Math.max(0, y0 + fark), t0 = null;
+    if (anim) { cancelAnimationFrame(anim); anim = 0; }
+    if (Math.abs(y1 - y0) < 1) return;
+    var az = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (az || Math.abs(fark) > window.innerHeight * 2) { window.scrollTo(0, y1); return; }
+    var adim = function (t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / 450), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      window.scrollTo(0, y0 + (y1 - y0) * e);
+      anim = k < 1 ? requestAnimationFrame(adim) : 0;
+    };
+    anim = requestAnimationFrame(adim);
+  }
+
+  // Okunan yer ekranın üst yarısından çıkınca sayfa kayar; okunan yer yukarıdan dörtte birde durur.
+  // Böylece okunan kelime hep ekranın üstünde ve oynatıcıdan uzakta kalır; kaymalar sık ve küçüktür.
   function takipKaydir(r) {
-    if (!r || (!r.width && !r.height) || takipBekle || Date.now() < kaydirmaKilidi) return;
+    if (!r || (!r.width && !r.height) || bekliyor() || Date.now() < kaydirmaKilidi) return;
     var ust = 16, alt = window.innerHeight - ((el.kok && el.kok.offsetHeight) || 190) - 16, H = alt - ust;
-    if (r.top >= ust + H * 0.05 && r.bottom <= ust + H * 0.8) return;
-    var fark = r.top - (ust + H * 0.3), az = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-    kaydirmaKilidi = Date.now() + 700;
-    window.scrollBy({ top: fark, behavior: (az || Math.abs(fark) > window.innerHeight * 2) ? 'auto' : 'smooth' });
+    if (r.top >= ust + H * 0.05 && r.bottom <= ust + H * 0.55) return;
+    kaydirmaKilidi = Date.now() + 600;
+    kaydirGit(r.top - (ust + H * 0.25));
   }
 
   // Çalarken kelime geçişi saniyede 4 kez gelen timeupdate'e bırakılmaz; her karede bakılır
@@ -366,7 +397,7 @@
   // ---------- Kontroller ----------
   function git(sn) {
     var top = sureToplam();
-    if (takipBekle) { takipBekle = false; durumYaz(); }
+    if (bekliyor()) { clearTimeout(bekleZamani); takipDurakla = 0; durumYaz(); }
     ses.currentTime = Math.max(0, top ? Math.min(sn, top - 0.5) : sn);
     guncelle();
   }
@@ -440,7 +471,7 @@
     if (id === dersId && !el.kok.hidden) { if (ses.paused) calis(); return; }   // zaten açık
     if (id) { konumKaydet(true); ses.pause(); }          // başka bir ders dinleniyorduysa yerini sakla
     id = dersId;
-    takipBekle = false; harita = null; cur = { p: -1, w: -2 };
+    clearTimeout(bekleZamani); takipDurakla = 0; harita = null; cur = { p: -1, w: -2 };
     ayrintiYukle(dersId);
     var kipler = Object.keys(veri[id].kipler);
     yukle(kipler.indexOf(kayit.kip) >= 0 ? kayit.kip : kipler[0]);
