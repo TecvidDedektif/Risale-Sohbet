@@ -9,6 +9,9 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
      plan      : sohbet planı (isteğe bağlı): açılış sorusu, ana noktalar
                  (mesaj, hikâye, bolum = metne git numarası, 0'dan sayılır), kapanış
+   sekil     : bölümün altına küçük çizim (merkez, halka, akis, ikiyan, basamak): js/sekiller.js başında anlatılır
+   pekistir  : bölümün altındaki "Pekiştir" kutusu (mesaj, anahtar, kisa, bosluk, soru, esles): js/pekistir.js başında anlatılır.
+               Dersin bütününe ait etkinlikler (esles, zincir) bolumler'den önceki pekistir bloğundadır.
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  hakîki (())
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
@@ -28,9 +31,30 @@ RISALE.dersEkle({
     noktalar: [
       { mesaj: 'Herkes Kur’an’ı kendi kabı kadar anlar; Üstad bile “bilmiyorum” der.', hikaye: 'Bahar yağmuru: gül koku yapar, domates meyve.', bolum: 1 },
       { mesaj: 'Sen de küçük bir âlemsin; Rabbin seni unutmaz.', hikaye: 'Uyurken atan kalp, karın altında bekleyen tohum.', bolum: 3 },
-      { mesaj: 'Kusurunu gören bahtiyardır; içteki eski çekiş, mücadelenin sürdüğünü gösterir.', hikaye: 'Sigarayı bırakan amcanın eli çaydan sonra hâlâ cebine gider.', bolum: 4 },
+      { mesaj: 'Kusurunu gören bahtiyardır; içteki eski çekiş, mücadelenin sürdüğünü gösterir.', hikaye: 'Sigarayı bırakan amcanın eli çaydan sonra hâlâ cebine gider.', bolum: 5 },
     ],
     kapanis: 'Bu hafta her akşam bir dakika: “Bugün kimseyi kırdım mı?”',
+  },
+
+  // Pekiştirme: bütün derse ait etkinlikler. Bölümlerin kendi etkinlikleri bölümlerin içinde.
+  pekistir: {
+    esles: { baslik: 'Günlük örneği anlattığı fikirle eşleştir', ciftler: [
+      ['Bahar yağmuru', 'Herkes kendi kabı kadar anlar'],
+      ['Dere ile deniz', 'Aradaki perde: berzah'],
+      ['Uyurken atan kalp', 'Bedeni de Rab idare eder'],
+      ['Yaprağın altındaki kurt', 'Kusurunu görmek nimettir'],
+      ['Sigarayı bırakan amca', 'Eski nefsin izi sinirlerde kalır'],
+      ['Tarladaki ot', 'Mücadele sürer, ilerleme sürer'],
+    ] },
+    zincir: { baslik: 'Dersin akışını sırala: önce hangisi gelir?', adimlar: [
+      'Talebenin soruları: konular birbirine bağlı değil',
+      'Kur’an’ın cümlesi her tabakaya ayrı mana taşır',
+      'İki deniz misali: hepsi birden murad olabilir',
+      'Her âlem doğrudan Rabbi tarafından idare edilir',
+      'Kusurunu görmek hayır işaretidir',
+      'Nefsini beğenen bahtsız, ayıbını gören bahtiyardır',
+      'Eski nefsin izi sinirlerde kalır; mücadele sürer',
+    ] },
   },
 
   bolumler: [
@@ -47,6 +71,17 @@ RISALE.dersEkle({
         'Yıllar sonra köyüne dönen birini düşünün. Kahvede yaşlı bir amcanın yanına oturur ve aklına ne gelirse sorar: “Amca, bu sene zeytin nasıl? Bizim eski evin damı ne oldu? Sen o hastalıktan nasıl kurtuldun?” Amca da her birine ayrı ayrı cevap verir. Sohbette sorular birbirine bağlı değildir ama her cevabın kendi kıymeti vardır.',
         'Ya da bir anne, gurbetteki oğluna uzun bir mektup yazar: önce sağlığını sorar, sonra kardeşinin düğününü anlatır, en sonda “namazını kılıyor musun?” der. Mektup dağınık görünür ama hepsi aynı sevginin içinden çıkmıştır.',
       ],
+      pekistir: {
+        mesaj: 'Bu bölüm bir talebenin dağınık sorularına verilen cevaplardır. Konular birbirine bağlı değil; bağlantı aramaya gerek yok.',
+        anahtar: ['bir talebe', 'beş altı soru', 'bağlantı arama'],
+        kisa: 'Köye dönen birinin kahvede amcaya art arda soru sorması.',
+        bosluk: [
+          { cumle: 'Onun için {{münâsebeti}} aramamalı; nasıl gelmiş, öyle yazılmış.', yanlis: ['hikmeti', 'sebebi'], not: 'Münâsebet: bağlantı.' },
+        ],
+        soru: [
+          { s: 'Üstad bu bölümdeki meseleler arasındaki bağlantı için ne diyor?', sec: ['Hepsi birbirine bağlıdır, sırayla okunmalı', 'Birbiriyle ilgili değildir, bağlantı aranmamalı', 'Sadece ilk mesele önemlidir'], dogru: 1, not: 'Mektup, talebenin farklı sorularına verilen cevaplardan oluşur.' },
+        ],
+      },
     },
     {
       baslik: '“On sekiz bin âlem” nedir?',
@@ -64,6 +99,19 @@ RISALE.dersEkle({
         'Bir baba sofrada “bu nimetin kıymetini bilin” der. Beş yaşındaki çocuk “yemeği dökmeyeyim” diye anlar. On beş yaşındaki “ekmeği çöpe atmayayım” diye anlar. Annesi ise “babası bu ekmeği nasıl alnının teriyle kazandı” diye anlar. Söz bir, anlayan herkes doğru anlamıştır.',
         '“Bilmiyorum” demeye gelince: çarşıda bir esnafa bir şey sorarsınız, “bunu bilmiyorum, yanlış söylemeyeyim, şuna sorun” der. O esnafa bir daha gittiğinizde söylediği her şeye güvenirsiniz. Üstad’ın “bilmiyorum” demesi de sözünün geri kalanını sağlamlaştırıyor.',
       ],
+      sekil: { tur: 'merkez', baslik: 'Bir âyet, her tabakaya bir mana', merkez: 'Bir âyet (küllî kaide)', dallar: ['Keşfe dayanan mana', 'Delile dayanan mana', 'Meşrebe dayanan mana'], alt: 'Her biri doğru, hiçbiri tamamı değil.' },
+      pekistir: {
+        mesaj: 'Üstad önce “bilmiyorum” der; sonra kuralı verir: Kur’an’ın cümlesi tek manaya kapalı değil, her tabakaya bir mana taşır. Âlimler o geniş kuraldan birer parça söyler.',
+        anahtar: ['“bilmiyorum”', 'her tabakaya bir mana', 'küllî kaide', 'birer parça'],
+        kisa: 'Aynı bahar yağmuru: gül koku yapar, domates meyve.',
+        bosluk: [
+          { cumle: 'Kur’ân-ı Hakîm’in cümleleri her {{tabakaya}} hitap eder ve her tabakaya bir mânâ taşır.', yanlis: ['şehre', 'asra'] },
+        ],
+        soru: [
+          { s: 'Üstad “on sekiz bin” sayısının hikmetini sorana önce ne diyor?', sec: ['Kesin sebebini açıklıyor', '“Ben şimdi o adedin hikmetini bilmiyorum” diyor', 'Soruyu geçiştiriyor'], dogru: 1, not: 'Bilmediğini rahatça söylemesi, sonraki sözlerini de sağlamlaştırır.' },
+        ],
+        esles: { baslik: 'Aynı yağmur: kim neyi alır?', ciftler: [['Gül', 'koku yapar'], ['Domates', 'meyve yapar'], ['Ayrık otu', 'kendi kadar yeşerir']] },
+      },
     },
     {
       baslik: 'İki deniz misali',
@@ -81,6 +129,19 @@ RISALE.dersEkle({
         'Bir de insanın içine bakalım: bir yanda dünya işleri, ekmek parası, ev kirası; öbür yanda namaz, dua, âhiret düşüncesi. İkisi aynı gün içinde, aynı kalpte buluşur. Akıllı insan ikisini de yaşar ama birini ötekine taşırmaz: dükkânı namazı unutturmaz, namazı da dükkânı ihmal ettirmez.',
         'Ya da bir anneyi düşünün: aynı gün hem çocuğuna kızar hem de onu bağrına basar. Öfke ile şefkat buluşur ama şefkat öfkenin taşmasına izin vermez. Âyetteki “berzah”, yani o görünmez perde, her yerde karşımıza çıkar.',
       ],
+      sekil: { tur: 'ikiyan', baslik: '“İki deniz”: hepsi birden murad olabilir', solBaslik: 'Bir deniz', sagBaslik: 'Öbür deniz', satirlar: [['Rabliğin denizi', 'Kulluğun denizi'], ['Dünya', 'Âhiret'], ['Görünmeyen âlem', 'Görünen âlem'], ['Tatlı su', 'Tuzlu su']], perde: 'Berzah: aralarında görünmez bir perde var, birbirine taşmazlar' },
+      pekistir: {
+        mesaj: 'Âyetteki “iki deniz” pek çok şey olabilir: Rablik ile kulluk, dünya ile âhiret, görünen ile görünmeyen âlem, tatlı ile tuzlu su. Hepsi birden murad olabilir; aralarında taşmayı önleyen bir perde, yani berzah vardır.',
+        anahtar: ['iki deniz', 'berzah (perde)', 'hepsi murad olabilir'],
+        kisa: 'Dere denize dökülür; tatlı ile tuzlu su yan yana durur ama birbirini bozmaz.',
+        bosluk: [
+          { cumle: 'Aralarında bir {{perde}} vardır, birbirine taşmazlar.', yanlis: ['köprü', 'kapı'], not: 'Âyette “berzah” denir (Rahmân 19-20).' },
+        ],
+        soru: [
+          { s: 'Üstad’a göre âyetteki “iki deniz” neler olabilir?', sec: ['Sadece Akdeniz ile Karadeniz', 'Dünya–âhiret, tatlı–tuzlu su gibi pek çok şey; hepsi birden murad olabilir', 'Yalnızca insanın iki gözü'], dogru: 1, not: 'Üstad, Rablik–kulluk denizinden tatlı–tuzlu sulara kadar sayıyor ve hepsini murad olabilir diyor.' },
+        ],
+        esles: { baslik: 'Kelimeyi anlamıyla eşleştir', ciftler: [['Bahr-i rubûbiyet', 'Rabliğin denizi'], ['Bahr-i ubûdiyet', 'Kulluğun denizi'], ['Âlem-i gayp', 'Görünmeyen âlem'], ['Âlem-i şehâdet', 'Görünen âlem']] },
+      },
     },
     {
       baslik: 'Her âlemin doğrudan Rabbi',
@@ -98,6 +159,18 @@ RISALE.dersEkle({
         'Kendi bedenimize bakalım: biz uyurken kalp atar, mide yemeği öğütür, yara kendi kendine kapanır. Bunların hiçbirine biz karışmıyoruz. Küçük bir âlem olan bedenimizi bizden başkası idare ediyor.',
         'Bazen insan “kimse benimle ilgilenmiyor, unutuldum” diye düşünür. Bu ders ona şunu söyler: yıldızları idare eden, senin kalbinin atışını da şu an doğrudan idare ediyor. Sen unutulmuş biri değilsin.',
       ],
+      sekil: { tur: 'halka', baslik: 'Âlemler iç içe, hepsinin Rabbi bir', halkalar: ['Göklerdeki âlemler', 'Canlı türleri', 'Her insan'], merkez: 'Hepsinin Rabbi', alt: 'Her biri bir âlem; hiçbiri başıboş değil.' },
+      pekistir: {
+        mesaj: '“Âlemlerin Rabbi” demek: gökteki âlemler, yerdeki her canlı türü, hatta her insan doğrudan Rabbi tarafından idare edilir. Sen de küçük bir âlemsin; unutulmuş değilsin.',
+        anahtar: ['binlerce âlem', 'her insan küçük bir âlem', 'doğrudan idare', 'başıboş değil'],
+        kisa: 'Biz uyurken kalp atar, kimse karışmıyor: küçük âlemimizi bizden başkası idare ediyor.',
+        bosluk: [
+          { cumle: 'Hattâ herbir insan dahi, {{küçük}} bir âlemdir.', yanlis: ['büyük', 'boş'] },
+        ],
+        soru: [
+          { s: '“Âlemlerin Rabbi” ifadesi Üstad’a göre ne demektir?', sec: ['Her âlem doğrudan Rabbi tarafından idare ve terbiye edilir', 'Âlemler kendi kendini idare eder', 'Sadece göklerdeki âlemler idare edilir'], dogru: 0, not: 'İnsan dahi küçük bir âlemdir ve başıboş değildir.' },
+        ],
+      },
     },
     {
       baslik: 'Kusurunu görmek hayırdır',
@@ -111,6 +184,18 @@ RISALE.dersEkle({
         'Bahçede domatesine bakan bir adam yaprağın altında küçük bir kurt görür. Hemen temizler, fide kurtulur. Görmeseydi bütün sıra kururdu. Kurdu görmek can sıkar ama asıl nimet odur.',
         'Bir de aynayı düşünün: sabah aynaya bakan, yüzündeki lekeyi görür ve siler. Aynaya hiç bakmayan, lekeyle bütün gün sokakta dolaşır. Allah’ın insana kusurunu göstermesi, ona ayna tutması gibidir.',
       ],
+      sekil: { tur: 'akis', baslik: 'Hadisin zinciri', adimlar: ['Allah bir topluluğa hayır diler', 'Onlara kendi nefislerinin kusurlarını gösterir', 'Kusurunu görürsün', 'Düzeltmeye başlarsın'], alt: 'Kurdu görmek can sıkar ama fideyi kurtarır.' },
+      pekistir: {
+        mesaj: 'Hadise göre Allah bir topluluğa hayır dilediğinde ona kendi nefislerinin kusurlarını gösterir. Kusurunu görmek kötü haber değil, hayır işaretidir.',
+        anahtar: ['hayır dilemek', 'kusurunu göstermek', 'ayna'],
+        kisa: 'Yaprağın altındaki kurdu görmek can sıkar ama fideyi kurtarır.',
+        bosluk: [
+          { cumle: 'Allah bir topluluğa {{hayır}} dilediğinde, onlara kendi nefislerinin kusurlarını gösterir.', yanlis: ['ceza', 'sıkıntı'] },
+        ],
+        soru: [
+          { s: 'Bu hadise göre kusurunu görmek ne anlama gelir?', sec: ['Allah’ın o kula hayır dilediğine işaret eder', 'Her şeyin bittiğine işaret eder', 'Hiçbir şeye işaret etmez'], dogru: 0, not: 'Aynaya bakıp lekeyi gören onu siler; bu bir nimettir.' },
+        ],
+      },
     },
     {
       baslik: 'Nefsini beğenen bahtsızdır',
@@ -129,6 +214,19 @@ RISALE.dersEkle({
         'Gençliğinde çok sinirli olan, sonra kendini terbiye etmiş bir adam düşünün. Biri ona ters bir söz söylediğinde hâlâ yüzüne bir sıcaklık gelir, kalbi hızlanır. Ama artık bağırmaz, susar ve geçer. O sıcaklık eski nefsin bıraktığı izdir; susması ise nefsini yendiğinin delilidir.',
         'Kendini beğenen ise kasabadaki o kibirli usta gibidir: “Ben hata yapmam” der, kimseye danışmaz. Bir gün yaptığı duvar çöker. Mütevazı çırak ise her işte “bir daha bakayım” der; onun duvarı yıllarca ayakta durur.',
       ],
+      sekil: { tur: 'basamak', baslik: 'Nefsin üç hâli', basamaklar: [{ ad: 'Nefs-i emmâre', not: 'kötülüğü emreden' }, { ad: 'Nefs-i levvâme', not: 'kötülüğünden dolayı kendini kınayan' }, { ad: 'Nefs-i mutmainne', not: 'Allah’a teslim olup huzura kavuşmuş' }], alt: 'Nefis düzelse de silâhlarını sinirlere devreder; eski nefsin izi ömür boyu görünebilir.' },
+      pekistir: {
+        mesaj: 'Nefsini beğenen ve ona güvenen bahtsızdır; nefsinin ayıbını gören bahtiyardır. Nefis düzelse bile eski izi sinirlerde kalır; bu iz, nefsin hâlâ seni yönettiği anlamına gelmez.',
+        anahtar: ['“nefsimi temize çıkarmam”', 'bedbaht / bahtiyar', 'sinirlere devredilen iz'],
+        kisa: 'Sigarayı bırakan amcanın eli, çaydan sonra hâlâ cebine gider.',
+        bosluk: [
+          { cumle: 'Nefsini beğenen ve nefsine {{güvenen}} bedbahttır; nefsinin ayıbını gören bahtiyardır.', yanlis: ['şikâyet eden', 'kızan'] },
+        ],
+        soru: [
+          { s: 'Nefsini terbiye etmiş birinde eski alışkanlığın izi neden hâlâ görünebilir?', sec: ['Nefs-i emmâre silâhlarını sinirlere devreder; sinirler o vazifeyi son ömre kadar görür', 'Çünkü terbiye boşa gitmiştir', 'Çünkü eski nefis hâlâ onu yönetiyordur'], dogru: 0, not: 'Nefs-i emmâre çoktan öldüğü hâlde izleri yine görünür.' },
+        ],
+        esles: { baslik: 'Kimdir bu?', ciftler: [['Nefsini beğenen', 'Bedbaht'], ['Nefsinin ayıbını gören', 'Bahtiyar'], ['Nefs-i levvâme', 'Kendini kınayan'], ['Nefs-i mutmainne', 'Huzura kavuşmuş']] },
+      },
     },
     {
       baslik: 'Büyük zatların şikâyeti',
@@ -147,6 +245,18 @@ RISALE.dersEkle({
         'Kuyunun başındaki ip de böyledir: her gün kova inip çıktıkça taşı aşındırır. Su çeken el yorulur ama kuyunun suyu tatlı kalır. İnsanın iç mücadelesi de bitmez; bitmediği için kalbin suyu tazelenir.',
         'Bir nine her gece yatmadan “Ya Rabbi, bugün de kimseyi kırdım mı?” diye düşünür, gözü yaşarır. Torunu “nine, sen kimseyi kırmazsın ki” der. Ama nine o kaygıyı taşıdığı için kimseyi kırmaz. Büyük zatların şikâyeti de böyledir: kusursuz oldukları için değil, kusurdan korktukları için temizdirler.',
       ],
+      sekil: { tur: 'ikiyan', baslik: 'Sanılan ile Üstad’ın dediği', solBaslik: 'Sanılan', sagBaslik: 'Üstad’ın dediği', satirlar: [['Nefsim hâlâ beni yönetiyor', 'Nefis değil, sinirlere devredilen iz'], ['Kalbim hasta', 'Hayalî hastalık, kalp hastalığı değil'], ['Mücadele bitmedi, başarısızım', 'Mücadele sürüyor; sürekli ilerlemeye sebep']] },
+      pekistir: {
+        mesaj: 'Nefsi huzura kavuşmuş büyük zatlar bile “nefsim, kalbim” diye şikâyet etmiş. Üstad: bu nefs-i emmâre değil, sinirlere geçen izdir; mücadele sürsün, ilerleme bitmesin diye vardır. Bahane için değil, ümitsizlikten kurtulmak içindir.',
+        anahtar: ['sinirlere geçen iz', 'hayalî hastalık', 'mücadelenin devamı', 'sürekli ilerleme'],
+        kisa: 'Çiftçi her bahar otu yolar; ot bitmeseydi belki tarlayı unutup giderdi.',
+        bosluk: [
+          { cumle: 'Bu hâl, {{mücadelenin}} devamı için sinirlere geçen bir hâldir.', yanlis: ['kederin', 'hastalığın'] },
+        ],
+        soru: [
+          { s: 'Bu ders neden “benim sinirim böyle” diye bahane yapılmamalı?', sec: ['Çünkü ders, kusurunu gören ve üzülen insanı ümitsizlikten kurtarmak içindir', 'Çünkü sinirlerin hiçbir etkisi yoktur', 'Çünkü nefis diye bir şey yoktur'], dogru: 0, not: 'Amaç hataya bahane bulmak değil, mücadeleye devam ettirmektir.' },
+        ],
+      },
     },
   ],
 
