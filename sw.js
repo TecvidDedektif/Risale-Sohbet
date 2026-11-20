@@ -6,9 +6,9 @@
    son hali açılır.
    ============================================================ */
 
-var ONBELLEK = 'risale-v1';
+var ONBELLEK = 'risale-v2';
 var TEMEL = [
-  './', 'index.html', 'css/stil.css', 'js/risale.js', 'dersler/liste.js', 'dersler/lugat.js',
+  './', 'index.html', 'css/stil.css', 'js/risale.js', 'js/sekiller.js', 'js/pekistir.js', 'dersler/liste.js', 'dersler/lugat.js',
   'manifest.webmanifest', 'ikon/ikon-192.png',
   'fonts/literata-latin-wght-normal.woff2', 'fonts/literata-latin-ext-wght-normal.woff2',
   'fonts/figtree-latin-wght-normal.woff2', 'fonts/figtree-latin-ext-wght-normal.woff2',

@@ -191,12 +191,12 @@ window.RISALE = {
       var d = R.dersler[id];
       if (!d) return '';
       return '<a class="ders-kart" href="#/' + esc(d.id) + '"><small>' + esc(d.kitap) + '</small>' +
-        '<h2>' + esc(d.baslik) + '</h2><p>' + esc(d.ozet) + '</p></a>';
+        '<h2>' + esc(d.baslik) + '</h2><p>' + esc(d.ozet) + '</p>' + (R.pekistir ? R.pekistir.kartIlerleme(d) : '') + '</a>';
     }).join('');
     var notSayisi = Object.keys(notlar).length;
     govde.innerHTML = '<div class="ana"><h1>Sohbet dersleri</h1>' +
       '<p>Her derste metin, zor kelimelerin anlamı, kısa bir açıklama ve günlük hayattan bir örnek var.</p>' +
-      hataKutusu() + kartlar +
+      hataKutusu() + (R.pekistir ? R.pekistir.anaKutu() : '') + kartlar +
       '<section class="yedek"><h2>Notlarım</h2>' +
       '<p>' + (notSayisi ? notSayisi + ' notun var.' : 'Henüz notun yok.') + ' Notlar sadece bu telefonda durur. Telefon değiştirmeden ya da tarayıcıyı temizlemeden önce yedek al.</p>' +
       '<div class="yedek-dugmeler"><button type="button" class="dugme" id="yedek-al"' + (notSayisi ? '' : ' disabled') + '>Yedek al</button>' +
@@ -257,7 +257,9 @@ window.RISALE = {
         '<h2>' + esc(b.baslik) + '</h2>' +
         '<div class="metin">' + metin + '</div>' +
         (b.aciklama ? '<div class="aciklama"><span class="etiket">Açıklama</span>' + b.aciklama.map(function (p) { return '<p>' + arapca(esc(p)) + '</p>'; }).join('') + '</div>' : '') +
+        (R.sekil && b.sekil ? R.sekil.ciz(b.sekil) : '') +
         (b.ornek ? '<div class="ornek"><span class="etiket">Günlük hayattan</span>' + b.ornek.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' : '') +
+        (R.pekistir ? R.pekistir.bolumKutusu(d, b, bi) : '') +
         '<div class="bolum-araclar">' +
           '<button type="button" class="kucuk" data-not-yaz="' + bi + '">Not yaz</button>' +
           '<button type="button" class="kucuk" data-paylas="' + bi + '">Paylaş</button>' +
@@ -286,9 +288,10 @@ window.RISALE = {
       : '';
 
     govde.innerHTML = '<header class="ders-bas"><small>' + esc(d.kitap) + (d.baski ? ' · ' + esc(d.baski) : '') + '</small><h1>' + esc(d.baslik) + '</h1>' +
-      '<ul class="icindekiler">' + icindekiler + '</ul></header>' + hataKutusu() + plan + bolumler + sorular +
+      '<ul class="icindekiler">' + icindekiler + '</ul>' + (R.pekistir ? R.pekistir.islemSatiri(d) : '') + '</header>' + hataKutusu() + plan + bolumler + sorular +
       '<p class="alt-not">Kelime anlamları ve açıklamalar sohbet hazırlığı içindir; asıl metin esastır.</p>';
 
+    if (R.pekistir) R.pekistir.bagla(govde, d);
     govde.querySelectorAll('[data-not-yaz]').forEach(function (b) {
       b.addEventListener('click', function () { notDuzenle(d, Number(b.dataset.notYaz)); });
     });
@@ -434,6 +437,9 @@ window.RISALE = {
     kutu.focus();
   }
 
+  // Yeni modüller (js/pekistir.js, js/sekiller.js) bunları kullanır
+  R.ic = { esc: esc, sade: sade, oku: oku, yaz: yaz, lugatListesi: lugatListesi, ustCiz: ustCiz, govde: govde, cubuk: cubuk };
+
   // =========================================================
   // 6. Gezinme
   // =========================================================
@@ -441,11 +447,20 @@ window.RISALE = {
   function yonlendir() {
     var p = location.hash.split('/');           // '#/ders/3' -> ['#','ders','3']
     var d = R.dersler[p[1]];
+    if (R.pekistir) R.pekistir.birak();
+    if (d && R.pekistir && (p[2] === 'pekistir' || p[2] === 'kart')) {
+      acikDers = null;
+      if (document.body.classList.contains('sohbet')) sohbetModu(false);
+      cubuk.hidden = true;
+      if (p[2] === 'pekistir') R.pekistir.oturum(d); else R.pekistir.kart(d);
+      window.scrollTo(0, 0);
+      return;
+    }
     if (!d) {
       acikDers = null;
       if (document.body.classList.contains('sohbet')) sohbetModu(false);
       if (p[1] === 'lugat') lugatSayfasi();
-      else if (p[1] === 'tekrar') tekrarSayfasi();
+      else if (p[1] === 'tekrar') { cubuk.hidden = true; if (R.pekistir) R.pekistir.tekrar(); else tekrarSayfasi(); }
       else if (p[1] === 'ara') araSayfasi();
       else anaSayfa();
       window.scrollTo(0, 0);
