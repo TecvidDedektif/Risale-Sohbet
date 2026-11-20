@@ -33,6 +33,7 @@ Alttaki çubukla anlamlar, açıklamalar ve örnekler ayrı ayrı açılıp kapa
 | Şekiller: bölümün altında küçük çizimler | Bölümün açıklamasından sonra |
 | Kalıcı kelime tekrarı: bilmediğin kelime sık, bildiğin seyrek gelir (1, 3, 7, 14, 30 gün) | Üstte "Tekrar" |
 | Çalışma ilerlemesi ve günlük seri | Ana sayfa (ders kartlarında çubuk, üstte "Bugün N kelime sırada") |
+| Dinle: dersi sesli dinle; ekran kilitliyken de çalar, kilit ekranından durdurulur. Tam ve Özet kayıt, bölüme atlama, hız, uyku zamanlayıcısı, kaldığın yerden devam | Ders başında "Dinle" (sesi olan derslerde) |
 
 ## Dosyalar
 
@@ -42,6 +43,7 @@ css/stil.css              görünüm ve renkler
 js/risale.js              uygulama (ders eklerken dokunmana gerek yok)
 js/pekistir.js            pekiştirme etkinlikleri, kart modu, kelime tekrarı (dokunmana gerek yok)
 js/sekiller.js            şekil çizici (dokunmana gerek yok)
+js/ses.js                 sesli dinleme oynatıcısı (dokunmana gerek yok)
 dersler/                  İÇERİK: senin çalışacağın yer
   liste.js                ana sayfadaki derslerin sırası
   lugat.js                derslerde geçmeyen ek kelimeler
@@ -51,6 +53,8 @@ dersler/                  İÇERİK: senin çalışacağın yer
   yirmi-altinci-mektup-3-6.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Altıncı Mesele: menfî milliyete iki cevap
   yirmi-altinci-mektup-3-7.js  Yirmi Altıncı Mektup, Üçüncü Mebhas, Yedinci Mesele: gerçek hamiyet şefkattir
   yirmi-altinci-mektup-4-1.js  Yirmi Altıncı Mektup, Dördüncü Mebhas, Birinci Mesele: âlemlerin Rabbi ve nefsin ayıbı
+ses/                      sesli anlatımlar (mp3) ve liste.js; araclar/ses_uret.py yazar, elle değiştirme
+araclar/ses_uret.py       bir dersin sesli anlatımını üretir (bilgisayarda çalıştırılır, siteye girmez)
 fonts/                    yazı tipleri ve lisansları
 ikon/                     telefona kurulunca görünen simge
 sw.js, manifest.webmanifest  internetsiz çalışma ve kurulum
@@ -96,3 +100,27 @@ pekistir: {
 İlerleme, kelime kutuları ve günlük seri sadece o telefonda saklanır (tarayıcı verisi silinirse gider).
 
 Kelime anlamları ve açıklamalar sohbet hazırlığı içindir; okumadan önce bilen birine göstermek iyi olur.
+
+## Sesli dinleme eklemek (isteğe bağlı)
+
+Sesi olmayan derste "Dinle" düğmesi görünmez; ders eskisi gibi çalışır. Ses, ders metninden **yapay Türkçe sesle** (Piper, `fahrettin`) üretilir ve `ses/` klasörüne mp3 olarak konur. Her ders için iki kayıt çıkar:
+
+- **Tam**: bölüm başlığı, metin, açıklama, günlük örnek (yaklaşık 15 dakika)
+- **Özet**: sadece açıklama ve günlük örnek (yaklaşık 8 dakika)
+
+Üretmek için (bilgisayarda, bir kez kurulum):
+
+```
+pip install piper-tts numpy                  # ffmpeg ve node da kurulu olmalı
+python3 araclar/ses_uret.py --model yol/tr_TR-fahrettin-medium.onnx --ders yirmi-altinci-mektup-4-1
+```
+
+Kullanılan ses `tr_TR-fahrettin-medium` (veri seti CC0, yani serbest). Ses modeli (`.onnx` ve `.onnx.json` yan yana) için kaynaklar `araclar/ses_uret.py` başında yazılı. Okunacak metni önceden görmek için: `--metni-goster`.
+
+Bilmen gerekenler:
+
+- Yapay ses **Arapça okumaz**; âyet ve hadis metni atlanır, hemen ardından gelen Türkçe anlam okunur.
+- Metindeki kelime anlamları "kelime, yani anlamı" diye okunur. Şapkalı harfler sade okunur.
+- Osmanlıca kelimelerde telaffuz bazen kayar. Ders dosyasında düzeltme yapınca sesi yeniden üretmek gerekir.
+- Ses internetten çalınır (internetsiz indirme yok). Her ders yaklaşık 7 MB tutar; depo büyüklüğünü akılda tut.
+- Ders metni değişirse (`ses_uret.py`yi aynı komutla yeniden çalıştır) zaman çizelgesi de yenilenir.
