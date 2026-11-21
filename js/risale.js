@@ -80,11 +80,12 @@ window.RISALE = {
         (b.metin || []).forEach(function (p) {
           var re = /\(\((.*?)\)\)/g, m;
           while ((m = re.exec(p))) {
-            var terim = terimBul(p.slice(0, m.index).replace(/\(\(.*?\)\)/g, ''), m[1]);
+            var anlam = m[1].replace(/^~\s*/, '');          // ((~anlam)): sayfada gizli, lügatte var
+            var terim = terimBul(p.slice(0, m.index).replace(/\(\(.*?\)\)/g, ''), anlam);
             if (!terim || /[؀-ۿ]/.test(terim)) continue;   // Arapça satırlar lügate girmez
             var k = sade(terim);
             if (!lugat[k]) lugat[k] = { terim: terim, anlam: '', yerler: [] };
-            if (m[1] && !lugat[k].anlam) lugat[k].anlam = m[1];
+            if (anlam && !lugat[k].anlam) lugat[k].anlam = anlam;
             if (!lugat[k].yerler.some(function (y) { return y.ders === id && y.bolum === bi; })) lugat[k].yerler.push({ ders: id, bolum: bi });
           }
         });
@@ -94,9 +95,11 @@ window.RISALE = {
 
   // "kelime ((anlamı))"  ->  kelime <span class="anlam">(anlamı)</span>
   // "kelime (())"        ->  anlamı lügatten getirir
+  // "kelime ((~anlamı))" ->  sayfada görünmez, sesli okumada okunmaz; lügatte ve kartlarda yine vardır
   function metinCiz(s, yer) {
     var cikti = '', son = 0, re = /\(\((.*?)\)\)/g, m;
     while ((m = re.exec(s))) {
+      if (m[1].charAt(0) === '~') { cikti += esc(s.slice(son, m.index).replace(/\s+$/, '')); son = re.lastIndex; continue; }
       cikti += esc(s.slice(son, m.index));
       var anlam = m[1];
       if (!anlam) {
@@ -114,6 +117,7 @@ window.RISALE = {
 
   // Paylaşım ve arama için düz metin
   function duzMetin(s) {
+    s = s.replace(/\s*\(\(~.*?\)\)/g, '');
     return s.replace(/\(\((.*?)\)\)/g, function (_, a, i) {
       if (a) return '(' + a + ')';
       var k = lugat[sade(terimBul(s.slice(0, i).replace(/\(\(.*?\)\)/g, '')))];

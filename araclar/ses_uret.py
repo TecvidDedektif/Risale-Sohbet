@@ -12,7 +12,7 @@ kelime zamanlarını (yazıyı takip için) ders açılınca ses/<ders>.json'dan
 Okuma kuralları:
   - Arapça yazılar OKUNMAZ (yapay ses Arapçayı, özellikle âyet ve hadisi, hatalı okur).
     Arapçanın hemen ardından gelen ((Türkçe anlam)) okunur.
-  - Metindeki kelime anlamları "kelime, yani anlamı," diye okunur.
+  - Metindeki kelime anlamları "kelime, yani anlamı," diye okunur. ((~anlam)) diye gizlenenler okunmaz.
   - Şapkalı harfler (â, î, û) sade okunur.
 
 Kurulum (bir kez):
@@ -71,6 +71,10 @@ def konus(t):
     cikti, son = '', 0
     for m in re.finditer(r'\(\((.*?)\)\)', t):
         onceki = t[son:m.start()]
+        if m.group(1).startswith('~'):                   # ((~anlam)): sayfada gizli, okunmaz
+            cikti = (cikti + onceki).rstrip()
+            son = m.end()
+            continue
         cikti += onceki
         anlam = m.group(1).strip()
         if anlam:

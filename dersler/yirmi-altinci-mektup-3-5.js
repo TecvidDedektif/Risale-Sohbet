@@ -9,6 +9,8 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  lâkayt (())
+   Anlamı sayfada göstermek ve sesli okumak istemezsen başına ~ koy: ((~sınırlı)).
+   Lügatte ve kelime kartlarında yine çıkar.
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
    o bölüme  sayfa: 455,  yaz. Numara bölümün üstünde kesik çizgiyle görünür.
    ============================================================ */
@@ -25,7 +27,7 @@ RISALE.dersEkle({
       baslik: 'Körü körüne taklit',
       metin: [
         'Beşinci Mesele',
-        'Asya’da uyanan akvâm ((kavimler, milletler)), fikr‑i milliyete ((milliyetçilik fikrine)) sarılıp, aynen Avrupa’yı her cihetle ((yönüyle, bakımından)) taklit ederek, hattâ çok mukaddesâtları ((kutsal değerleri)) o yolda fedâ ederek hareket ediyorlar. Hâlbuki her milletin kàmet‑i kıymeti ((değerinin boyu, ölçüsü)) başka bir elbise ister. Bir cins kumaş bile olsa; tarzı, ayrı ayrı olmak lâzım gelir. Bir kadına, bir jandarma elbisesi giydirilmez! Bir ihtiyar hocaya, tango ((modaya düşkün, açık giyinen)) bir kadın libâsı ((elbisesi)) giydirilmediği gibi; körü körüne taklit dahi, çok defa maskaralık olur. Çünkü:',
+        'Asya’da uyanan akvâm ((kavimler, milletler)), fikr‑i milliyete ((~milliyetçilik fikrine)) sarılıp, aynen Avrupa’yı her cihetle ((~yönüyle, bakımından)) taklit ederek, hattâ çok mukaddesâtları ((~kutsal değerleri)) o yolda fedâ ederek hareket ediyorlar. Hâlbuki her milletin kàmet‑i kıymeti ((~değerinin boyu, ölçüsü)) başka bir elbise ister. Bir cins kumaş bile olsa; tarzı, ayrı ayrı olmak lâzım gelir. Bir kadına, bir jandarma elbisesi giydirilmez! Bir ihtiyar hocaya, tango ((modaya düşkün, açık giyinen)) bir kadın libâsı ((elbisesi)) giydirilmediği gibi; körü körüne taklit dahi, çok defa maskaralık olur. Çünkü:',
       ],
       aciklama: [
         'Bu satırlar yaklaşık yüz yıl önce yazıldı. O yıllarda Asya’daki milletler yeni uyanıyor, kalkınmak için milliyet fikrine sarılıyor ve Avrupa’yı her yönüyle örnek alıyordu. Bu uğurda kutsal saydıkları birçok değeri de bırakıyorlardı.',
@@ -39,7 +41,7 @@ RISALE.dersEkle({
     {
       baslik: 'Birinci sebep: dükkân ile tarla bir değil',
       metin: [
-        'Evvelâ ((birinci olarak, öncelikle)): Avrupa bir dükkân, bir kışla ise; Asya bir mezraa ((ekin tarlası)), bir câmi hükmündedir ((gibidir, yerindedir)). Bir dükkâncı dansa gider, bir çiftçi gidemez. Kışla vaziyeti ile mescit vaziyeti bir olmaz.',
+        'Evvelâ ((~birinci olarak, öncelikle)): Avrupa bir dükkân, bir kışla ise; Asya bir mezraa ((ekin tarlası)), bir câmi hükmündedir ((~gibidir, yerindedir)). Bir dükkâncı dansa gider, bir çiftçi gidemez. Kışla vaziyeti ile mescit vaziyeti bir olmaz.',
       ],
       aciklama: [
         'Birinci sebep: Avrupa ile Asya’nın hâli farklıdır. Üstad Avrupa’yı bir dükkâna ve kışlaya, Asya’yı bir tarlaya ve camiye benzetiyor. Dükkân alışverişin, kışla askerliğin yeridir; tarla emeğin, cami ibadetin yeridir. Her birinin düzeni ve ihtiyacı ayrıdır.',
@@ -54,7 +56,7 @@ RISALE.dersEkle({
       alt: true,
       sayfa: 455,
       metin: [
-        'Hem, ekser ((çoğu)) enbiyânın ((peygamberlerin)) Asya’da zuhûru ((ortaya çıkması)), ağleb‑i hükemânın ((filozofların çoğunun)) Avrupa’da gelmesi, kader‑i Ezelînin ((Allah’ın ezelî takdirinin)) bir remzi ((ince bir işareti)) ve işâretidir ki; Asya akvâmını ((milletlerini)) intibâha ((uyanışa)) getirecek, terakkî ((ilerleme, yükselme)) ettirecek, idare ettirecek; din ve kalptir. Felsefe ve hikmet ((akla dayanan ilimler, bilgelik)) ise, din ve kalbe yardım etmeli, yerine geçmemeli.',
+        'Hem, ekser ((~çoğu)) enbiyânın ((peygamberlerin)) Asya’da zuhûru ((ortaya çıkması)), ağleb‑i hükemânın ((filozofların çoğunun)) Avrupa’da gelmesi, kader‑i Ezelînin ((Allah’ın ezelî takdirinin)) bir remzi ((ince bir işareti)) ve işâretidir ki; Asya akvâmını ((~milletlerini)) intibâha ((uyanışa)) getirecek, terakkî ((~ilerleme, yükselme)) ettirecek, idare ettirecek; din ve kalptir. Felsefe ve hikmet ((~akla dayanan ilimler, bilgelik)) ise, din ve kalbe yardım etmeli, yerine geçmemeli.',
       ],
       aciklama: [
         'Peygamberlerin çoğu Asya’da gelmiş, filozofların çoğu ise Avrupa’da yetişmiştir. Üstad bunu kaderin bir işareti olarak görüyor: Asya milletlerini uyandıracak, ilerletecek ve idare edecek olan şey din ve kalptir.',
@@ -67,7 +69,7 @@ RISALE.dersEkle({
     {
       baslik: 'İkinci sebep: Avrupa dinine sahip',
       metin: [
-        'Sâniyen ((ikinci olarak)): Din‑i İslâm’ı, Hıristiyan dinine kıyâs edip ((benzetip, onunla bir tutup)), Avrupa gibi dine lâkayt ((ilgisiz, kayıtsız)) olmak, pek büyük bir hatâdır. Evvelâ (()) Avrupa, dinine sâhiptir. Başta Wilson, Lloyd George, Venizelos gibi Avrupa büyükleri, papaz gibi dinlerine müteassıp ((sıkı sıkıya, tutuculukla bağlı)) olmaları şâhittir ki; Avrupa dinine sâhiptir, belki ((hatta)) bir cihette ((yönden)) müteassıptır.',
+        'Sâniyen ((~ikinci olarak)): Din‑i İslâm’ı, Hıristiyan dinine kıyâs edip ((~benzetip, onunla bir tutup)), Avrupa gibi dine lâkayt ((~ilgisiz, kayıtsız)) olmak, pek büyük bir hatâdır. Evvelâ ((~)) Avrupa, dinine sâhiptir. Başta Wilson, Lloyd George, Venizelos gibi Avrupa büyükleri, papaz gibi dinlerine müteassıp ((~sıkı sıkıya, tutuculukla bağlı)) olmaları şâhittir ki; Avrupa dinine sâhiptir, belki ((hatta)) bir cihette ((~yönden)) müteassıptır.',
       ],
       aciklama: [
         'İkinci sebep: “Avrupa dini önemsemedi ve ilerledi, biz de öyle yapalım” düşüncesi yanlıştır. Çünkü Avrupa dinini bırakmış değildir.',
@@ -80,7 +82,7 @@ RISALE.dersEkle({
     {
       baslik: 'Üçüncü sebep: bu kıyas yanlış',
       metin: [
-        'Sâlisen ((üçüncü olarak)): İslâmiyeti Hıristiyan dinine kıyâs etmek, kıyâs‑ı maa\'l-fârıktır ((birbirine benzemeyen iki şeyi kıyaslamaktır)), o kıyâs yanlıştır. Çünkü, Avrupa dinine müteassıp (()) olduğu zaman medenî değildi; taassubu ((tutuculuğu, bağnazlığı)) terketti, medenîleşti.',
+        'Sâlisen ((~üçüncü olarak)): İslâmiyeti Hıristiyan dinine kıyâs etmek, kıyâs‑ı maa\'l-fârıktır ((birbirine benzemeyen iki şeyi kıyaslamaktır)), o kıyâs yanlıştır. Çünkü, Avrupa dinine müteassıp ((~)) olduğu zaman medenî değildi; taassubu ((~tutuculuğu, bağnazlığı)) terketti, medenîleşti.',
       ],
       aciklama: [
         'Üçüncü sebep: İslâm’ı Hıristiyanlığın Avrupa’daki tarihiyle bir tutmak, birbirine benzemeyen iki şeyi kıyaslamaktır. Üstad’ın tespitine göre Avrupa, dinde bağnazlık gösterdiği devirde medenî değildi; bağnazlığı bırakınca medenîleşti.',
@@ -94,8 +96,8 @@ RISALE.dersEkle({
       baslik: 'Avrupa’da dine neden küsüldü?',
       alt: true,
       metin: [
-        'Hem din, onların içinde üç yüz sene muhârebe‑i dâhiliyeyi ((iç savaşı)) intaç etmiş ((doğurmuş, sonuç vermiş)). Müstebit ((baskıcı, zorba)) zâlimlerin elinde avâmı ((halkı)), fukarayı ((fakirleri)) ve ehl‑i fikri ((fikir sahiplerini, düşünenleri)) ezmeye vâsıta ((araç)) olduğundan; onların umumunda ((genelinde, çoğunda)) muvakkaten ((geçici olarak)) dine karşı bir küsmek hâsıl ((meydana gelmiş)) olmuştu.',
-        'İslâmiyet’te ise, tarihler şâhittir ki, bir defadan başka dâhilî ((iç)) muhârebeye ((savaşa)) sebebiyet vermemiş.',
+        'Hem din, onların içinde üç yüz sene muhârebe‑i dâhiliyeyi ((iç savaşı)) intaç etmiş ((doğurmuş, sonuç vermiş)). Müstebit ((baskıcı, zorba)) zâlimlerin elinde avâmı ((~halkı)), fukarayı ((~fakirleri)) ve ehl‑i fikri ((~fikir sahiplerini, düşünenleri)) ezmeye vâsıta ((~araç)) olduğundan; onların umumunda ((~genelinde, çoğunda)) muvakkaten ((~geçici olarak)) dine karşı bir küsmek hâsıl ((~meydana gelmiş)) olmuştu.',
+        'İslâmiyet’te ise, tarihler şâhittir ki, bir defadan başka dâhilî ((~iç)) muhârebeye ((~savaşa)) sebebiyet vermemiş.',
       ],
       aciklama: [
         'Avrupa’da din, yaklaşık üç yüz yıl süren iç savaşlara sebep oldu (örneğin Katolik ve Protestanlar arasındaki savaşlar). Ayrıca baskıcı yöneticilerin elinde halkı, fakirleri ve düşünen insanları ezmeye alet edildi. Bu yüzden orada insanlar bir süreliğine dine küstü.',
@@ -110,8 +112,8 @@ RISALE.dersEkle({
       baslik: 'Müslümanlar dine sarıldıkça yükseldi',
       alt: true,
       metin: [
-        'Hem ne vakit Ehl‑i İslâm ((Müslümanlar)), dine ciddi sâhip olmuşlarsa, o zamana nispeten ((göre)) yüksek terakkî (()) etmişler. Buna şâhit, Avrupa’nın en büyük üstadı, Endülüs Devlet‑i İslâmiye’sidir.',
-        'Hem ne vakit, Cemâat‑i İslâmiye ((Müslüman toplumu)) dine karşı lâkayt (()) vaziyeti almışlar; perîşan vaziyete düşerek tedennî ((gerileme, alçalma)) etmişler.',
+        'Hem ne vakit Ehl‑i İslâm ((~Müslümanlar)), dine ciddi sâhip olmuşlarsa, o zamana nispeten ((~göre)) yüksek terakkî ((~)) etmişler. Buna şâhit, Avrupa’nın en büyük üstadı, Endülüs Devlet‑i İslâmiye’sidir.',
+        'Hem ne vakit, Cemâat‑i İslâmiye ((~Müslüman toplumu)) dine karşı lâkayt ((~)) vaziyeti almışlar; perîşan vaziyete düşerek tedennî ((gerileme, alçalma)) etmişler.',
       ],
       aciklama: [
         'Müslümanların tarihi ters yönde bir tablo gösteriyor: dine ciddi sahip çıktıkları dönemlerde, o çağa göre çok ilerlemişler. Örnek Endülüs’tür: bugünkü İspanya’da yaklaşık sekiz yüz yıl süren İslâm medeniyeti. Kurtuba gibi şehirleri ilim merkeziydi ve Avrupa oradan çok şey öğrendi. Üstad bu yüzden ona “Avrupa’nın en büyük üstadı” diyor.',
@@ -125,7 +127,7 @@ RISALE.dersEkle({
       baslik: 'İslâm, fakirin ve ilim ehlinin kalesi',
       alt: true,
       metin: [
-        'Hem İslâmiyet, vücûb‑u zekât ((zekâtın farz olması)) ve hurmet‑i ribâ ((faizin haram olması)) gibi binler şefkat‑perverâne ((şefkatli, merhamet dolu)) mesâil ile ((meselelerle, hükümlerle)) fukarayı (()) ve avâmı (()) himâye ((koruma)) ettiği; اَفَلَا يَعْقِلُونَ ٭ اَفَلَا يَتَفَكَّرُونَ ٭ اَفَلَا يَتَدَبَّرُونَ ((“Akıl etmiyorlar mı?”, “Düşünmüyorlar mı?”, “Derin derin düşünmüyorlar mı?”)) gibi kelimâtıyla ((sözleriyle)) aklı ve ilmi istişhâd ((şahit gösterme)) ve îkaz ((uyarma, uyandırma)) ettiği ve ehl‑i ilmi ((ilim sahiplerini)) himâye ettiği cihetle (()); dâima İslâmiyet, fukaraların ve ehl‑i ilmin kalesi ve melcei ((sığınağı)) olmuştur. Onun için, İslâmiyete karşı küsmeye hiçbir sebep yoktur.',
+        'Hem İslâmiyet, vücûb‑u zekât ((~zekâtın farz olması)) ve hurmet‑i ribâ ((faizin haram olması)) gibi binler şefkat‑perverâne ((~şefkatli, merhamet dolu)) mesâil ile ((~meselelerle, hükümlerle)) fukarayı ((~)) ve avâmı ((~)) himâye ((~koruma)) ettiği; اَفَلَا يَعْقِلُونَ ٭ اَفَلَا يَتَفَكَّرُونَ ٭ اَفَلَا يَتَدَبَّرُونَ ((“Akıl etmiyorlar mı?”, “Düşünmüyorlar mı?”, “Derin derin düşünmüyorlar mı?”)) gibi kelimâtıyla ((~sözleriyle)) aklı ve ilmi istişhâd ((şahit gösterme)) ve îkaz ((~uyarma, uyandırma)) ettiği ve ehl‑i ilmi ((~ilim sahiplerini)) himâye ettiği cihetle ((~)); dâima İslâmiyet, fukaraların ve ehl‑i ilmin kalesi ve melcei ((sığınağı)) olmuştur. Onun için, İslâmiyete karşı küsmeye hiçbir sebep yoktur.',
       ],
       aciklama: [
         'Avrupa’da dine küsmenin iki sebebi sayılmıştı: din, fakirleri ve düşünen insanları ezmeye alet edilmişti. İslâm’da ikisi de tersinedir.',
@@ -139,8 +141,8 @@ RISALE.dersEkle({
       baslik: 'Farkın sırrı: saf tevhid',
       sayfa: 456,
       metin: [
-        'İslâmiyetin, Hıristiyanlık ve sâir (()) dinlere cihet‑i farkının ((fark yönünün)) sırr‑ı hikmeti ((hikmetinin sırrı)) şudur ki:',
-        'İslâmiyetin esâsı, mahz‑ı Tevhiddir ((katıksız, saf tevhiddir; yalnız Allah’ı bir bilmektir)); vesâit ((vasıtalara, aracılara)) ve esbâba ((sebeplere)), tesir-i hakîki ((gerçek tesir)) vermiyor; icâd ((yaratma)) ve makam cihetiyle ((yönüyle)) kıymet vermiyor.',
+        'İslâmiyetin, Hıristiyanlık ve sâir ((~)) dinlere cihet‑i farkının ((~fark yönünün)) sırr‑ı hikmeti ((~hikmetinin sırrı)) şudur ki:',
+        'İslâmiyetin esâsı, mahz‑ı Tevhiddir ((~katıksız, saf tevhiddir; yalnız Allah’ı bir bilmektir)); vesâit ((~vasıtalara, aracılara)) ve esbâba ((~sebeplere)), tesir-i hakîki ((~gerçek tesir)) vermiyor; icâd ((~yaratma)) ve makam cihetiyle ((~yönüyle)) kıymet vermiyor.',
       ],
       aciklama: [
         'Şimdi farkın asıl sebebi açıklanıyor. İslâm’ın temeli saf tevhiddir: her şeyi yapan ve yaratan yalnız Allah’tır. Sebepler ve aracılar sadece birer perdedir; gerçek tesir onların değildir. İslâm onlara ne yaratmada bir pay ne de ayrı bir makam verir.',
@@ -153,7 +155,7 @@ RISALE.dersEkle({
       baslik: 'Hıristiyanlıkta aracılara verilen pay',
       alt: true,
       metin: [
-        'Hıristiyanlık ise, “velediyet” ((Allah’a oğul isnat etme)) fikrini kabûl ettiği için, vesâit (()) ve esbâba (()) bir kıymet verir, enâniyeti ((benliği, kendini beğenmeyi)) kırmaz. Âdeta Rubûbiyet‑i İlâhiye’nin ((Allah’ın her şeyi terbiye ve idare edişinin)) bir cilvesini ((yansımasını)) azîzlerine ((kutsal saydıkları kişilere)), büyüklerine verir. اِتَّخَذُٓوا اَحْبَارَهُمْ وَرُهْبَانَهُمْ اَرْبَابًا مِنْ دُونِ اللّٰهِ ((“Onlar, Allah’ı bırakıp hahamlarını ve rahiplerini rabler edindiler.” Tevbe 31)) âyetine mâsadak ((uygun düşen, onun bir örneği)) olmuşlar. Onun içindir ki, Hıristiyanların dünyaca en yüksek mertebede olanları, gurur ve enâniyetlerini muhâfaza ((koruma)) etmekle beraber – sâbık ((önceki)) Amerika reisi ((başkanı)) Wilson gibi – müteassıp (()) bir dindar olur.',
+        'Hıristiyanlık ise, “velediyet” ((Allah’a oğul isnat etme)) fikrini kabûl ettiği için, vesâit ((~)) ve esbâba ((~)) bir kıymet verir, enâniyeti ((~benliği, kendini beğenmeyi)) kırmaz. Âdeta Rubûbiyet‑i İlâhiye’nin ((~Allah’ın her şeyi terbiye ve idare edişinin)) bir cilvesini ((~yansımasını)) azîzlerine ((~kutsal saydıkları kişilere)), büyüklerine verir. اِتَّخَذُٓوا اَحْبَارَهُمْ وَرُهْبَانَهُمْ اَرْبَابًا مِنْ دُونِ اللّٰهِ ((“Onlar, Allah’ı bırakıp hahamlarını ve rahiplerini rabler edindiler.” Tevbe 31)) âyetine mâsadak ((uygun düşen, onun bir örneği)) olmuşlar. Onun içindir ki, Hıristiyanların dünyaca en yüksek mertebede olanları, gurur ve enâniyetlerini muhâfaza ((~koruma)) etmekle beraber – sâbık ((~önceki)) Amerika reisi ((~başkanı)) Wilson gibi – müteassıp ((~)) bir dindar olur.',
       ],
       aciklama: [
         'Hıristiyanlık ise Hz. İsâ’yı “Allah’ın oğlu” saydığı için sebeplere ve aracılara bir değer verir. Bu yüzden insanın benliğini kırmaz. Hatta Allah’a ait olan bir yetkiyi din büyüklerine verir; âyet de bunu haber veriyor (Tevbe 31).',
@@ -168,7 +170,7 @@ RISALE.dersEkle({
       baslik: 'Sonuç: ya benlik ya dindarlık',
       alt: true,
       metin: [
-        'Mahz‑ı Tevhid ((saf tevhid)) dini olan İslâmiyet içinde, dünyaca yüksek mertebede olanlar, ya enâniyeti (()) ve gururu bırakacak veya dindarlığı bir derece bırakacak. Onun için, bir kısmı lâkayt (()) kalıyorlar, belki (()) dinsiz oluyorlar.',
+        'Mahz‑ı Tevhid ((~saf tevhid)) dini olan İslâmiyet içinde, dünyaca yüksek mertebede olanlar, ya enâniyeti ((~)) ve gururu bırakacak veya dindarlığı bir derece bırakacak. Onun için, bir kısmı lâkayt ((~)) kalıyorlar, belki ((~)) dinsiz oluyorlar.',
       ],
       aciklama: [
         'İslâm’da ise büyük küçük herkes Allah’ın huzurunda aynı kuldur; makam kimseye ayrı bir pay vermez. Bu yüzden dünyada yüksek makama çıkan bir Müslüman bir seçimle karşılaşır: ya gururunu ve benliğini bırakacak ya da dindarlığından bir derece vazgeçecek. Benliğini bırakamayanların bir kısmı dine ilgisiz kalır, hatta dinden çıkar.',

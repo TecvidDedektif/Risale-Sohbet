@@ -14,6 +14,8 @@
                Dersin bütününe ait etkinlikler (esles, zincir) bolumler'den önceki pekistir bloğundadır.
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  hakîki (())
+   Anlamı sayfada göstermek ve sesli okumak istemezsen başına ~ koy: ((~sınırlı)).
+   Lügatte ve kelime kartlarında yine çıkar.
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
    o bölüme  sayfa: 460,  yaz. Numara bölümün üstünde kesik çizgiyle görünür.
    ============================================================ */
@@ -62,7 +64,7 @@ RISALE.dersEkle({
       baslik: 'Bir talebenin soruları',
       metin: [
         'Dördüncü Mebhas ((bahis, konu bölümü))',
-        'Tenbih ((uyarı, dikkat çekme)): Yirmialtıncı Mektûb’un Dört Mebhası, birbiri ile münâsebettar ((ilgili, bağlantılı)) olmadığı gibi, bu Dördüncü Mebhas’ın “On Mesâil”i ((on meselesi)) dahi birbiriyle münâsebettar (()) değildir. Onun için, münâsebeti ((bağlantıyı)) aramamalı. Nasıl gelmiş, öyle yazılmış. Mühim bir talebesine gönderdiği mektûbun bir parçasıdır. O talebenin beş altı suâllerine verilen cevaplardır.',
+        'Tenbih ((~uyarı, dikkat çekme)): Yirmialtıncı Mektûb’un Dört Mebhası, birbiri ile münâsebettar ((~ilgili, bağlantılı)) olmadığı gibi, bu Dördüncü Mebhas’ın “On Mesâil”i ((on meselesi)) dahi birbiriyle münâsebettar ((~)) değildir. Onun için, münâsebeti ((~bağlantıyı)) aramamalı. Nasıl gelmiş, öyle yazılmış. Mühim bir talebesine gönderdiği mektûbun bir parçasıdır. O talebenin beş altı suâllerine verilen cevaplardır.',
       ],
       aciklama: [
         'Bu bölüm bir talebenin Üstad’a sorduğu beş altı soruya verilen cevaplardır. Konular birbirine bağlı değil; “bu neden buradan buraya geçti?” diye bağlantı aramaya gerek yok.',
@@ -87,8 +89,8 @@ RISALE.dersEkle({
       baslik: '“On sekiz bin âlem” nedir?',
       metin: [
         'Birincisi',
-        'Sâniyen (()): Mektûbunda diyorsun: رَبِّ الْعَالَم۪ينَ ((âlemlerin Rabbi)) tâbir ((ifade, deyim)) ve tefsirinde ((açıklamasında)), “On sekiz bin âlem” demişler. O adedin hikmetini soruyorsun.',
-        'Kardeşim, ben şimdi o adedin hikmetini bilmiyorum; fakat bu kadar derim ki: Kur\'ân‑ı Hakîm’in cümleleri, birer mânâya münhasır ((sınırlı)) değil, belki ((bilakis)) nev-i beşerin ((insanlığın)) umum ((bütün)) tabakàtına ((kesimlerine, seviyelerine)) hitap olduğu için, her tabakaya karşı birer mânâyı tazammun eden ((içine alan)) bir küllî ((genel, hepsini kapsayan)) hükmündedir. Beyân (()) olunan mânâlar, o küllî kaidenin ((kuralın)) cüz\'iyâtları ((parçaları, tek tek örnekleri)) hükmündedirler. Herbir müfessir ((Kur’an’ı açıklayan âlim)), herbir ârif ((Allah’ı tanımış veli)), o küllîden bir cüzü ((parçayı)) zikrediyor ((söylüyor)). Ya keşfine ((kalbine açılan manaya)), ya deliline, veyâhut meşrebine ((yoluna, mizacına)) istinat edip ((dayanıp)), bir mânâyı tercih ediyor. İşte bunda dahi, bir tâife ((topluluk)), o adede muvâfık ((uygun)) bir mânâ keşfetmiş.',
+        'Sâniyen ((~)): Mektûbunda diyorsun: رَبِّ الْعَالَم۪ينَ ((âlemlerin Rabbi)) tâbir ((~ifade, deyim)) ve tefsirinde ((~açıklamasında)), “On sekiz bin âlem” demişler. O adedin hikmetini soruyorsun.',
+        'Kardeşim, ben şimdi o adedin hikmetini bilmiyorum; fakat bu kadar derim ki: Kur\'ân‑ı Hakîm’in cümleleri, birer mânâya münhasır ((sınırlı)) değil, belki ((bilakis)) nev-i beşerin ((~insanlığın)) umum ((~bütün)) tabakàtına ((kesimlerine, seviyelerine)) hitap olduğu için, her tabakaya karşı birer mânâyı tazammun eden ((içine alan)) bir küllî ((genel, hepsini kapsayan)) hükmündedir. Beyân ((~)) olunan mânâlar, o küllî kaidenin ((~kuralın)) cüz\'iyâtları ((parçaları, tek tek örnekleri)) hükmündedirler. Herbir müfessir ((~Kur’an’ı açıklayan âlim)), herbir ârif ((~Allah’ı tanımış veli)), o küllîden bir cüzü ((~parçayı)) zikrediyor ((~söylüyor)). Ya keşfine ((kalbine açılan manaya)), ya deliline, veyâhut meşrebine ((yoluna, mizacına)) istinat edip ((~dayanıp)), bir mânâyı tercih ediyor. İşte bunda dahi, bir tâife ((~topluluk)), o adede muvâfık ((~uygun)) bir mânâ keşfetmiş.',
       ],
       aciklama: [
         'Talebe soruyor: Fâtiha’daki “âlemlerin Rabbi” için “on sekiz bin âlem” denmiş, bu sayının hikmeti ne? Üstad önce açıkça “bilmiyorum” diyor. Koca bir âlimin bunu rahatça söylemesi başlı başına bir derstir.',
@@ -118,7 +120,7 @@ RISALE.dersEkle({
       alt: true,
       sayfa: 460,
       metin: [
-        'Meselâ: Ehl‑i velâyetin ((velilerin)), ehemmiyetle, virdlerinde ((her gün okudukları dualarda)) zikir ve tekrar ettikleri مَرَجَ الْبَحْرَيْنِ يَلْتَقِيَانِ ۝ بَيْنَهُمَا بَرْزَخٌ لَا يَبْغِيَانِ ((“İki denizi salıvermiştir, birbirine kavuşuyorlar. Aralarında bir perde vardır, birbirine taşmazlar.” Rahmân 19‑20)) cümlesinde; dâire‑i vücûb ((varlığı zorunlu olan Allah’a ait daire)) ile dâire‑i imkândaki ((yaratılmışlar dairesindeki)) bahr‑i Rubûbiyet ((Rabliğin denizi)) ve bahr‑i ubûdiyetten ((kulluğun denizinden)) tut, tâ dünya ve âhiret bahirlerine ((denizlerine)), tâ âlem-i gayp ((görünmeyen âlem)) ve âlem‑i şehâdet ((görünen âlem)) bahirlerine (()), tâ şark ((doğu)) ve garp ((batı)), şimâl ((kuzey)) ve cenûptaki ((güneydeki)) bahr‑i muhîtlerine ((okyanuslarına)), tâ Bahr‑i Rûm ((Rum denizi)) ve Fars bahrine ((Basra Körfezi’ne)), tâ Akdeniz ve Karadeniz ve Boğaz’ına – ki mercan denilen balık ondan çıkıyor – tâ Akdeniz ve Bahr‑i Ahmer’e ((Kızıldeniz’e)) ve Süveyş Kanalı’na, tâ tatlı ve tuzlu sular denizlerine, tâ toprak tabakası altındaki tatlı ve müteferrik ((dağınık, ayrı ayrı)) su denizleriyle, üstündeki tuzlu ve muttasıl ((birbirine bitişik)) denizlerine, tâ Nil ve Dicle ve Fırat gibi, büyük ırmaklar denilen küçük tatlı denizler ile onların karıştığı tuzlu büyük denizlerine kadar, mânâsındaki cüz\'iyâtları (()) var. Bunlar umumen ((hepsi birden)) murad ((kastedilmiş)) ve maksûd ((amaçlanmış)) olabilir ve onun hakîki (()) ve mecâzî ((benzetme yoluyla)) mânâlarıdır.',
+        'Meselâ: Ehl‑i velâyetin ((~velilerin)), ehemmiyetle, virdlerinde ((her gün okudukları dualarda)) zikir ve tekrar ettikleri مَرَجَ الْبَحْرَيْنِ يَلْتَقِيَانِ ۝ بَيْنَهُمَا بَرْزَخٌ لَا يَبْغِيَانِ ((“İki denizi salıvermiştir, birbirine kavuşuyorlar. Aralarında bir perde vardır, birbirine taşmazlar.” Rahmân 19‑20)) cümlesinde; dâire‑i vücûb ((varlığı zorunlu olan Allah’a ait daire)) ile dâire‑i imkândaki ((yaratılmışlar dairesindeki)) bahr‑i Rubûbiyet ((Rabliğin denizi)) ve bahr‑i ubûdiyetten ((~kulluğun denizinden)) tut, tâ dünya ve âhiret bahirlerine ((~denizlerine)), tâ âlem-i gayp ((görünmeyen âlem)) ve âlem‑i şehâdet ((görünen âlem)) bahirlerine ((~)), tâ şark ((~doğu)) ve garp ((~batı)), şimâl ((~kuzey)) ve cenûptaki ((~güneydeki)) bahr‑i muhîtlerine ((okyanuslarına)), tâ Bahr‑i Rûm ((Rum denizi)) ve Fars bahrine ((Basra Körfezi’ne)), tâ Akdeniz ve Karadeniz ve Boğaz’ına – ki mercan denilen balık ondan çıkıyor – tâ Akdeniz ve Bahr‑i Ahmer’e ((Kızıldeniz’e)) ve Süveyş Kanalı’na, tâ tatlı ve tuzlu sular denizlerine, tâ toprak tabakası altındaki tatlı ve müteferrik ((~dağınık, ayrı ayrı)) su denizleriyle, üstündeki tuzlu ve muttasıl ((birbirine bitişik)) denizlerine, tâ Nil ve Dicle ve Fırat gibi, büyük ırmaklar denilen küçük tatlı denizler ile onların karıştığı tuzlu büyük denizlerine kadar, mânâsındaki cüz\'iyâtları ((~)) var. Bunlar umumen ((~hepsi birden)) murad ((~kastedilmiş)) ve maksûd ((~amaçlanmış)) olabilir ve onun hakîki ((~)) ve mecâzî ((~benzetme yoluyla)) mânâlarıdır.',
       ],
       aciklama: [
         'Üstad kuralı bir âyetle gösteriyor: “İki denizi salıvermiştir, kavuşurlar ama aralarındaki perdeden taşmazlar.” Bu “iki deniz” en yüksekten en sadeye kadar pek çok şey olabilir: Allah’ın Rabliği ile kulun kulluğu, dünya ile âhiret, görünen âlem ile görünmeyen âlem, tatlı su ile tuzlu su, nehrin denize döküldüğü yer…',
@@ -147,8 +149,8 @@ RISALE.dersEkle({
       baslik: 'Her âlemin doğrudan Rabbi',
       alt: true,
       metin: [
-        'İşte onun gibi, اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ ((“Hamd, âlemlerin Rabbi olan Allah’adır.”)) dahi, pek çok hakàikı ((hakikatleri)) câmi\'dir ((içine alır)). Ehl‑i keşf ((kalbine manalar açılan veliler)) ve hakikat, keşiflerine göre ayrı ayrı beyân (()) ederler.',
-        'Ben de böyle fehmederim ((anlarım)) ki: Semâvâtta ((göklerde)) binler âlem var. Yıldızların bir kısmı her biri birer âlem olabilir. Yerde de herbir cins mahlûkat ((yaratılmışlar)), birer âlemdir. Hattâ herbir insan dahi, küçük bir âlemdir. رَبُّ الْعَالَم۪ينَ ((âlemlerin Rabbi)) tâbiri ((ifadesi)) ise; “Doğrudan doğruya her âlem, Cenâb‑ı Hakk’ın rubûbiyetiyle ((Rabliğiyle)) idare ve terbiye ((yetiştirme, olgunlaştırma)) ve tedbir ((düzenleme, işini görme)) edilir.” demektir.',
+        'İşte onun gibi, اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ ((“Hamd, âlemlerin Rabbi olan Allah’adır.”)) dahi, pek çok hakàikı ((~hakikatleri)) câmi\'dir ((içine alır)). Ehl‑i keşf ((~kalbine manalar açılan veliler)) ve hakikat, keşiflerine göre ayrı ayrı beyân ((~)) ederler.',
+        'Ben de böyle fehmederim ((anlarım)) ki: Semâvâtta ((~göklerde)) binler âlem var. Yıldızların bir kısmı her biri birer âlem olabilir. Yerde de herbir cins mahlûkat ((~yaratılmışlar)), birer âlemdir. Hattâ herbir insan dahi, küçük bir âlemdir. رَبُّ الْعَالَم۪ينَ ((âlemlerin Rabbi)) tâbiri ((~ifadesi)) ise; “Doğrudan doğruya her âlem, Cenâb‑ı Hakk’ın rubûbiyetiyle ((~Rabliğiyle)) idare ve terbiye ((~yetiştirme, olgunlaştırma)) ve tedbir ((~düzenleme, işini görme)) edilir.” demektir.',
       ],
       aciklama: [
         'Üstad kendi anlayışını söylüyor: gökte binlerce âlem var; yerde her canlı türü bir âlem; her insan da küçük bir âlem. “Âlemlerin Rabbi” demek, bunların her biri doğrudan doğruya Allah tarafından idare edilir, yetiştirilir, işi görülür demektir.',
@@ -175,7 +177,7 @@ RISALE.dersEkle({
     {
       baslik: 'Kusurunu görmek hayırdır',
       metin: [
-        'Sâlisen (()): Resûl‑i Ekrem Aleyhissalâtü Vesselâm fermân etmiş ((buyurmuş)): اِذَا اَرَادَ اللّٰهُ بِقَوْمٍ خَيْرًا اَبْصَرَهُمْ بِعُيُوبِ اَنْفُسِهِمْ ((“Allah bir topluluğa hayır dilediğinde, onlara kendi nefislerinin kusurlarını gösterir.”))',
+        'Sâlisen ((~)): Resûl‑i Ekrem Aleyhissalâtü Vesselâm fermân etmiş ((~buyurmuş)): اِذَا اَرَادَ اللّٰهُ بِقَوْمٍ خَيْرًا اَبْصَرَهُمْ بِعُيُوبِ اَنْفُسِهِمْ ((“Allah bir topluluğa hayır dilediğinde, onlara kendi nefislerinin kusurlarını gösterir.”))',
       ],
       aciklama: [
         'Talebe anlaşılan Üstad’a kendi nefsinden şikâyet etmiş. Üstad cevaba bu hadisle başlıyor: Allah birine hayır dilediğinde ona kendi kusurunu gösterir. Yani kusurunu görmek kötü haber değil, hayır işaretidir.',
@@ -203,7 +205,7 @@ RISALE.dersEkle({
       sayfa: 461,
       metin: [
         'Kur\'ân‑ı Hakîm’de Hazret‑i Yûsuf Aleyhisselâm demiş: وَمَٓا اُبَرِّئُ نَفْس۪ي اِنَّ النَّفْسَ لَاَمَّارَةٌ بِالسُّٓوءِ ((“Ben nefsimi temize çıkarmam; çünkü nefis daima kötülüğü emreder.” Yûsuf 53))',
-        'Evet, nefsini beğenen ve nefsine îtimat eden ((güvenen)), bedbahttır ((bahtsızdır)). Nefsinin ayıbını gören, bahtiyardır ((talihlidir)). Öyle ise, sen bahtiyarsın. Fakat bazen olur ki, nefs‑i emmâre ((kötülüğü emreden nefis)), ya levvâmeye ((yaptığı kötülükten dolayı kendini kınayan nefse)) veya mutmainneye ((Allah’a teslim olup huzura kavuşmuş nefse)) inkılâp eder ((dönüşür)); fakat silâhlarını ve cihâzâtını ((aletlerini)) âsâba ((sinirlere)) devreder. Âsap ((sinirler)) ve damarlar ise, o vazifeyi âhir ((son)) ömre kadar görür. Nefs‑i emmâre çoktan öldüğü hâlde, onun âsârı ((izleri)) yine görünür.',
+        'Evet, nefsini beğenen ve nefsine îtimat eden ((~güvenen)), bedbahttır ((~bahtsızdır)). Nefsinin ayıbını gören, bahtiyardır ((~talihlidir)). Öyle ise, sen bahtiyarsın. Fakat bazen olur ki, nefs‑i emmâre ((kötülüğü emreden nefis)), ya levvâmeye ((yaptığı kötülükten dolayı kendini kınayan nefse)) veya mutmainneye ((Allah’a teslim olup huzura kavuşmuş nefse)) inkılâp eder ((dönüşür)); fakat silâhlarını ve cihâzâtını ((~aletlerini)) âsâba ((sinirlere)) devreder. Âsap ((~sinirler)) ve damarlar ise, o vazifeyi âhir ((~son)) ömre kadar görür. Nefs‑i emmâre çoktan öldüğü hâlde, onun âsârı ((~izleri)) yine görünür.',
       ],
       aciklama: [
         'Hz. Yûsuf gibi bir peygamber bile “ben nefsimi temize çıkarmam” diyor. Üstad’ın ölçüsü açık: nefsini beğenen bahtsızdır, nefsinin ayıbını gören bahtiyardır. Talebeye de “sen ayıbını görüyorsun, öyleyse bahtiyarsın” diyor.',
@@ -232,8 +234,8 @@ RISALE.dersEkle({
       baslik: 'Büyük zatların şikâyeti',
       alt: true,
       metin: [
-        'Çok büyük asfiyâ ((kalbi tertemiz olan büyük zatlar)) ve evliyâ ((veliler)) var ki, nüfûsları ((nefisleri)) mutmainne ((huzura kavuşmuş)) iken, nefs‑i emmâreden ((kötülüğü emreden nefisten)) şekvâ ((şikâyet)) etmişler. Kalpleri gayet selîm ((sağlam, temiz)) ve münevver ((nurlu)) iken, emrâz-ı kalpten ((kalp hastalıklarından)) vâveylâ ((feryat)) etmişler. İşte bu zâtlardaki, nefs‑i emmâre (()) değil, belki ((bilakis)) âsâba (()) devredilen nefs‑i emmârenin ((kötülüğü emreden nefsin)) vazifesidir.',
-        'Maraz ((hastalık)) ise, kalbî değil, belki maraz‑ı hayâlîdir ((hayalî hastalıktır, gerçekte yoktur)). İnşâallâh azîz ((değerli)) kardeşim, size hücum eden ((saldıran)) nefsiniz ve emrâz‑ı kalbiniz ((kalp hastalıklarınız)) değil, belki mücâhedenin ((nefisle mücadelenin)) devamı için beşeriyet ((insanlık)) itibariyle âsâba (()) intikal eden ((geçen)) ve terakkiyât‑ı dâimîye ((sürekli ilerlemeye)) sebebiyet veren dediğimiz gibi bir hâlettir ((hâldir)).',
+        'Çok büyük asfiyâ ((kalbi tertemiz olan büyük zatlar)) ve evliyâ ((~veliler)) var ki, nüfûsları ((~nefisleri)) mutmainne ((~huzura kavuşmuş)) iken, nefs‑i emmâreden ((~kötülüğü emreden nefisten)) şekvâ ((şikâyet)) etmişler. Kalpleri gayet selîm ((~sağlam, temiz)) ve münevver ((~nurlu)) iken, emrâz-ı kalpten ((~kalp hastalıklarından)) vâveylâ ((~feryat)) etmişler. İşte bu zâtlardaki, nefs‑i emmâre ((~)) değil, belki ((~bilakis)) âsâba ((~)) devredilen nefs‑i emmârenin ((~kötülüğü emreden nefsin)) vazifesidir.',
+        'Maraz ((~hastalık)) ise, kalbî değil, belki maraz‑ı hayâlîdir ((~hayalî hastalıktır, gerçekte yoktur)). İnşâallâh azîz ((~değerli)) kardeşim, size hücum eden ((~saldıran)) nefsiniz ve emrâz‑ı kalbiniz ((~kalp hastalıklarınız)) değil, belki mücâhedenin ((~nefisle mücadelenin)) devamı için beşeriyet ((~insanlık)) itibariyle âsâba ((~)) intikal eden ((~geçen)) ve terakkiyât‑ı dâimîye ((~sürekli ilerlemeye)) sebebiyet veren dediğimiz gibi bir hâlettir ((~hâldir)).',
       ],
       aciklama: [
         'Nice büyük veli, nefsi huzura kavuşmuşken yine “nefsim beni bırakmıyor, kalbim hasta” diye ağlamış. Üstad diyor ki: onlarda gördüğün nefis değil, sinirlere geçmiş eski nefsin izidir; hastalık da gerçek değil, hayalîdir.',

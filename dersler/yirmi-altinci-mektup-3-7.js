@@ -9,6 +9,8 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  hamiyet (())
+   Anlamı sayfada göstermek ve sesli okumak istemezsen başına ~ koy: ((~sınırlı)).
+   Lügatte ve kelime kartlarında yine çıkar.
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
    o bölüme  sayfa: 458,  yaz. Numara bölümün üstünde kesik çizgiyle görünür.
    ============================================================ */
@@ -25,7 +27,7 @@ RISALE.dersEkle({
       baslik: 'Gerçek hamiyet çoğunluğa şefkattir',
       metin: [
         'Yedinci Mesele',
-        'Menfî (()) milliyette fazla hamiyet‑perverlik ((milletseverlik, değerlerini koruma gayreti)) gösterenlere deriz ki: Eğer şu milleti ciddi severseniz, onlara şefkat ederseniz; öyle bir hamiyet (()) taşıyınız ki, onların ekserîsine ((çoğuna)) şefkat sayılsın. Yoksa, ekserîsine (()) merhametsizcesine bir tarzda, şefkate muhtaç olmayan bir kısm‑ı kalîlin ((az bir kısmın)) muvakkat ((geçici)) gafletkârâne ((gaflet içinde, âhireti unutarak geçen)) hayat-ı içtimâiyelerine ((toplum hayatlarına)) hizmet ise, hamiyet değildir.',
+        'Menfî ((~)) milliyette fazla hamiyet‑perverlik ((~milletseverlik, değerlerini koruma gayreti)) gösterenlere deriz ki: Eğer şu milleti ciddi severseniz, onlara şefkat ederseniz; öyle bir hamiyet (()) taşıyınız ki, onların ekserîsine ((~çoğuna)) şefkat sayılsın. Yoksa, ekserîsine ((~)) merhametsizcesine bir tarzda, şefkate muhtaç olmayan bir kısm‑ı kalîlin ((az bir kısmın)) muvakkat ((~geçici)) gafletkârâne ((~gaflet içinde, âhireti unutarak geçen)) hayat-ı içtimâiyelerine ((~toplum hayatlarına)) hizmet ise, hamiyet değildir.',
       ],
       aciklama: [
         'Bu mesele, milliyetçilikte çok gayretli görünenlere sesleniyor: milletinizi gerçekten seviyor ve ona acıyorsanız, gayretiniz milletin çoğunluğuna şefkat olmalı.',
@@ -38,7 +40,7 @@ RISALE.dersEkle({
     {
       baslik: 'Sekizden altının ihtiyacı',
       metin: [
-        'Çünkü, menfî (()) unsuriyet (()) fikriyle yapılacak hamiyetkârlığın ((hamiyet göstermenin)), milletin sekizden ikisine muvakkat (()) faydası dokunabilir. Lâyık olmadıkları o hamiyetin şefkatine mazhar ((erişmiş, kavuşmuş)) olurlar. O sekizden altısı; ya ihtiyardır, ya hastadır, ya musîbet‑zededir ((başına musibet gelmiş kimsedir)), ya çocuktur, ya çok zayıftır, ya pek ciddi olarak âhireti düşünür müttakîdirler ((Allah’a karşı gelmekten sakınan kimselerdir)) ki; bunlar hayat‑ı dünyeviyeden ((dünya hayatından)) ziyâde ((daha çok)), müteveccih ((yönelmiş)) oldukları hayat‑ı berzahiyeye ((kabir hayatına)) ve uhreviyeye ((âhiret hayatına)) karşı bir nur, bir tesellî, bir şefkat isterler ve hamiyetkâr ((hamiyetli, değerlerini koruyan)) mübârek ellere muhtaçtırlar. Bunların ışıklarını söndürmeye ve tesellîlerini kırmaya hangi hamiyet müsâade eder ((izin verir))? Heyhât ((yazık, ne kadar uzak))! Nerede millete şefkat, nerede millet yolunda fedâkârlık!',
+        'Çünkü, menfî ((~)) unsuriyet (()) fikriyle yapılacak hamiyetkârlığın ((~hamiyet göstermenin)), milletin sekizden ikisine muvakkat ((~)) faydası dokunabilir. Lâyık olmadıkları o hamiyetin şefkatine mazhar ((~erişmiş, kavuşmuş)) olurlar. O sekizden altısı; ya ihtiyardır, ya hastadır, ya musîbet‑zededir ((~başına musibet gelmiş kimsedir)), ya çocuktur, ya çok zayıftır, ya pek ciddi olarak âhireti düşünür müttakîdirler ((~Allah’a karşı gelmekten sakınan kimselerdir)) ki; bunlar hayat‑ı dünyeviyeden ((~dünya hayatından)) ziyâde ((~daha çok)), müteveccih ((yönelmiş)) oldukları hayat‑ı berzahiyeye ((kabir hayatına)) ve uhreviyeye ((~âhiret hayatına)) karşı bir nur, bir tesellî, bir şefkat isterler ve hamiyetkâr ((~hamiyetli, değerlerini koruyan)) mübârek ellere muhtaçtırlar. Bunların ışıklarını söndürmeye ve tesellîlerini kırmaya hangi hamiyet müsâade eder ((~izin verir))? Heyhât ((yazık, ne kadar uzak))! Nerede millete şefkat, nerede millet yolunda fedâkârlık!',
       ],
       aciklama: [
         'Üstad milleti sekiz parça olarak düşünüyor. Soya dayanan bir milliyetçiliğin faydası bunlardan ancak ikisine dokunur; o da geçicidir. Bu iki parça, şefkate zaten muhtaç olmayanlardır.',
@@ -53,7 +55,7 @@ RISALE.dersEkle({
       baslik: 'Ümit kesilmez',
       sayfa: 458,
       metin: [
-        'Rahmet‑i İlâhiye’den ((Allah’ın rahmetinden)) ümit kesilmez. Çünkü Cenâb‑ı Hak, bin seneden beri Kur\'ânın hizmetinde istihdam ((çalıştırma, görevlendirme)) ettiği ve ona bayraktar ((bayrağı taşıyan, öncü)) tâyin ((belirleme, görevlendirme)) ettiği bu vatandaşların muhteşem ordusunu ve muazzam ((çok büyük)) cemâatini ((topluluğunu)), muvakkat (()) ârızalarla ((engellerle, aksaklıklarla)) inşâallâh perîşan etmez. Yine o nuru ışıklandırır ve vazifesini idâme ((sürdürme, devam ettirme)) ettirir…',
+        'Rahmet‑i İlâhiye’den ((~Allah’ın rahmetinden)) ümit kesilmez. Çünkü Cenâb‑ı Hak, bin seneden beri Kur\'ânın hizmetinde istihdam ((~çalıştırma, görevlendirme)) ettiği ve ona bayraktar ((~bayrağı taşıyan, öncü)) tâyin ((~belirleme, görevlendirme)) ettiği bu vatandaşların muhteşem ordusunu ve muazzam ((~çok büyük)) cemâatini ((~topluluğunu)), muvakkat ((~)) ârızalarla ((~engellerle, aksaklıklarla)) inşâallâh perîşan etmez. Yine o nuru ışıklandırır ve vazifesini idâme ((~sürdürme, devam ettirme)) ettirir…',
       ],
       aciklama: [
         'Mesele ümitle bitiyor: Allah’ın rahmetinden ümit kesilmez. Bu vatanın insanları bin yıldır Kur’an’ın hizmetinde çalışmış, onun bayrağını taşımıştır. Allah böyle büyük bir orduyu ve topluluğu geçici sıkıntılarla dağıtmaz. O nuru yeniden parlatır ve görevini sürdürür.',
