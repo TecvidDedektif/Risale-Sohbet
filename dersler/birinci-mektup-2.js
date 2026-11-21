@@ -8,6 +8,8 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  mevt (())
+   Anlamı sayfada göstermek ve sesli okumak istemezsen başına ~ koy: ((~sınırlı)).
+   Lügatte ve kelime kartlarında yine çıkar.
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
    o bölüme  sayfa: 28,  yaz. Numara bölümün üstünde kesik çizgiyle görünür.
    ============================================================ */
@@ -25,7 +27,7 @@ RISALE.dersEkle({
       sayfa: 28,
       metin: [
         'İkinci Suâl',
-        'Furkàn‑ı Hakîm’de ((hikmetli Kur’an’da)) اَلَّذ۪ي خَلَقَ الْمَوْتَ وَالْحَيٰوةَ لِيَبْلُوَكُمْ اَيُّكُمْ اَحْسَنُ عَمَلًا ((“O, hanginizin daha güzel amel yapacağını sınamak için ölümü ve hayatı yaratandır.” Mülk 2)) gibi âyetlerde; “Mevt (()) dahi, hayat gibi mahlûktur ((yaratılmıştır)), hem bir nîmettir.” diye ifhâm ediliyor ((anlatılıyor, bildiriliyor)). Hâlbuki zâhiren ((görünüşte)) mevt; inhilâldir ((dağılmaktır)), ademdir ((yokluktur)), tefessühtür ((çürümektir)), hayatın sönmesidir, hêdimü’l‑lezzâttır ((lezzetleri yıkıp bitirendir))‥ nasıl mahlûk ve nîmet olabilir?',
+        'Furkàn‑ı Hakîm’de ((~hikmetli Kur’an’da)) اَلَّذ۪ي خَلَقَ الْمَوْتَ وَالْحَيٰوةَ لِيَبْلُوَكُمْ اَيُّكُمْ اَحْسَنُ عَمَلًا ((“O, hanginizin daha güzel amel yapacağını sınamak için ölümü ve hayatı yaratandır.” Mülk 2)) gibi âyetlerde; “Mevt (()) dahi, hayat gibi mahlûktur ((~yaratılmıştır)), hem bir nîmettir.” diye ifhâm ediliyor ((anlatılıyor, bildiriliyor)). Hâlbuki zâhiren ((~görünüşte)) mevt; inhilâldir ((dağılmaktır)), ademdir ((yokluktur)), tefessühtür ((çürümektir)), hayatın sönmesidir, hêdimü’l‑lezzâttır ((lezzetleri yıkıp bitirendir))‥ nasıl mahlûk ve nîmet olabilir?',
       ],
       aciklama: [
         'Kur’an, Mülk Sûresi’nde ölümün de hayat gibi “yaratıldığını” söylüyor. Yaratılan bir şey ise boş ve anlamsız olamaz; üstelik âyetlerden ölümün bir nimet olduğu da anlaşılıyor. Soru şu: ölüm dışarıdan bakınca dağılmak, çürümek, yok olmak ve bütün lezzetlerin bitmesi gibi görünüyor. Böyle bir şey nasıl “yaratılmış” ve “nimet” olabilir?',
@@ -37,7 +39,7 @@ RISALE.dersEkle({
     {
       baslik: 'Kısa cevap: ölüm bir terhistir',
       metin: [
-        'Elcevap: “Birinci Suâl”in cevabının âhirinde ((sonunda)) denildiği gibi; mevt, vazife‑i hayattan ((hayat görevinden)) bir terhistir (()), bir paydostur ((iş bırakmadır, moladır)), bir tebdil‑i mekândır (()), bir tahvîl‑i vücûddur ((vücudun başka bir hâle geçmesidir)), hayat‑ı bâkiyeye ((sonsuz hayata)) bir dâvettir, bir mebde’dir ((başlangıçtır)), bir hayat‑ı bâkiyenin mukaddimesidir ((girişidir)). Nasıl ki, hayatın dünyaya gelmesi bir halk ((yaratma)) ve takdir ((ölçüp belirleme)) iledir. Öyle de; dünyadan gitmesi de bir halk ve takdir ile, bir hikmet ve tedbir ((düzenleme)) iledir.',
+        'Elcevap: “Birinci Suâl”in cevabının âhirinde ((~sonunda)) denildiği gibi; mevt, vazife‑i hayattan ((~hayat görevinden)) bir terhistir ((~)), bir paydostur ((~iş bırakmadır, moladır)), bir tebdil‑i mekândır ((~)), bir tahvîl‑i vücûddur ((~vücudun başka bir hâle geçmesidir)), hayat‑ı bâkiyeye ((~sonsuz hayata)) bir dâvettir, bir mebde’dir ((başlangıçtır)), bir hayat‑ı bâkiyenin mukaddimesidir ((~girişidir)). Nasıl ki, hayatın dünyaya gelmesi bir halk ((yaratma)) ve takdir ((ölçüp belirleme)) iledir. Öyle de; dünyadan gitmesi de bir halk ve takdir ile, bir hikmet ve tedbir ((~düzenleme)) iledir.',
       ],
       aciklama: [
         'Cevap, birinci sorunun sonuna bağlanıyor: ölüm yok olmak değildir. Hayat görevinden terhistir, moladır, bir yerden başka bir yere geçmektir, sonsuz hayata davettir ve o hayatın başlangıcıdır.',
@@ -50,8 +52,8 @@ RISALE.dersEkle({
     {
       baslik: 'Çekirdeğin ölümü, sümbülün hayatı',
       metin: [
-        'Çünkü, en basit tabaka‑i hayat olan hayat‑ı nebâtiyenin ((bitki hayatının)) mevti, hayattan daha muntazam ((düzenli)) bir eser-i sanat ((sanat eseri)) olduğunu gösteriyor. Zîra ((çünkü)) meyvelerin, çekirdeklerin, tohumların mevti, tefessüh ((çürüme)) ile, çürümek ve dağılmakla göründüğü hâlde, gayet muntazam bir muâmele‑i kimyeviye ((kimyasal işlem)) ve mîzanlı ((ölçülü)) bir imtizacât‑ı unsuriye ((elementlerin birbirine karışması)) ve hikmetli bir teşekkülât‑ı zerreviyeden ((zerrelerin düzenlenmesinden)) ibaret olan bir yoğurmaktır ki, bu görünmeyen intizamlı ((düzenli)) ve hikmetli ölümü, sünbülün ((başağın, filizin)) hayatıyla tezâhür ediyor ((ortaya çıkıyor)).',
-        'Demek çekirdeğin mevti, sünbülün mebde-i hayatıdır ((hayatının başlangıcıdır)); belki ayn‑ı hayatı ((hayatının ta kendisi)) hükmünde olduğu için, şu ölüm dahi, hayat kadar mahlûk ve muntazamdır.',
+        'Çünkü, en basit tabaka‑i hayat olan hayat‑ı nebâtiyenin ((bitki hayatının)) mevti, hayattan daha muntazam ((~düzenli)) bir eser-i sanat ((~sanat eseri)) olduğunu gösteriyor. Zîra ((~çünkü)) meyvelerin, çekirdeklerin, tohumların mevti, tefessüh ((~çürüme)) ile, çürümek ve dağılmakla göründüğü hâlde, gayet muntazam bir muâmele‑i kimyeviye ((~kimyasal işlem)) ve mîzanlı ((~ölçülü)) bir imtizacât‑ı unsuriye ((elementlerin birbirine karışması)) ve hikmetli bir teşekkülât‑ı zerreviyeden ((zerrelerin düzenlenmesinden)) ibaret olan bir yoğurmaktır ki, bu görünmeyen intizamlı ((~düzenli)) ve hikmetli ölümü, sünbülün ((başağın, filizin)) hayatıyla tezâhür ediyor ((~ortaya çıkıyor)).',
+        'Demek çekirdeğin mevti, sünbülün mebde-i hayatıdır ((~hayatının başlangıcıdır)); belki ayn‑ı hayatı ((~hayatının ta kendisi)) hükmünde olduğu için, şu ölüm dahi, hayat kadar mahlûk ve muntazamdır.',
       ],
       aciklama: [
         'Delil en basit hayattan, bitkiden geliyor. Toprağa düşen tohum dışarıdan bakınca çürüyor ve dağılıyor gibidir. Oysa toprağın altında çok düzenli bir kimya işliyor: maddeler ölçüyle karışıyor, zerreler hikmetle diziliyor. Bu görünmeyen düzen, filiz topraktan çıkınca belli oluyor.',
@@ -65,7 +67,7 @@ RISALE.dersEkle({
       baslik: 'Yiyeceklerin ölümü',
       alt: true,
       metin: [
-        'Hem zîhayat ((canlı)) meyvelerin yâhut hayvanların mide‑i insaniyede ((insan midesinde)) ölümleri, hayat‑ı insaniyeye ((insan hayatına)) çıkmalarına menşe ((kaynak, sebep)) olduğundan; “o mevt, onların hayatından daha muntazam ve mahlûk” denilir.',
+        'Hem zîhayat ((canlı)) meyvelerin yâhut hayvanların mide‑i insaniyede ((~insan midesinde)) ölümleri, hayat‑ı insaniyeye ((~insan hayatına)) çıkmalarına menşe ((~kaynak, sebep)) olduğundan; “o mevt, onların hayatından daha muntazam ve mahlûk” denilir.',
       ],
       aciklama: [
         'İkinci delil: bir meyve ya da hayvan, insanın midesinde “ölür”. Ama o ölümle insan bedenine karışır ve bitki ya da hayvan hayatından insan hayatına yükselir. Bu ölüm bir kayıp değil, bir terfidir; o yüzden hayatlarından bile daha düzenli ve yaratılmış sayılır.',
@@ -77,8 +79,8 @@ RISALE.dersEkle({
     {
       baslik: 'Sonuç: insan da bir çekirdek gibidir',
       metin: [
-        'İşte en ednâ ((en aşağı, en basit)) tabaka‑i hayat olan hayat‑ı nebâtiyenin mevti, böyle mahlûk, hikmetli ve intizamlı olsa, tabaka‑i hayatın en ulvîsi ((en yücesi)) olan hayat‑ı insaniyenin ((insan hayatının)) başına gelen mevt; elbette yer altına girmiş bir çekirdeğin hava âleminde bir ağaç olması gibi, yer altına giren bir insan da, âlem‑i Berzahta (()), elbette bir hayat‑ı bâkiye ((sonsuz hayat)) sümbülü verecektir.',
-        'Amma ((ama)) mevt, nîmet olduğunun ciheti ((yönü)) ise, çok vücûhundan ((yönlerinden)) dört vechine ((yönüne)) işâret ederiz.',
+        'İşte en ednâ ((en aşağı, en basit)) tabaka‑i hayat olan hayat‑ı nebâtiyenin mevti, böyle mahlûk, hikmetli ve intizamlı olsa, tabaka‑i hayatın en ulvîsi ((~en yücesi)) olan hayat‑ı insaniyenin ((~insan hayatının)) başına gelen mevt; elbette yer altına girmiş bir çekirdeğin hava âleminde bir ağaç olması gibi, yer altına giren bir insan da, âlem‑i Berzahta (()), elbette bir hayat‑ı bâkiye ((~sonsuz hayat)) sümbülü verecektir.',
+        'Amma ((~ama)) mevt, nîmet olduğunun ciheti ((~yönü)) ise, çok vücûhundan ((yönlerinden)) dört vechine ((~yönüne)) işâret ederiz.',
       ],
       aciklama: [
         'En basit hayat olan bitkinin ölümü bile bu kadar düzenli ve hikmetliyse, hayatın en yücesi olan insan hayatının ölümü elbette öyledir. Toprağa giren çekirdek hava âleminde ağaç olur. Toprağa giren insan da kabir âleminde sonsuz hayatın filizini verir.',
@@ -92,7 +94,7 @@ RISALE.dersEkle({
       baslik: 'Birinci yön: sevdiklerine kavuşmak',
       sayfa: 29,
       metin: [
-        'Birincisi: Ağırlaşmış olan vazife‑i hayattan ve tekâlif‑i hayatiyeden ((hayatın yüklerinden, sorumluluklarından)) âzat edip ((kurtarıp)), yüzde doksan dokuz ahbabına ((dostlarına, sevdiklerine)) kavuşmak için, âlem‑i Berzahta bir visâl ((kavuşma)) kapısı olduğundan, en büyük bir nîmettir.',
+        'Birincisi: Ağırlaşmış olan vazife‑i hayattan ve tekâlif‑i hayatiyeden ((hayatın yüklerinden, sorumluluklarından)) âzat edip ((~kurtarıp)), yüzde doksan dokuz ahbabına ((~dostlarına, sevdiklerine)) kavuşmak için, âlem‑i Berzahta bir visâl ((kavuşma)) kapısı olduğundan, en büyük bir nîmettir.',
       ],
       aciklama: [
         'İnsan yaşlandıkça hayatın yükü ağırlaşır ve sevdiklerinin çoğu öbür tarafa göçmüş olur: anne baba, dedeler, eski dostlar. Ölüm, insanı bu ağırlaşan yükten kurtarır ve o sevdiklerine kavuşturan kapı olur.',
@@ -105,7 +107,7 @@ RISALE.dersEkle({
       baslik: 'İkinci yön: zindandan ferahlığa',
       alt: true,
       metin: [
-        'İkincisi: Dar, sıkıntılı, dağdağalı ((gürültülü, karışık)), zelzeleli ((sarsıntılı)) dünya zindânından çıkarıp; vüs’atli ((geniş, ferah)), sürûrlu ((sevinçli)), ızdırapsız ((acısız)), bâkî ((sonsuz)) bir hayata mazhariyetle ((kavuşmakla)) Mahbûb‑u Bâkî’nin ((sonsuz Sevgili’nin, yani Allah’ın)) dâire‑i rahmetine ((rahmet dairesine)) girmektir.',
+        'İkincisi: Dar, sıkıntılı, dağdağalı ((gürültülü, karışık)), zelzeleli ((~sarsıntılı)) dünya zindânından çıkarıp; vüs’atli ((geniş, ferah)), sürûrlu ((~sevinçli)), ızdırapsız ((~acısız)), bâkî ((~sonsuz)) bir hayata mazhariyetle ((~kavuşmakla)) Mahbûb‑u Bâkî’nin ((sonsuz Sevgili’nin, yani Allah’ın)) dâire‑i rahmetine ((~rahmet dairesine)) girmektir.',
       ],
       aciklama: [
         'Dünya, iman edenin gözünde dar, gürültülü ve sarsıntılı bir yerdir. Ölüm, oradan çıkıp geniş, sevinçli, acısız ve sonsuz bir hayata, Allah’ın rahmetine girmektir.',
@@ -118,9 +120,9 @@ RISALE.dersEkle({
       baslik: 'Üçüncü yön: yaşlılığın ağırlığı',
       alt: true,
       metin: [
-        'Üçüncüsü: İhtiyarlık gibi, şerâit‑i hayatiyeyi ((hayat şartlarını)) ağırlaştıran bir çok esbap ((sebepler)) vardır ki; mevti, hayatın pek fevkınde (()) nîmet olarak gösterir.',
-        'Meselâ, sana ızdırap ((acı, üzüntü)) veren pek ihtiyar olmuş peder ve vâliden ((baban ve annen)) ile beraber, ceddin ((dedenin)) cedleri ((dedeleri)), sefâlet‑i hâlleriyle ((perişan hâlleriyle)) senin önünde şimdi bulunsaydı; hayat ne kadar nıkmet ((azap, sıkıntı)), mevt ne kadar nîmet olduğunu bilecektin.',
-        'Hem meselâ, güzel çiçeklerin âşıkları olan güzel sineklerin ((uçan küçük böceklerin)), kışın şedâidi ((şiddetli zorlukları)) içinde hayatları ne kadar zahmet‥ ve ölümleri ne kadar rahmet olduğu anlaşılır.',
+        'Üçüncüsü: İhtiyarlık gibi, şerâit‑i hayatiyeyi ((~hayat şartlarını)) ağırlaştıran bir çok esbap ((~sebepler)) vardır ki; mevti, hayatın pek fevkınde (()) nîmet olarak gösterir.',
+        'Meselâ, sana ızdırap ((~acı, üzüntü)) veren pek ihtiyar olmuş peder ve vâliden ((baban ve annen)) ile beraber, ceddin ((~dedenin)) cedleri ((~dedeleri)), sefâlet‑i hâlleriyle ((~perişan hâlleriyle)) senin önünde şimdi bulunsaydı; hayat ne kadar nıkmet ((azap, sıkıntı)), mevt ne kadar nîmet olduğunu bilecektin.',
+        'Hem meselâ, güzel çiçeklerin âşıkları olan güzel sineklerin ((~uçan küçük böceklerin)), kışın şedâidi ((şiddetli zorlukları)) içinde hayatları ne kadar zahmet‥ ve ölümleri ne kadar rahmet olduğu anlaşılır.',
       ],
       aciklama: [
         'Yaşlılık gibi, hayatı ağırlaştıran sebepler vardır. Ölüm hiç olmasaydı, çok yaşlanmış anne babanla birlikte dedelerinin dedeleri de güçsüz ve perişan hâlde önünde duracaktı. O zaman ölümsüz bir hayatın ne kadar ağır, ölümün ne kadar büyük bir nimet olduğunu anlardın.',
@@ -135,7 +137,7 @@ RISALE.dersEkle({
       baslik: 'Dördüncü yön: uykunun büyük kardeşi',
       alt: true,
       metin: [
-        'Dördüncüsü: Nevm ((uyku)), nasıl ki bir rahat, bir rahmet, bir istirahattir; hususan ((özellikle)) musîbet‑zedeler ((başına musibet gelmiş olanlar)), yaralılar, hastalar için. Öyle de; nevmin büyük kardeşi olan mevt dahi, musîbet‑zedelere ve intihara sevkeden ((sürükleyen)) belâlarla müptelâ olanlar ((yakalanmış olanlar)) için ayn-ı nîmet ((nimetin ta kendisi)) ve rahmettir.',
+        'Dördüncüsü: Nevm ((uyku)), nasıl ki bir rahat, bir rahmet, bir istirahattir; hususan ((~özellikle)) musîbet‑zedeler ((~başına musibet gelmiş olanlar)), yaralılar, hastalar için. Öyle de; nevmin büyük kardeşi olan mevt dahi, musîbet‑zedelere ve intihara sevkeden ((~sürükleyen)) belâlarla müptelâ olanlar ((~yakalanmış olanlar)) için ayn-ı nîmet ((~nimetin ta kendisi)) ve rahmettir.',
       ],
       aciklama: [
         'Uyku herkes için dinlenmedir; dertli, yaralı ve hasta için ise ayrıca bir rahmettir. Ölüm, uykunun büyük kardeşidir. Çok ağır dertlere düşmüş bir mümin için, eceliyle geldiğinde bir dinlenme ve rahmet olur.',
@@ -150,7 +152,7 @@ RISALE.dersEkle({
       baslik: 'Bir kayıt: dalâlet ehli için',
       alt: true,
       metin: [
-        'Amma ehl‑i dalâlet ((doğru yoldan sapmış, imansız olanlar)) için, müteaddit ((birçok)) Söz’lerde kat’î ((kesin)) ispat edildiği gibi; mevt dahi hayat gibi nıkmet (()) içinde nıkmet, azap içinde azaptır‥ o, bahisten ((konudan)) hariçtir ((dışındadır)).',
+        'Amma ehl‑i dalâlet ((~doğru yoldan sapmış, imansız olanlar)) için, müteaddit ((birçok)) Söz’lerde kat’î ((~kesin)) ispat edildiği gibi; mevt dahi hayat gibi nıkmet ((~)) içinde nıkmet, azap içinde azaptır‥ o, bahisten ((~konudan)) hariçtir ((~dışındadır)).',
       ],
       aciklama: [
         'Sayılan dört nimet yönü iman edenler içindir. İmansız bir bakışta ölüm de hayat da sıkıntı üstüne sıkıntıdır. Bu, başka Söz’lerde ispat edilmiştir ve bu sorunun konusu değildir.',

@@ -66,6 +66,7 @@ sw.js, manifest.webmanifest  internetsiz çalışma ve kurulum
 1. `dersler/birinci-mektup-1.js` dosyasını kopyala, yeni bir ad ver (örneğin `ikinci-mektup.js`). İçindeki `id` dosya adıyla aynı olsun.
 2. Metni, açıklamaları ve örnekleri değiştir. Zor kelimenin anlamını kelimenin hemen arkasına çift parantezle yaz: `merâtib‑i hayat ((hayatın mertebeleri))`
    Anlamı daha önce bir derste yazılmış kelimede boş parantez yeter: `tenvir (())`. Anlam lügatten gelir; hiçbir derste olmayan kelimeleri `dersler/lugat.js` dosyasına yaz.
+   Anlamı sayfada göstermek ve sesli okumada okutmak istemezsen başına `~` koy: `kayıtlarla ((~sınırlarla))`, `tenvir ((~))`. Kelime lügatte ve kelime kartlarında yine çıkar. Derslerde anlamlar sadece gerçekten zor kelimelerde ve dersteki ilk geçişte görünür; diğerleri böyle gizlidir. Birini göstermek için `~` işaretini sil.
 3. `dersler/liste.js` dosyasına yeni dersin adını ekle.
 4. İstersen derse bir sohbet planı ekle (`plan`): bir açılış sorusu, iki üç ana nokta (her birinde tek cümlelik mesaj, kısa bir hikâye ve metindeki bölümün numarası) ve bir kapanış. Plan, ders sayfasının başında açılıp kapanan bir kutuda görünür. Örnek: `dersler/yirmi-altinci-mektup-4-1.js`.
 
@@ -121,7 +122,7 @@ Kullanılan ses `tr_TR-fahrettin-medium` (veri seti CC0, yani serbest). Ses mode
 Bilmen gerekenler:
 
 - Kelime kelime takip için her kelimenin başlangıç zamanı ses modelinden alınır (`onnx` kuruluysa kesin, yoksa tahmin). Zamanlar `ses/<ders>.json` içinde durur; ders açılınca oynatıcı onları okur.
-- Sayfadaki kelimeler seslendirilen kelimelerle sırayla eşleştirilir. Arapça ve okunmayan anlamlar (ders dosyasında boş `(())` olup anlamı lügattan gelenler) işaretlenmez, işaret bir sonraki okunan kelimeye geçer. Çok eski telefonlarda (kelime işaretini desteklemeyen tarayıcılar) sadece okunan paragraf işaretlenir.
+- Sayfadaki kelimeler seslendirilen kelimelerle sırayla eşleştirilir. Arapça ve okunmayan anlamlar (ders dosyasında boş `(())` olup anlamı lügattan gelenler) işaretlenmez; `((~…))` ile gizlenen anlamlar ne görünür ne okunur, işaret bir sonraki okunan kelimeye geçer. Çok eski telefonlarda (kelime işaretini desteklemeyen tarayıcılar) sadece okunan paragraf işaretlenir.
 - Yapay ses **Arapça okumaz**; âyet ve hadis metni atlanır, hemen ardından gelen Türkçe anlam okunur.
 - Metindeki kelime anlamları "kelime, yani anlamı" diye okunur. Şapkalı harfler sade okunur.
 - Osmanlıca kelimelerde telaffuz bazen kayar. Ders dosyasında düzeltme yapınca sesi yeniden üretmek gerekir.

@@ -9,6 +9,8 @@
      ornek     : günlük hayattan örnek (her paragraf ayrı bir satır)
    Daha önce anlamı yazılmış kelimede (()) yazman yeter,
    anlam lügatten kendiliğinden gelir. Örnek:  lâkayt (())
+   Anlamı sayfada göstermek ve sesli okumak istemezsen başına ~ koy: ((~sınırlı)).
+   Lügatte ve kelime kartlarında yine çıkar.
    Sayfa numarası (eRisale'deki gibi): kitapta yeni sayfa hangi bölümle başlıyorsa
    o bölüme  sayfa: 457,  yaz. Numara bölümün üstünde kesik çizgiyle görünür.
    ============================================================ */
@@ -25,7 +27,7 @@ RISALE.dersEkle({
       baslik: 'Menfî milliyette aşırıya gidenlere',
       metin: [
         'Altıncı Mesele',
-        'Menfî ((olumsuz, zararlı)) milliyette ve unsuriyet ((ırkçılık, kavmiyetçilik)) fikrinde ifrat ((aşırıya gitme)) edenlere deriz ki:',
+        'Menfî ((~olumsuz, zararlı)) milliyette ve unsuriyet ((ırkçılık, kavmiyetçilik)) fikrinde ifrat ((~aşırıya gitme)) edenlere deriz ki:',
       ],
       aciklama: [
         'Bu mesele, milliyetçilikte aşırıya giden ve onu soya, ırka dayandıranlara hitap ediyor. Bu mebhasın önceki meselelerinde milliyet fikri ikiye ayrılmıştı: yardımlaşmaya ve dayanışmaya götüren müsbet milliyet ile başkasını düşman görerek beslenen menfî milliyet. “Unsuriyet” ise insanları soylarına göre ayırmak, birini üstün ötekini aşağı saymaktır.',
@@ -39,7 +41,7 @@ RISALE.dersEkle({
     {
       baslik: 'Birinci cevap: soylar birbirine karışmıştır',
       metin: [
-        'Evvelâ (()): Şu dünya yüzü, hususan (()) şu memleketimiz, eski zamandan beri çok muhâceretlere ((göçlere)) ve tebeddülâta ((değişimlere)) mârûz ((uğramış, karşı karşıya kalmış)) olmakla beraber; merkez‑i hükûmet-i İslâmiye ((İslâm hükümetinin merkezi)) bu vatanda teşkil ((kurulmuş, oluşmuş)) olduktan sonra, akvâm‑ı sâireden ((diğer milletlerden)) pervâne ((ışığın etrafında dönen kelebek)) gibi çokları içine atılıp, tavattun ((yerleşme, vatan edinme)) etmişler. İşte bu hâlde; Levh‑i Mahfûz ((her şeyin yazılı olduğu kader levhası)) açılsa ancak hakîki ((gerçek)) unsurlar ((soylar, ırklar)) birbirinden tefrik ((ayırt etme)) edilebilir.',
+        'Evvelâ ((~)): Şu dünya yüzü, hususan ((~)) şu memleketimiz, eski zamandan beri çok muhâceretlere ((göçlere)) ve tebeddülâta ((değişimlere)) mârûz ((~uğramış, karşı karşıya kalmış)) olmakla beraber; merkez‑i hükûmet-i İslâmiye ((~İslâm hükümetinin merkezi)) bu vatanda teşkil ((~kurulmuş, oluşmuş)) olduktan sonra, akvâm‑ı sâireden ((~diğer milletlerden)) pervâne ((~ışığın etrafında dönen kelebek)) gibi çokları içine atılıp, tavattun ((yerleşme, vatan edinme)) etmişler. İşte bu hâlde; Levh‑i Mahfûz ((~her şeyin yazılı olduğu kader levhası)) açılsa ancak hakîki ((~gerçek)) unsurlar ((~soylar, ırklar)) birbirinden tefrik ((~ayırt etme)) edilebilir.',
       ],
       aciklama: [
         'Birinci cevap: Anadolu çok eski zamanlardan beri sayısız göç ve değişim görmüştür. Burası İslâm devletinin merkezi olduktan sonra da başka milletlerden pek çok insan, ışığa koşan pervaneler gibi gelip yerleşmiştir.',
@@ -53,7 +55,7 @@ RISALE.dersEkle({
       baslik: 'Soy değil; dil, din ve vatan',
       alt: true,
       metin: [
-        'Öyle ise, hakîki unsuriyet (()) fikrine, hareketi ve hamiyeti ((değerlerini koruma gayretini)) bina etmek ((üzerine kurmak, dayandırmak)), mânâsız ve hem pek zararlıdır. Onun içindir ki; menfî (()) milliyetçilerin ve unsuriyet‑perverlerin ((ırkçılık taraftarlarının)) reislerinden ((önderlerinden)) ve dine karşı pek lâkayt (()) birisi, mecbur olmuş, demiş: “Dil, din bir ise, millet birdir.” Mâdem öyledir; hakîki unsuriyete değil; belki ((bilakis, aksine)) dil, din, vatan münâsebâtına ((bağlarına)) bakılacak. Eğer üçü bir ise, zâten kuvvetli bir millet; eğer biri noksan olursa, tekrar milliyet dâiresine dâhildir ((içindedir)).',
+        'Öyle ise, hakîki unsuriyet ((~)) fikrine, hareketi ve hamiyeti ((değerlerini koruma gayretini)) bina etmek ((~üzerine kurmak, dayandırmak)), mânâsız ve hem pek zararlıdır. Onun içindir ki; menfî ((~)) milliyetçilerin ve unsuriyet‑perverlerin ((~ırkçılık taraftarlarının)) reislerinden ((~önderlerinden)) ve dine karşı pek lâkayt ((~)) birisi, mecbur olmuş, demiş: “Dil, din bir ise, millet birdir.” Mâdem öyledir; hakîki unsuriyete değil; belki ((bilakis, aksine)) dil, din, vatan münâsebâtına ((~bağlarına)) bakılacak. Eğer üçü bir ise, zâten kuvvetli bir millet; eğer biri noksan olursa, tekrar milliyet dâiresine dâhildir ((~içindedir)).',
       ],
       aciklama: [
         'Soylar ayırt edilemediğine göre, bir hareketi ve gayreti soya dayandırmak hem anlamsız hem zararlıdır. Üstad buna karşı tarafın kendi sözüyle delil getiriyor: ırkçı milliyetçilerin önderlerinden, dine karşı da çok ilgisiz biri bile sonunda “Dil, din bir ise, millet birdir” demek zorunda kalmış. Metin bu kişinin adını vermiyor.',
@@ -67,8 +69,8 @@ RISALE.dersEkle({
       baslik: 'İkinci cevap: İslâm milliyetinin faydaları',
       sayfa: 457,
       metin: [
-        'Sâniyen (()): İslâmiyetin mukaddes ((kutsal)) milliyeti, bu vatan evlâdının hayat-ı içtimâiyesine ((toplum hayatına)) kazandırdığı yüzer fâideden ((faydadan)) iki faydayı misâl olarak beyân ((açıklama)) edeceğiz:',
-        'Birincisi: Şu Devlet‑i İslâmiye ((İslâm Devleti)), yirmi‑otuz milyon iken, bütün Avrupa’nın büyük devletlerine karşı hayatını ve mevcûdiyetini ((varlığını)) muhâfaza (()) ettiren, şu devletin ordusundaki Nur‑u Kur\'ân’dan ((Kur’an’ın nurundan)) gelen şu fikirdir: “Ben ölsem şehîdim, öldürsem gâziyim.” Kemâl‑i şevk ile ((tam bir istek ve coşkuyla)) ve aşk ile ölümün yüzüne gülerek istikbâl etmiş ((karşılamış)). Dâima Avrupa’yı titretmiş. Acaba dünyada basit fikirli, sâfî ((saf, temiz)) kalpli olan neferâtın ((erlerin, sıradan askerlerin)) rûhunda şöyle ulvî ((yüce)) fedâkârlığa sebebiyet verecek, hangi şey gösterilebilir? Hangi hamiyet ((değerlerini koruma gayreti)) onun yerine ikame ((yerine koyma)) edilebilir ve hayatını ve bütün dünyasını severek ona fedâ ettirebilir?‥',
+        'Sâniyen ((~)): İslâmiyetin mukaddes ((~kutsal)) milliyeti, bu vatan evlâdının hayat-ı içtimâiyesine ((~toplum hayatına)) kazandırdığı yüzer fâideden ((~faydadan)) iki faydayı misâl olarak beyân ((~açıklama)) edeceğiz:',
+        'Birincisi: Şu Devlet‑i İslâmiye ((~İslâm Devleti)), yirmi‑otuz milyon iken, bütün Avrupa’nın büyük devletlerine karşı hayatını ve mevcûdiyetini ((~varlığını)) muhâfaza ((~)) ettiren, şu devletin ordusundaki Nur‑u Kur\'ân’dan ((~Kur’an’ın nurundan)) gelen şu fikirdir: “Ben ölsem şehîdim, öldürsem gâziyim.” Kemâl‑i şevk ile ((~tam bir istek ve coşkuyla)) ve aşk ile ölümün yüzüne gülerek istikbâl etmiş ((karşılamış)). Dâima Avrupa’yı titretmiş. Acaba dünyada basit fikirli, sâfî ((~saf, temiz)) kalpli olan neferâtın ((erlerin, sıradan askerlerin)) rûhunda şöyle ulvî ((~yüce)) fedâkârlığa sebebiyet verecek, hangi şey gösterilebilir? Hangi hamiyet ((değerlerini koruma gayreti)) onun yerine ikame ((~yerine koyma)) edilebilir ve hayatını ve bütün dünyasını severek ona fedâ ettirebilir?‥',
       ],
       aciklama: [
         'İkinci cevap: İslâm kardeşliği, yani “İslâmiyetin mukaddes milliyeti”, bu vatanın insanlarına yüzlerce fayda sağlamıştır. Üstad bunlardan ikisini örnek veriyor.',
@@ -84,7 +86,7 @@ RISALE.dersEkle({
       baslik: 'İkinci fayda: arkadaki büyük destek',
       alt: true,
       metin: [
-        'İkincisi: Avrupa’nın ejderhaları (büyük devletleri) her ne vakit şu devlet‑i İslâmiye’ye bir tokat vurmuşlarsa, üç yüz elli milyon İslâmı ağlatmış ve inletmiş. Ve o müstemlekât ((sömürgeler)) sâhipleri, onları inletmemek ve sızlatmamak için, elini çekmiş‥ elini kaldırırken indirmiş. Şu hiçbir cihette (()) istisğar ((küçük görme)) edilmeyecek manevî ve dâimî (()) bir kuvvetü\'z‑zahr ((arka kuvveti, arkadaki destek)) yerine hangi kuvvet ikame (()) edilebilir? Gösterilsin! Evet o azîm ((büyük)), manevî kuvvetü\'z‑zahrı, menfî (()) milliyet ile ve istiğnâkârâne ((başkasına ihtiyacı yokmuş gibi davranan)) hamiyet (()) ile gücendirmemeli!‥',
+        'İkincisi: Avrupa’nın ejderhaları (büyük devletleri) her ne vakit şu devlet‑i İslâmiye’ye bir tokat vurmuşlarsa, üç yüz elli milyon İslâmı ağlatmış ve inletmiş. Ve o müstemlekât ((sömürgeler)) sâhipleri, onları inletmemek ve sızlatmamak için, elini çekmiş‥ elini kaldırırken indirmiş. Şu hiçbir cihette ((~)) istisğar ((küçük görme)) edilmeyecek manevî ve dâimî ((~)) bir kuvvetü\'z‑zahr ((arka kuvveti, arkadaki destek)) yerine hangi kuvvet ikame ((~)) edilebilir? Gösterilsin! Evet o azîm ((~büyük)), manevî kuvvetü\'z‑zahrı, menfî ((~)) milliyet ile ve istiğnâkârâne ((başkasına ihtiyacı yokmuş gibi davranan)) hamiyet ((~)) ile gücendirmemeli!‥',
       ],
       aciklama: [
         'İkinci fayda: o yıllarda dünyada üç yüz elli milyon Müslüman vardı ve çoğu Avrupa devletlerinin sömürgesinde yaşıyordu. Avrupa’nın büyük devletleri Osmanlı’ya ne zaman bir darbe vursa, bu Müslümanlar üzülüp tepki gösteriyordu. Sömürge sahibi devletler de kendi idarelerindeki Müslümanları kızdırmamak için çoğu zaman geri adım atıyordu. Örneğin Hindistan Müslümanları Osmanlı’ya destek için İngiltere’ye karşı büyük bir hareket başlatmıştı.',
