@@ -253,13 +253,13 @@
   }
 
   function islemSatiri(d) {
-    var l = dersEtkinlikleri(d), k = kartlar(d).length, dinle = !!(R.ses && R.ses.var(d.id));
-    if (!l.length && !k && !dinle) return '';
+    var l = dersEtkinlikleri(d), k = kartlar(d).length, dinle = !!(R.ses && R.ses.var(d.id)), oyun = R.oyun ? R.oyun.dersDugmesi(d) : '';
+    if (!l.length && !k && !dinle && !oyun) return '';
     var bit = l.filter(function (e) { return tamam(e.id); }).length;
     return '<div class="ders-islem">' +
       (dinle ? '<button type="button" class="dugme dinle-dugme" data-dinle="' + esc(d.id) + '"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg> Dinle</button>' : '') +
       (l.length ? '<a class="dugme ana-dugme" href="#/' + esc(d.id) + '/pekistir">Pekiştir <span class="rozet-acik">' + bit + '/' + l.length + '</span></a>' : '') +
-      (k ? '<a class="dugme" href="#/' + esc(d.id) + '/kart">Kart modu</a>' : '') + '</div>';
+      (k ? '<a class="dugme" href="#/' + esc(d.id) + '/kart">Kart modu</a>' : '') + oyun + '</div>';
   }
 
   function kartIlerleme(d) {

@@ -180,7 +180,7 @@ window.RISALE = {
   function ustCiz(sol) {
     ust.innerHTML = '<div class="kap">' + sol +
       '<nav class="ust-baglanti" aria-label="Sayfalar">' +
-      '<a href="#/ara">Ara</a><a href="#/lugat">Lügat</a><a href="#/tekrar">Tekrar</a></nav></div>';
+      '<a href="#/ara">Ara</a><a href="#/lugat">Lügat</a><a href="#/tekrar">Tekrar</a>' + (R.oyun ? '<a href="#/oyun">Oyun</a>' : '') + '</nav></div>';
   }
   function hataKutusu() {
     return hatalar.length ? '<div class="hata"><b>Ders dosyalarında düzeltilecek yerler:</b><br>' + hatalar.map(esc).join('<br>') + '</div>' : '';
@@ -200,7 +200,7 @@ window.RISALE = {
     var notSayisi = Object.keys(notlar).length;
     govde.innerHTML = '<div class="ana"><h1>Sohbet dersleri</h1>' +
       '<p>Her derste metin, zor kelimelerin anlamı, kısa bir açıklama ve günlük hayattan bir örnek var.</p>' +
-      hataKutusu() + (R.pekistir ? R.pekistir.anaKutu() : '') + kartlar +
+      hataKutusu() + (R.pekistir ? R.pekistir.anaKutu() : '') + (R.oyun ? R.oyun.anaKutu() : '') + kartlar +
       '<section class="yedek"><h2>Notlarım</h2>' +
       '<p>' + (notSayisi ? notSayisi + ' notun var.' : 'Henüz notun yok.') + ' Notlar sadece bu telefonda durur. Telefon değiştirmeden ya da tarayıcıyı temizlemeden önce yedek al.</p>' +
       '<div class="yedek-dugmeler"><button type="button" class="dugme" id="yedek-al"' + (notSayisi ? '' : ' disabled') + '>Yedek al</button>' +
@@ -452,6 +452,14 @@ window.RISALE = {
     var p = location.hash.split('/');           // '#/ders/3' -> ['#','ders','3']
     var d = R.dersler[p[1]];
     if (R.pekistir) R.pekistir.birak();
+    if (R.oyun) R.oyun.birak();
+    if (d && R.oyun && p[2] === 'bulmaca') {
+      acikDers = null;
+      if (document.body.classList.contains('sohbet')) sohbetModu(false);
+      R.oyun.bulmaca(d, parseInt(p[3], 10) || 1);
+      window.scrollTo(0, 0);
+      return;
+    }
     if (d && R.pekistir && (p[2] === 'pekistir' || p[2] === 'kart')) {
       acikDers = null;
       if (document.body.classList.contains('sohbet')) sohbetModu(false);
@@ -466,6 +474,8 @@ window.RISALE = {
       if (p[1] === 'lugat') lugatSayfasi();
       else if (p[1] === 'tekrar') { cubuk.hidden = true; if (R.pekistir) R.pekistir.tekrar(); else tekrarSayfasi(); }
       else if (p[1] === 'ara') araSayfasi();
+      else if (p[1] === 'oyun' && R.oyun) R.oyun.sayfa();
+      else if (p[1] === 'kelime' && R.oyun) R.oyun.kelime();
       else anaSayfa();
       window.scrollTo(0, 0);
       return;

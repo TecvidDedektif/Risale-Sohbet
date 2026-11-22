@@ -155,7 +155,8 @@
 
     // Okuma sırasında dinleme: sohbet ya da kart moduna girince durdur
     new MutationObserver(function () {
-      if ((document.body.classList.contains('sohbet') || document.body.classList.contains('kartlar')) && !ses.paused) ses.pause();
+      var c = document.body.classList;
+      if ((c.contains('sohbet') || c.contains('kartlar') || c.contains('oyun')) && !ses.paused) ses.pause();
     }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
     medyaOturumu();
