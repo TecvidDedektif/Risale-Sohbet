@@ -34,6 +34,8 @@ Alttaki çubukla anlamlar, açıklamalar ve örnekler ayrı ayrı açılıp kapa
 | Kalıcı kelime tekrarı: bilmediğin kelime sık, bildiğin seyrek gelir (1, 3, 7, 14, 30 gün) | Üstte "Tekrar" |
 | Çalışma ilerlemesi ve günlük seri | Ana sayfa (ders kartlarında çubuk, üstte "Bugün N kelime sırada") |
 | Yazıyı takip: dinlerken okunan kelime sayfada işaretlenir, ekran onunla kayar. Elle kaydırırsan takip 5 saniye bekler ve kendiliğinden geri döner ("Takibe dön" düğmesi hemen döndürür); "Takip" düğmesiyle kapatılır | Oynatıcıda "Takip" düğmesi |
+| Günün kelimesi: her gün herkese aynı Risale kelimesi, 6 hakta bulunur; seri ve istatistik; sonuç cevabı ele vermeden renkli karelerle gruba gönderilir | Üstte "Oyun", ana sayfadaki kutu |
+| Çengel bulmaca: her dersin lügatinden kendiliğinden kurulur (derse göre 1–3 bulmaca), ipucu kelimenin anlamı; harf aç, kelimeyi aç, dersteki cümle; süre ve sonuç gruba gönderilir | Ders başında "Bulmaca", üstte "Oyun" |
 | Dinle: dersi sesli dinle; ekran kilitliyken de çalar, kilit ekranından durdurulur. Tam ve Özet kayıt, bölüme atlama, hız, uyku zamanlayıcısı, kaldığın yerden devam | Ders başında "Dinle" (sesi olan derslerde) |
 
 ## Dosyalar
@@ -45,6 +47,8 @@ js/risale.js              uygulama (ders eklerken dokunmana gerek yok)
 js/pekistir.js            pekiştirme etkinlikleri, kart modu, kelime tekrarı (dokunmana gerek yok)
 js/sekiller.js            şekil çizici (dokunmana gerek yok)
 js/ses.js                 sesli dinleme oynatıcısı (dokunmana gerek yok)
+js/oyunlar.js             Günün kelimesi ve Çengel bulmaca (dokunmana gerek yok)
+oyun/kelimeler.js         Günün kelimesi listesi (yeni kelimeyi hep en sona ekle)
 dersler/                  İÇERİK: senin çalışacağın yer
   liste.js                ana sayfadaki derslerin sırası
   lugat.js                derslerde geçmeyen ek kelimeler
@@ -102,6 +106,12 @@ pekistir: {
 İlerleme, kelime kutuları ve günlük seri sadece o telefonda saklanır (tarayıcı verisi silinirse gider).
 
 Kelime anlamları ve açıklamalar sohbet hazırlığı içindir; okumadan önce bilen birine göstermek iyi olur.
+
+## Oyunlar
+
+- **Çengel bulmaca** için bir şey yapman gerekmez: yeni dersin lügatindeki tek kelimelik terimlerden kendiliğinden kurulur. Herkeste aynı bulmaca çıkar, böylece sonuçlar karşılaştırılabilir. Dersin anlamları değişirse bulmaca da değişir; o dersin yarım kalan bulmacası sıfırlanır.
+- **Günün kelimesi** `oyun/kelimeler.js` listesinden sırayla gelir (1. gün: 22 Kasım 2026). Kelime 5, 6 ya da 7 harf olmalı (şapkalar sayılmaz). Yeni kelimeyi **hep en sona** ekle; araya eklersen sonraki günlerin kelimesi kayar.
+- Sonuçlar ve seriler sadece o telefonda durur. Ortak puan tablosu yok (sitenin sunucusu yok); sonuç "Gruba gönder" ile paylaşılır.
 
 ## Sesli dinleme eklemek (isteğe bağlı)
 
