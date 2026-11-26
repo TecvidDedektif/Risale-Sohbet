@@ -448,7 +448,26 @@ window.RISALE = {
   // 6. Gezinme
   // =========================================================
   var acikDers = null;
+  // Üst çubuk (geri ve sayfa bağlantıları) hep el altında: aşağı okurken çekilir,
+  // biraz yukarı kaydırınca ya da sayfanın başında hemen görünür.
+  (function () {
+    var sonY = window.pageYOffset, birikim = 0;
+    window.addEventListener('scroll', function () {
+      var y = window.pageYOffset, fark = y - sonY;
+      sonY = y;
+      if (y < 80) { ust.classList.remove('gizli'); birikim = 0; }
+      else {
+        birikim = (fark > 0) === (birikim > 0) ? birikim + fark : fark;
+        if (birikim > 30) ust.classList.add('gizli');
+        else if (birikim < -10) ust.classList.remove('gizli');
+      }
+      ust.classList.toggle('golge', y > 4);
+    }, { passive: true });
+    ust.addEventListener('focusin', function () { ust.classList.remove('gizli'); });
+  })();
+
   function yonlendir() {
+    ust.classList.remove('gizli');
     var p = location.hash.split('/');           // '#/ders/3' -> ['#','ders','3']
     var d = R.dersler[p[1]];
     if (R.pekistir) R.pekistir.birak();

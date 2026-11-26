@@ -46,7 +46,9 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--anlam); outline-
 .ar { font-family:var(--f-ar); direction:rtl; unicode-bidi:isolate; font-size:1.35em; line-height:1.4 }
 
 /* ---------- Üst ---------- */
-.ust { border-bottom:1px solid var(--cizgi); background:var(--kart) }
+.ust { border-bottom:1px solid var(--cizgi); background:var(--kart); position:sticky; top:0; z-index:30; transition:transform .25s ease, box-shadow .25s ease }
+.ust.gizli { transform:translateY(-100%); box-shadow:none }
+.ust.golge { box-shadow:0 2px 12px rgba(0,0,0,.08) }
 .ust .kap { display:flex; align-items:center; gap:12px; padding-top:calc(12px + env(safe-area-inset-top,0px)); padding-bottom:12px }
 .marka { font-family:var(--f-metin); font-weight:650; font-size:20px; text-decoration:none; margin-right:auto }
 .geri { font-weight:600; font-size:15px; color:var(--soluk); text-decoration:none }
@@ -67,7 +69,7 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--anlam); outline-
 .icindekiler { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 4px; padding:0; list-style:none }
 .icindekiler a { display:block; font-size:14px; font-weight:600; text-decoration:none; border:1px solid var(--cizgi); border-radius:999px; padding:5px 12px; background:var(--kart) }
 
-.bolum { padding-top:26px; scroll-margin-top:12px }
+.bolum { padding-top:26px; scroll-margin-top:72px }
 .bolum h2 { font-family:var(--f-metin); font-weight:650; font-size:calc(var(--boyut) * 1.25); line-height:1.25; margin:0 0 12px }
 .bolum.alt h2 { font-size:calc(var(--boyut) * 1.08); color:var(--soluk) }
 .bolum + .bolum { border-top:1px solid var(--cizgi); margin-top:26px }
@@ -423,7 +425,7 @@ body.sohbet .oyn, body.kartlar .oyn, body.oyun .oyn { display:none }
 .bolum.dinleniyor::before { content:''; position:absolute; left:-12px; top:26px; bottom:0; width:4px; border-radius:2px; background:var(--pk) }
 .bolum.dinleniyor h2::after { content:'Dinleniyor'; margin-left:10px; vertical-align:middle; font:700 11px/1 var(--f-ui); letter-spacing:.04em; text-transform:uppercase; color:var(--pk); background:var(--pk-zemin); border-radius:999px; padding:5px 9px }
 @media (max-width:420px) { .bolum.dinleniyor::before { left:-9px } }
-@media (prefers-reduced-motion: reduce) { .oyn * { transition:none !important } }
+@media (prefers-reduced-motion: reduce) { .oyn * { transition:none !important } .ust { transition:none } }
 
 /* Yazıyı takip: çalan kelime ve paragraf (js/ses.js) */
 :root { --okunan-zemin:#ffd84d; --okunan-yazi:#141414; --okunan-par:rgba(255,216,77,.17) }
