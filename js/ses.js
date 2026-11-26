@@ -222,7 +222,8 @@
   function sayfadaGoster() {
     if (location.hash.split('/')[1] !== id || sonBolum === null || sonBolum < 0) return;
     var h = document.getElementById('b' + sonBolum);
-    if (h) { kaydirmaKilidi = Date.now() + 900; kaydirGit(h.getBoundingClientRect().top - 12); }
+    var u = document.getElementById('ust');
+    if (h) { kaydirmaKilidi = Date.now() + 900; kaydirGit(h.getBoundingClientRect().top - 12 - (u ? u.offsetHeight : 0)); }
   }
 
   // ---------- Yazıyı takip ----------
@@ -381,7 +382,7 @@
   // Böylece okunan kelime hep ekranın üstünde ve oynatıcıdan uzakta kalır; kaymalar sık ve küçüktür.
   function takipKaydir(r) {
     if (!r || (!r.width && !r.height) || bekliyor() || Date.now() < kaydirmaKilidi) return;
-    var ust = 16, alt = window.innerHeight - ((el.kok && el.kok.offsetHeight) || 190) - 16, H = alt - ust;
+    var u = document.getElementById('ust'), ust = Math.max(16, u ? u.getBoundingClientRect().bottom + 8 : 16), alt = window.innerHeight - ((el.kok && el.kok.offsetHeight) || 190) - 16, H = alt - ust;
     if (r.top >= ust + H * 0.05 && r.bottom <= ust + H * 0.55) return;
     kaydirmaKilidi = Date.now() + 600;
     kaydirGit(r.top - (ust + H * 0.25));
